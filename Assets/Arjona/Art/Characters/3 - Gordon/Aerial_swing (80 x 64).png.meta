@@ -115,7 +115,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Aerial_swing (80 x 64)_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 6
+        width: 39
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091988dd673f8a147b1573765fa0da7a
+      internalID: -598504208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aerial_swing (80 x 64)_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 10
+        width: 30
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc9675229e726048acf27f9048bb6ee
+      internalID: 76598137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aerial_swing (80 x 64)_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 7
+        width: 40
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47b353a5a9418b40beb518d686246d5
+      internalID: 1991962647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aerial_swing (80 x 64)_3
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 0
+        width: 57
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474f34d927771cd45b2326ebc689647c
+      internalID: 1626303683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aerial_swing (80 x 64)_4
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1
+        width: 52
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d90c6405bde8f42a27d88998e6fb72
+      internalID: -811366084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aerial_swing (80 x 64)_5
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 7
+        width: 40
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e534f1d98d7cf43b023a30419b4ccc
+      internalID: -1794845905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aerial_swing (80 x 64)_6
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 4
+        width: 39
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ba8a1bd11e975418ce039e9e1380dd
+      internalID: 2124239815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +273,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Aerial_swing (80 x 64)_0: -598504208
+      Aerial_swing (80 x 64)_5: -1794845905
+      Aerial_swing (80 x 64)_4: -811366084
+      Aerial_swing (80 x 64)_2: 1991962647
+      Aerial_swing (80 x 64)_6: 2124239815
+      Aerial_swing (80 x 64)_3: 1626303683
+      Aerial_swing (80 x 64)_1: 76598137
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -115,7 +115,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Up_swing (80 x 64)_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 0
+        width: 41
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0df35a81c87674fb37c132f8ebc8bc
+      internalID: -1610879372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_swing (80 x 64)_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 53
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0e2735ff33184469103ac35aa8661c
+      internalID: 748239779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_swing (80 x 64)_2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 69
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029f18ba9d616524f9a7d175b7f39db7
+      internalID: -161457783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_swing (80 x 64)_3
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 52
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2369a6459d346e478c7f76c79ff8dba
+      internalID: -1694695433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_swing (80 x 64)_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 34
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbda8306dffe1524e80d58ab57e8c7ff
+      internalID: -787419678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_swing (80 x 64)_5
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 0
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f307ee6174b3a8a4eaf9f7421d7fa81a
+      internalID: 363468691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_swing (80 x 64)_6
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 0
+        width: 30
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbc61650f60a814280aae90602923c5
+      internalID: 142533328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +273,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Up_swing (80 x 64)_6: 142533328
+      Up_swing (80 x 64)_1: 748239779
+      Up_swing (80 x 64)_4: -787419678
+      Up_swing (80 x 64)_2: -161457783
+      Up_swing (80 x 64)_5: 363468691
+      Up_swing (80 x 64)_0: -1610879372
+      Up_swing (80 x 64)_3: -1694695433
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

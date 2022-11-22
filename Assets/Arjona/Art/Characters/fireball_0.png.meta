@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0b5bc490031ccb4e9225696d5827813
+guid: 743c4a95544ed3e49b34d7e0986a4ce2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,127 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Running (32 x 32)_0
+      name: fireball_0_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 23
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 9
+        y: 15
+        width: 54
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 785ceeb695a45304195f781ee5872d8e
-      internalID: 389494225
+      spriteID: cc499aac17cf7d949bea136e86f53b9c
+      internalID: -1733853224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running (32 x 32)_1
+      name: fireball_0_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 0
-        width: 22
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 71
+        y: 15
+        width: 56
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c038c624275d649ad5573097bbaffe
-      internalID: -2000261672
+      spriteID: 48056e5d7c0a434439936e4040b6ffa2
+      internalID: -123035152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running (32 x 32)_2
+      name: fireball_0_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 0
-        width: 22
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 135
+        y: 15
+        width: 56
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89793c1c809b02547aae7469e6cdc231
-      internalID: 1732908933
+      spriteID: 256551439e7eb3d4ebce15353ef1f4ac
+      internalID: 1172419430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running (32 x 32)_3
+      name: fireball_0_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 23
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 194
+        y: 16
+        width: 61
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a85bd6c4bcb14c84d9e92cadd857c98f
-      internalID: -550493563
+      spriteID: 8fbca25fa5fb8c04ab0e024eb268544a
+      internalID: -1786861877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running (32 x 32)_4
+      name: fireball_0_4
       rect:
         serializedVersion: 2
-        x: 131
-        y: 0
-        width: 26
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 266
+        y: 16
+        width: 53
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e152655988f7f94eadbb55628a6dd77
-      internalID: -395280682
+      spriteID: 5de1959ebb99c774892f418dfbbf9c3d
+      internalID: -1785315955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running (32 x 32)_5
+      name: fireball_0_5
       rect:
         serializedVersion: 2
-        x: 163
-        y: 0
-        width: 26
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 325
+        y: 16
+        width: 58
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f91ddd4c04a5ad948bfb881c0683d394
-      internalID: 2123922595
+      spriteID: 6669f988b7fb18a459da3f67acf6fd66
+      internalID: 799615934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball_0_6
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 16
+        width: 56
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0b650a762e6dc4e9a1170408d575f8
+      internalID: -138794973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball_0_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 16
+        width: 58
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1938e0d6227f94438443e4d2e019b26
+      internalID: 1238620648
       vertices: []
       indices: 
       edges: []
@@ -253,12 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Running (32 x 32)_5: 2123922595
-      Running (32 x 32)_0: 389494225
-      Running (32 x 32)_2: 1732908933
-      Running (32 x 32)_4: -395280682
-      Running (32 x 32)_1: -2000261672
-      Running (32 x 32)_3: -550493563
+      fireball_0_3: -1786861877
+      fireball_0_0: -1733853224
+      fireball_0_2: 1172419430
+      fireball_0_6: -138794973
+      fireball_0_5: 799615934
+      fireball_0_1: -123035152
+      fireball_0_4: -1785315955
+      fireball_0_7: 1238620648
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
