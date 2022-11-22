@@ -23,6 +23,10 @@ public class PlayerControlOscar : MonoBehaviour
     public float AtkRadius;
     public LayerMask IsEnemy;
 
+    //Fireball throw
+    public GameObject FireProp;
+    public int FirePow;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +64,17 @@ public class PlayerControlOscar : MonoBehaviour
         }
         else { Anim.SetBool("MeleeCharge", false);}
         Anim.SetFloat("CharTime", CharTimer);
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Anim.SetTrigger("Fireball");
+        }
+
+        if(Input.GetAxisRaw("Vertical") < 0 && Grounded == false)
+        {
+            Anim.SetBool("GroundPound", true);
+        }
+        else { Anim.SetBool("GroundPound", false); }
     }
 
     //Attacks
@@ -87,6 +102,14 @@ public class PlayerControlOscar : MonoBehaviour
             }
         }
         CharTimer = 0;
+    }
+
+    public void FireballThrow()
+    {
+        Vector3 Dir = new Vector3(0, 0, 0);
+        if(transform.localScale.x < 0) { Dir.y = 180; }
+        GameObject NewFire = Instantiate(FireProp, CanonPoint.position, Quaternion.Euler(Dir));
+        NewFire.GetComponent<BulletOscar>().Power = FirePow;
     }
 
     private void OnDrawGizmosSelected()
