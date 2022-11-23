@@ -23,6 +23,8 @@ public class LifeNStatusOscar : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (Input.GetKeyDown(KeyCode.H)) { TakeDamage(10, false); }
     }
 
     public void TakeDamage(int Dmg, bool Potent)
@@ -33,6 +35,7 @@ public class LifeNStatusOscar : MonoBehaviour
             {
                 Life -= Dmg;
                 Shield = false;
+                if(Anim != null) { Anim.SetTrigger("Hurt"); }
             }
             else
             {
@@ -42,6 +45,7 @@ public class LifeNStatusOscar : MonoBehaviour
         else
         {
             Life -= Dmg;
+            if (Anim != null) { Anim.SetTrigger("Hurt"); }
         }
     }
 }
