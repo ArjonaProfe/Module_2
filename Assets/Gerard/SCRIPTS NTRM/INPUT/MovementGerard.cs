@@ -34,11 +34,10 @@ public class MovementGerard : MonoBehaviour
             Jump();                                                        // se llama a la función 'Jump'
         }
         if (Input.GetButtonDown("Fire1"))                                // si se pulsa el botón 'Fire1'
-
-        {
             
+        {            
             am = FindObjectOfType<AnimationManagerGerard>();                 // se busca el objeto que tenga el script 'AnimationManager' y se guarda en la variable 'am'
-            am.AttackAnimation();                                     // se llama a la función 'AttackAnimation()' del script 'AnimationManager' 
+            am.AttackAnimation();                                    // se llama a la función 'AttackAnimation()' del script 'AnimationManager' 
             
         }
     }
