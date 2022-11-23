@@ -91,8 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   damping: 1
-  maxPosition: {x: 30, y: 10}
-  minPosition: {x: -30, y: -4}
+  maxPosition: {x: 20, y: 10}
+  minPosition: {x: -20, y: -1}
 --- !u!81 &7421761742492933707
 AudioListener:
   m_ObjectHideFlags: 0

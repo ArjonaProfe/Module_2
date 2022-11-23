@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoaderMery : MonoBehaviour
 {
     public string SceneName;                    // Variable donde guardaremos el nombre de la escena a cargar 
-    public string Sandbox;                    // Como indicamos que esta string llama a LoadScene2?
+    public string Sandbox;                    
 
     // Update is called once per frame
     void Update()
@@ -22,6 +22,6 @@ public class SceneLoaderMery : MonoBehaviour
     }
     public void LoadScene2()
     {
-        SceneManager.LoadScene("Sandbox");      // Recuerda "" es necesario para los ombres de scene
+        SceneManager.LoadScene("Sandbox");      // Recuerda "" es necesario para los nombres de scene
     }
 }

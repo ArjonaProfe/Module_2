@@ -25,19 +25,19 @@ public class PlayerMovementMery : MonoBehaviour
 
     private void Update()
     {
-        PlayerMovement();   // Funciones (a definit en voids)
+        PlayerMovement();   // Funciones (a definir en voids)
         IsGrounded();       
 
-        if (Input.GetButtonDown("Jump") && isGrounded == true)    // Si se pulsa el botón 'Jump' y la variable 'isGrounded' es true
+        if (Input.GetButtonDown("Jump") && isGrounded == true)    // If pulsa 'Jump' y la variable 'isGrounded' es true
         {
             Jump();                                               
         }
     }
 
-    private void PlayerMovement()       // Función PlayerMovement()
+    private void PlayerMovement()       
     {
         xMovement = Input.GetAxisRaw("Horizontal");                     // Eje X (Horizontal) se controla con el Horizontal Input
-        rb.velocity = new Vector2(xMovement * speed, rb.velocity.y);    // Al valor 'velocity' del rigidbody 2d 'rb' se le asigna el valor en X -> xMovement * speed y se le deja en Y el valor que tenga
+        rb.velocity = new Vector2(xMovement * speed, rb.velocity.y);    // Al valor 'velocity' del rigidbody se le asigna el valor  X -> xMovement * speed y se le deja en Y el valor que tenga
     }
     void Jump()     
     {
@@ -52,11 +52,11 @@ public class PlayerMovementMery : MonoBehaviour
 
         if (ray.distance < 0.01f)   // Si el rayo choca con un objeto a una distancia menor de 0.01
         {
-            isGrounded = true;      // Activa el bool 'isGrounded' 
+            isGrounded = true;      
         }
         else                        
         {
-            isGrounded = false;     // Desactiva el bool 'isGrounded'
+            isGrounded = false;     
         }
     }
 }
