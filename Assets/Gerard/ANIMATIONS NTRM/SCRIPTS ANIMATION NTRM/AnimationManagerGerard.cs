@@ -22,13 +22,13 @@ public class AnimationManagerGerard : MonoBehaviour
 
     }
 
-
+    
     private void Update()
     {
+
+
         anim.SetInteger("SpeedMovement", Mathf.RoundToInt(rb.velocity.x));   // se configura el entero "SpeedMovement" del animator con el valor "rb.velocity.x" para redondearlo a entero.
         anim.SetBool("Ground", pi.isGrounded);                               // se configura el bool "Ground" del animator con el valor que hay en la variable "isGrounded" del script "pi".
-        anim.SetBool("Attack", attack);                                      // se setea el bool "Attack" con el valor que hay en la variable "attack".
-
         if (rb.velocity.x < -0.1)                                            // si la velocidad en X es menor de -0.1.
         {
             sr.flipX = true;                                                 // se gira en el eje X del sprite "sr".
@@ -37,12 +37,14 @@ public class AnimationManagerGerard : MonoBehaviour
         {
             sr.flipX = false;                                                // se desactiva el flip en el eje X del sprite "sr".
         }
-
+        anim.SetBool("Attack", attack);                                      // se setea el bool "Attack" con el valor que hay en la variable "attack".
+       
     }
 
     public void AttackAnimation()                                             // activa el bool "attack". 
     {
         attack = true;
+        Debug.Log("2");
     }
 
 
