@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,133 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Running (32 x 48)_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 0
-        width: 28
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb6abcbe24f90cb47ad419bebd54c6de
-      internalID: -1225467450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Running (32 x 48)_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 0
-        width: 28
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32a2ec4e14760324884db587d7204afd
-      internalID: -1686537869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Running (32 x 48)_2
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 0
-        width: 28
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc1ece1a2fba9154f862e60779dae951
-      internalID: 1565077533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Running (32 x 48)_3
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 0
-        width: 28
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07ae1103d8332d34091a1f9b6f3a1a4a
-      internalID: 831127299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Running (32 x 48)_4
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 0
-        width: 29
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea6e9fecfdc0c1542b226321be6344b2
-      internalID: -1325197584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Running (32 x 48)_5
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 0
-        width: 28
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 232d39d41eb31ea49898bc50d5d44b39
-      internalID: 114871155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -252,13 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Running (32 x 48)_2: 1565077533
-      Running (32 x 48)_1: -1686537869
-      Running (32 x 48)_5: 114871155
-      Running (32 x 48)_4: -1325197584
-      Running (32 x 48)_0: -1225467450
-      Running (32 x 48)_3: 831127299
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

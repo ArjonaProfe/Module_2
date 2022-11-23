@@ -37,6 +37,7 @@ public class PlayerControlOscar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Moving
         float Move = Input.GetAxisRaw("Horizontal");
         if(Move != 0)
         {
@@ -104,6 +105,19 @@ public class PlayerControlOscar : MonoBehaviour
         CharTimer = 0;
     }
 
+    public void RunMeleeAttack()
+    {
+        Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsEnemy);
+        for (int i = 0; i < EnemiesToDamage.Length; i++)
+        {
+            if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
+            {
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage((int)((float)MeleeDmg * 1.5f), false);
+            }
+        }
+        CharTimer = 0;
+    }
+
     public void FireballThrow()
     {
         Vector3 Dir = new Vector3(0, 0, 0);
@@ -112,6 +126,7 @@ public class PlayerControlOscar : MonoBehaviour
         NewFire.GetComponent<BulletOscar>().Power = FirePow;
     }
 
+    //Grafics for visualization
     private void OnDrawGizmosSelected()
     {
         //ground detector
@@ -120,5 +135,6 @@ public class PlayerControlOscar : MonoBehaviour
         //punch
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(CanonPoint.position, AtkRadius);
+        Gizmos.DrawWireSphere(GroundPoint.transform.position, 0.3f);
     }
 }

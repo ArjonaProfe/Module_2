@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -131,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a66b62932d2d61a4989f27f3f44a59ae
-      internalID: -585710358
+      spriteID: b892d53c891116e49b8e6c4c017232b2
+      internalID: -51300102
       vertices: []
       indices: 
       edges: []
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8d3af4b16711db46b9a06f19a68209c
-      internalID: -1217067692
+      spriteID: 0959533b2cb4ac849bc7db2453cdb84d
+      internalID: 1589255170
       vertices: []
       indices: 
       edges: []
@@ -173,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2297730793e23542b13d560eaf7d6dc
-      internalID: -1927889399
+      spriteID: 20d37833033bf3948a3778ca30600891
+      internalID: -447232255
       vertices: []
       indices: 
       edges: []
@@ -194,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ce1b0af67ec2874faf60ea465c9a59f
-      internalID: -1820745315
+      spriteID: 7867b1d476b723a44a89bcbb683637d0
+      internalID: -1506498034
       vertices: []
       indices: 
       edges: []
@@ -211,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle (32 x 48)_1: -1217067692
-      Idle (32 x 48)_0: -585710358
-      Idle (32 x 48)_3: -1820745315
-      Idle (32 x 48)_2: -1927889399
+      Idle (32 x 48)_1: 1589255170
+      Idle (32 x 48)_0: -51300102
+      Idle (32 x 48)_3: -1506498034
+      Idle (32 x 48)_2: -447232255
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
