@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoaderGerard : MonoBehaviour
 {
 
-    public string SceneName1;      //guardamos el nombre de la pantalla que se va a cargar en esta variable
+    public string SceneName1;      //guardamos una variable para cada nombre de Escena.
     public string SceneName2;
     public string SceneName3;
     public string SceneName4;
@@ -47,7 +47,7 @@ public class SceneLoaderGerard : MonoBehaviour
     public void QuitGame()
 
     {
-        Application.Quit();
+        Application.Quit();         // Cerrar la aplicación.
     }
 
 }
