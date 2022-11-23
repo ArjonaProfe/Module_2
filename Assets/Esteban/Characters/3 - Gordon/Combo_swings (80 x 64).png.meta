@@ -1,72 +1,12 @@
 fileFormatVersion: 2
-guid: c0c817d08afb9a64098b165ebb2b71cc
+guid: 266ca027ae4e0fe45b1ed1bd4c78a99a
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: bg_cave_greenish_16x16_0
-  - first:
-      213: 21300002
-    second: bg_cave_greenish_16x16_1
-  - first:
-      213: 21300004
-    second: bg_cave_greenish_16x16_2
-  - first:
-      213: 21300006
-    second: bg_cave_greenish_16x16_3
-  - first:
-      213: 21300008
-    second: bg_cave_greenish_16x16_4
-  - first:
-      213: 21300010
-    second: bg_cave_greenish_16x16_5
-  - first:
-      213: 21300012
-    second: bg_cave_greenish_16x16_6
-  - first:
-      213: 21300014
-    second: bg_cave_greenish_16x16_7
-  - first:
-      213: 21300016
-    second: bg_cave_greenish_16x16_8
-  - first:
-      213: 21300018
-    second: bg_cave_greenish_16x16_9
-  - first:
-      213: 21300020
-    second: bg_cave_greenish_16x16_10
-  - first:
-      213: 21300022
-    second: bg_cave_greenish_16x16_11
-  - first:
-      213: 21300024
-    second: bg_cave_greenish_16x16_12
-  - first:
-      213: 21300026
-    second: bg_cave_greenish_16x16_13
-  - first:
-      213: 21300028
-    second: bg_cave_greenish_16x16_14
-  - first:
-      213: 21300030
-    second: bg_cave_greenish_16x16_15
-  - first:
-      213: 21300032
-    second: bg_cave_greenish_16x16_16
-  - first:
-      213: 21300034
-    second: bg_cave_greenish_16x16_17
-  - first:
-      213: 21300036
-    second: bg_cave_greenish_16x16_18
-  - first:
-      213: 21300038
-    second: bg_cave_greenish_16x16_19
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -89,12 +29,12 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: 16
+    filterMode: 1
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
@@ -122,8 +62,8 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
-  cookieLightType: 1
+  applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -173,386 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_cave_greenish_16x16_0
+      name: Combo_swings (80 x 64)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 380222dbf4f503c40a6d1558a0f5fa1b
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d0f6d3b6ff209540b25a88b11bf524d
-      internalID: 21300004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50aeca662e87e164bb78c990ce6e48b1
-      internalID: 21300006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9eb5330399932e45a029fa3d34dc93a
-      internalID: 21300008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b322e76ab063364e8d1548b2931fe49
-      internalID: 21300010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c82a952af6b208944be3edb4421de0f6
-      internalID: 21300012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c34f72a8fe1bc44daa27eaed0669b48
-      internalID: 21300014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_8
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9da2ea18e53324b49b051abab9516534
-      internalID: 21300016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c24f924447186af47aa8f124c91fe5d1
-      internalID: 21300018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_10
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f90ce3762ecbedb4cb212c2f517b242d
-      internalID: 21300020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_11
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d5692c36f093934a89983d7f13ff9a2
-      internalID: 21300022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7bf1bb074d649904f91e4957f99a0664
-      internalID: 21300024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_13
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1b9b3976f4ae244288ef825c05c5df2
-      internalID: 21300026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_14
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44a3c806274485241a374d6fc6e49c91
-      internalID: 21300028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_15
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51b4a8e4a7bd63a4fb39b6caad5a9178
-      internalID: 21300030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_16
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e496158be8aea14188a3cc517a3b3ce
-      internalID: 21300032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg_cave_greenish_16x16_17
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 19
         y: 0
-        width: 16
-        height: 16
+        width: 41
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c44a10aae683dd49bb2b4ce829d5ab2
-      internalID: 21300034
+      spriteID: d50fb1cc0ecea72449ed991ffeceb4a0
+      internalID: 1865263282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bg_cave_greenish_16x16_18
+      name: Combo_swings (80 x 64)_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 85
         y: 0
-        width: 16
-        height: 16
+        width: 53
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -581,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c278f064c1fa8714eb867abafa93c00f
-      internalID: 21300036
+      spriteID: 2ac0684482b46fc41820128c7b6a6a17
+      internalID: 574488664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bg_cave_greenish_16x16_19
+      name: Combo_swings (80 x 64)_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 165
         y: 0
-        width: 16
-        height: 16
+        width: 69
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -602,8 +173,323 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5d7bd9be7104714c9741b48eadf1cee
-      internalID: 21300038
+      spriteID: 8e8cdd0fa279ac343a7e9380f0c70864
+      internalID: -2023886454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_3
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b976bbb9cd3602e4999d928cd31360e7
+      internalID: -1987806821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c297a151b603a764a826ec72bcf5ecbe
+      internalID: -1119669082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_5
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 0
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa67d0c887765c54fbeadbf9a28037c2
+      internalID: -1010172470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_6
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5504dad28690d55419156bb6a2c60523
+      internalID: -1672880946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_7
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 0
+        width: 53
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea541b3d510719a41a71ff880d6a7e55
+      internalID: -638255906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_8
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 0
+        width: 61
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c3500145c92d64bbf04eb1cfcc6105
+      internalID: -1652109700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_9
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 0
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d4038550120c546829b964804668da
+      internalID: 327264294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_10
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 0
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f04dbbbdabe44d4086b203f14c713f2
+      internalID: -2143097206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_11
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 0
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9e3d636c2e2dd46990edcf384a3b6f
+      internalID: 1685056771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_12
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 0
+        width: 54
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd1f70bfee9907449533e29135cd7ec
+      internalID: -692698905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_13
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 0
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dedf8a6ca639b44ea34978fee482d5b
+      internalID: 343130068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_14
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 0
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0046f3f526d65924e80495a32c7491b1
+      internalID: -1077692378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_15
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 0
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d80ff6d5b8c94f4a8862af7eeecd22a
+      internalID: -1920064676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_16
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 0
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84e7ccce5a80434c9a112b2cdc4adbc
+      internalID: 77435895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combo_swings (80 x 64)_17
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 0
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976ca436fed276442acfd2c80a7e5daf
+      internalID: -442195648
       vertices: []
       indices: 
       edges: []
@@ -611,7 +497,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 14eac8d0539c508419ccdbd3b1aa6523
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -619,26 +505,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bg_cave_greenish_16x16_2: 21300004
-      bg_cave_greenish_16x16_0: 21300000
-      bg_cave_greenish_16x16_9: 21300018
-      bg_cave_greenish_16x16_16: 21300032
-      bg_cave_greenish_16x16_3: 21300006
-      bg_cave_greenish_16x16_14: 21300028
-      bg_cave_greenish_16x16_8: 21300016
-      bg_cave_greenish_16x16_4: 21300008
-      bg_cave_greenish_16x16_13: 21300026
-      bg_cave_greenish_16x16_12: 21300024
-      bg_cave_greenish_16x16_15: 21300030
-      bg_cave_greenish_16x16_10: 21300020
-      bg_cave_greenish_16x16_19: 21300038
-      bg_cave_greenish_16x16_18: 21300036
-      bg_cave_greenish_16x16_17: 21300034
-      bg_cave_greenish_16x16_6: 21300012
-      bg_cave_greenish_16x16_5: 21300010
-      bg_cave_greenish_16x16_1: 21300002
-      bg_cave_greenish_16x16_11: 21300022
-      bg_cave_greenish_16x16_7: 21300014
+      Combo_swings (80 x 64)_3: -1987806821
+      Combo_swings (80 x 64)_1: 574488664
+      Combo_swings (80 x 64)_13: 343130068
+      Combo_swings (80 x 64)_0: 1865263282
+      Combo_swings (80 x 64)_9: 327264294
+      Combo_swings (80 x 64)_11: 1685056771
+      Combo_swings (80 x 64)_2: -2023886454
+      Combo_swings (80 x 64)_4: -1119669082
+      Combo_swings (80 x 64)_10: -2143097206
+      Combo_swings (80 x 64)_15: -1920064676
+      Combo_swings (80 x 64)_7: -638255906
+      Combo_swings (80 x 64)_8: -1652109700
+      Combo_swings (80 x 64)_17: -442195648
+      Combo_swings (80 x 64)_16: 77435895
+      Combo_swings (80 x 64)_5: -1010172470
+      Combo_swings (80 x 64)_6: -1672880946
+      Combo_swings (80 x 64)_12: -692698905
+      Combo_swings (80 x 64)_14: -1077692378
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

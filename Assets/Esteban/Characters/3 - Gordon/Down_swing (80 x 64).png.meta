@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e57a8945fbc2db540be8d336aa27dd10
+guid: 68cb31e105c9c084492f52b90581815d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle (32 x 48)_0
+      name: Down_swing (80 x 64)_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 20
         y: 0
-        width: 28
-        height: 39
+        width: 41
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b892d53c891116e49b8e6c4c017232b2
-      internalID: -51300102
+      spriteID: 1b533be6585dbef4298999bd6fdaad2d
+      internalID: 138375284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32 x 48)_1
+      name: Down_swing (80 x 64)_1
       rect:
         serializedVersion: 2
-        x: 34
+        x: 93
         y: 0
-        width: 28
-        height: 40
+        width: 46
+        height: 46
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0959533b2cb4ac849bc7db2453cdb84d
-      internalID: 1589255170
+      spriteID: 9fee2a5afd77db34cbbeb9ca8b50f7bc
+      internalID: -679412978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32 x 48)_2
+      name: Down_swing (80 x 64)_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 167
         y: 0
-        width: 28
-        height: 40
+        width: 53
+        height: 46
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20d37833033bf3948a3778ca30600891
-      internalID: -447232255
+      spriteID: e49b0ec4aa0bda0429e048eaff618438
+      internalID: 828715993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32 x 48)_3
+      name: Down_swing (80 x 64)_3
       rect:
         serializedVersion: 2
-        x: 98
+        x: 251
         y: 0
-        width: 28
-        height: 39
+        width: 61
+        height: 52
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +194,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7867b1d476b723a44a89bcbb683637d0
-      internalID: -1506498034
+      spriteID: 832b2936b17304449beb9e9b518da127
+      internalID: -1073378477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Down_swing (80 x 64)_4
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 0
+        width: 46
+        height: 52
+      alignment: 9
+      pivot: {x: 0.20182733, y: 0.0063589313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a00cafa139e354b9f651c79462f3c6
+      internalID: 1830643806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Down_swing (80 x 64)_5
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 0
+        width: 40
+        height: 41
+      alignment: 9
+      pivot: {x: 0.23856202, y: 0.015941288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236e47f98c54f704fa4a0f5caa1ac4f3
+      internalID: -1226005925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Down_swing (80 x 64)_6
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 0
+        width: 30
+        height: 41
+      alignment: 9
+      pivot: {x: 0.33660075, y: 0.031882625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567b3f3864a360a48bbfb0e0dae8f0d0
+      internalID: -400600694
       vertices: []
       indices: 
       edges: []
@@ -223,10 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle (32 x 48)_1: 1589255170
-      Idle (32 x 48)_0: -51300102
-      Idle (32 x 48)_3: -1506498034
-      Idle (32 x 48)_2: -447232255
+      Down_swing (80 x 64)_5: -1226005925
+      Down_swing (80 x 64)_0: 138375284
+      Down_swing (80 x 64)_3: -1073378477
+      Down_swing (80 x 64)_1: -679412978
+      Down_swing (80 x 64)_2: 828715993
+      Down_swing (80 x 64)_6: -400600694
+      Down_swing (80 x 64)_4: 1830643806
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
