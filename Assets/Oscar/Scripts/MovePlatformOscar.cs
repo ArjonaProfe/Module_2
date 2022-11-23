@@ -5,9 +5,8 @@ using UnityEngine;
 public class MovePlatformOscar : MonoBehaviour
 {
     public float Speed, Timer, GoalTime;
-    public Vector3 Dir;
+    public Vector3 Pos1, Pos2;
     public bool Going1, Moving;
-    public Rigidbody2D RB2D;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +25,11 @@ public class MovePlatformOscar : MonoBehaviour
         {
             if(Going1 == true)
             {
-                RB2D.MovePosition(transform.position + Dir * Speed * Time.deltaTime);
+                transform.position = Vector3.Lerp(Pos2, Pos1, Timer);
             }
             else
             {
-                RB2D.MovePosition(transform.position - Dir * Speed * Time.deltaTime);
+                transform.position = Vector3.Lerp(Pos1, Pos2, Timer);
             }
 
             if(Timer >= GoalTime) { Moving = false; Timer = 0; }
@@ -42,13 +41,21 @@ public class MovePlatformOscar : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    collision.transform.SetParent(transform);
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collision.transform.SetParent(transform);
+    }
 
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    collision.transform.SetParent(null);
-    //}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.transform.SetParent(null);
+    }
+
+    public void OnDisable()
+    {
+        if(transform.GetChild(0) != null)
+        {
+            transform.SetParent(null);
+        }
+    }
 }

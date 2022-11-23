@@ -21,7 +21,7 @@ public class PlayerControlOscar : MonoBehaviour
 
     public Transform CanonPoint;
     public float AtkRadius;
-    public LayerMask IsEnemy;
+    public LayerMask IsEnemy, IsGizmo;
 
     //Fireball throw
     public GameObject FireProp;
@@ -82,6 +82,7 @@ public class PlayerControlOscar : MonoBehaviour
     public void MeleeAttack()
     {
         Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsEnemy);
+        Collider2D[] Gizmos = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsGizmo);
         for (int i = 0; i < EnemiesToDamage.Length; i++)
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
@@ -89,12 +90,17 @@ public class PlayerControlOscar : MonoBehaviour
                 EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, false);
             }
         }
+        for (int i = 0; i < Gizmos.Length; i++)
+        {
+            Gizmos[i].GetComponent<HitGizmoOscar>().Reaction();
+        }
         CharTimer = 0;
     }
 
     public void ChargedMeleeAttack()
     {
         Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsEnemy);
+        Collider2D[] Gizmos = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsGizmo);
         for (int i = 0; i < EnemiesToDamage.Length; i++)
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
@@ -102,18 +108,27 @@ public class PlayerControlOscar : MonoBehaviour
                 EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(CharMeleeDmg, true);
             }
         }
+        for (int i = 0; i < Gizmos.Length; i++)
+        {
+            Gizmos[i].GetComponent<HitGizmoOscar>().Reaction();
+        }
         CharTimer = 0;
     }
 
     public void RunMeleeAttack()
     {
         Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsEnemy);
+        Collider2D[] Gizmos = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsGizmo);
         for (int i = 0; i < EnemiesToDamage.Length; i++)
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
             {
                 EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage((int)((float)MeleeDmg * 1.5f), false);
             }
+        }
+        for (int i = 0; i < Gizmos.Length; i++)
+        {
+            Gizmos[i].GetComponent<HitGizmoOscar>().Reaction();
         }
         CharTimer = 0;
     }

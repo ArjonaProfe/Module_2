@@ -30,7 +30,12 @@ public class BulletOscar : MonoBehaviour
         {
             collision.GetComponent<LifeNStatusOscar>().TakeDamage(Power, Potent);
         }
-        print(collision.name);
+
+        if (collision.GetComponent<HitGizmoOscar>() != null)
+        {
+            collision.GetComponent<HitGizmoOscar>().Reaction();
+        }
+
         Destroy(gameObject);
     }
 }

@@ -47,7 +47,6 @@ public class EnemyControlOscar : MonoBehaviour
             if((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
             {
                 transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                print("Vuelta");
             }
             if (ActTimer >= ActCool)
             {
@@ -60,7 +59,6 @@ public class EnemyControlOscar : MonoBehaviour
             if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
             {
                 transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                print("Vuelta");
             }
             if (ActTimer >= ActCool)
             {

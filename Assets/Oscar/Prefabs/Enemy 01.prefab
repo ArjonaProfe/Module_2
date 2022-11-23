@@ -137,7 +137,7 @@ MonoBehaviour:
   MyFaction: 2
   Life: 0
   MaxLife: 200
-  Shield: 1
+  Shield: 0
   Anim: {fileID: 2021005621459127212}
 --- !u!114 &2021005621459127219
 MonoBehaviour:
