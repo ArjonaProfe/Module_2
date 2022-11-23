@@ -1,25 +1,36 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*Script para ir de una escena a otra. Añadimos todas las escenas, para que se pueda ir de una a otra.
+ * Tenemos el Menú principal con todas las opciones.
+ * Tenemos la partida de Juego con la opción de Pausa para ir a Menu o a Juego.
+ * Tenemos Opciones para cambiar dificultad y volver a Menu.
+ * Tenemos Salir del juego.
+ * Todas públicas para que el jugador pueda interactuar.
+ */
+
 public class MainMenu_AC : MonoBehaviour
 {
-    public void PlayGame()
+    public void EscenaMenu()                         //pública para que el usuario pueda interactuar
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   //Load the active scene
+        SceneManager.LoadScene("MainMenu_AC");       //el nombre exacto que le hemos puesto a la escena creada
     }
-    public void GoToMainMenu()
+    public void EscenaJuego()                        //pública para que el usuario pueda interactuar
     {
-        SceneManager.LoadScene("MainMenuScene_AC");     //Go to Main Menu when clic
+        SceneManager.LoadScene("Juego_AC");         //el nombre exacto que le hemos puesto a la escena creada
     }
-    public void GoToLevel()
+    public void EscenaOpciones()                    //pública para que el usuario pueda interactuar
     {
-        SceneManager.LoadScene("LevelScene_AC");        //Go to Level when clic
+        SceneManager.LoadScene("Opciones_AC");     //el nombre exacto que le hemos puesto a la escena creada
     }
-    public void QuitGameu()
+    public void EscenaPausa()                     //pública para que el usuario pueda interactuar
     {
-        Application.Quit();                             //Quit Game
+        SceneManager.LoadScene("Pausa_AC");       //el nombre exacto que le hemos puesto a la escena creada
+    }
+    public void Salir()                           //variable para poder salir del juego
+    {
+        Application.Quit();                       //Función para salir del juego
     }
 }

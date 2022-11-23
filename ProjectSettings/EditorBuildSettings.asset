@@ -5,46 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Main Menu NTRM.unity
-    guid: 4b9a18167d4ad2e47b027a76253efcee
+    path: Assets/Alexandra/Scenes_AC/MainMenuScene_AC.unity
+    guid: 2e2f445b364a10e42bbbdf723e6d3397
   - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Game Mode NTRM.unity
-    guid: 7b7c9c052ec757b48b8e01f39ffbb38e
+    path: Assets/Alexandra/Scenes_AC/Juego_AC.unity
+    guid: fee42f44b4669e54980aa044e459c01a
   - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Floor Selection NTRM.unity
-    guid: 5ae5e497354fe534fb4479ea800006d1
+    path: Assets/Alexandra/Scenes_AC/Opciones_AC.unity
+    guid: b21eed45424e05b4ab4068558d9e564c
   - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Tutorial NTRM.unity
-    guid: 29e74fe25e1f170448c0324442cc526a
-  - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Level 1 NTRM.unity
-    guid: f92ded110b5bb7d4ab4f7b47279310d6
-  - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Level 2 NTRM.unity
-    guid: 1daa02bb971411e41bffef55cc43de55
-  - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Level 3 NTRM.unity
-    guid: cbea06c4478ee3846910ea879af01b39
-  - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Succeed Level NTRM.unity
-    guid: f27da9d7c8598814ab3ddbeaa02a2a18
-  - enabled: 1
-    path: Assets/Gerard/SCENES NTRM/Fail Level NTRM.unity
-    guid: fea37d76725c2a346b1b386dfe1db87a
-  - enabled: 1
-    path: Assets/Arjona/UILoadScene/Scene1.unity
-    guid: 768c876bd1be4f84983e858be3ef027a
-  - enabled: 1
-    path: Assets/Arjona/UILoadScene/Scene2.unity
-    guid: c95ac0db82bdd524da4f9f3736c439f3
-  - enabled: 1
-    path: Assets/Oscar/Scenes/MainMenuOscar.unity
-    guid: fee64c8d12d179e48984e779a255fa04
-  - enabled: 1
-    path: Assets/Oscar/Scenes/Nivel1Oscar.unity
-    guid: 80604c741b22f034cbc9d0626f27d8ce
+    path: Assets/Alexandra/Scenes_AC/Pausa_AC.unity
+    guid: c88d6ee908c7e96478125a2ad829adc6
   m_configObjects: {}
