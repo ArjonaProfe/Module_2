@@ -18,8 +18,10 @@ public class MovePlatformOscar : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Counting time
         Timer += Time.deltaTime;
 
+        //Moving
         if(Moving == true)
         {
             if(Going1 == true)
@@ -33,6 +35,7 @@ public class MovePlatformOscar : MonoBehaviour
 
             if(Timer >= GoalTime) { Moving = false; Timer = 0; }
         }
+        //Once in position, waiting to move again
         else
         {
             if (Timer >= GoalTime) { Moving = true; Going1 = !Going1; Timer = 0; }

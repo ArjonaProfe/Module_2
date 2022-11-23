@@ -17,7 +17,10 @@ public class BulletOscar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Moving in the direction it is facing (can be redirected by rotation)
         transform.position += transform.right * Speed * Time.deltaTime;
+
+        //Destroyed if it exist for too long
         Destroy(gameObject, 8);
     }
 

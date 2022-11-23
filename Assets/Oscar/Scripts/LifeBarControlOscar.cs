@@ -23,6 +23,7 @@ public class LifeBarControlOscar : MonoBehaviour
     {
         if(MyLifeMan != null)
         {
+            //Makes the lifebar show how much life is left in comparison to the max life
             Bar.fillAmount = (float)(MyLifeMan.Life) / MyLifeMan.MaxLife;
             if (Follower == true)
             {

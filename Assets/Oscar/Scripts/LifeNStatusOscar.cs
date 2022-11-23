@@ -40,12 +40,13 @@ public class LifeNStatusOscar : MonoBehaviour
             else
             {
                 //not damage
+                if (Anim != null) { Anim.SetTrigger("Hurt"); }
             }
         }
         else
         {
             Life -= Dmg;
-            if (Anim != null) { Anim.SetTrigger("Hurt"); }
+            if (Anim != null && Life > (MaxLife/2)) { Anim.SetTrigger("Hurt"); }
         }
     }
 }
