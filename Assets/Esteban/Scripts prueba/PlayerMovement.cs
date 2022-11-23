@@ -8,82 +8,75 @@ public class PlayerMovement : MonoBehaviour
     //public int secondNumber;
     //public bool interruptor;
     //public GameObject cubeCharacer;
+    public Transform rayOrigin;
+    private float xMovement;
     public float speed = 1;
-    public float jump = 6;
+    public float jump = 10;
     private Rigidbody2D rb;
+    private Animator anim;
+    public bool attack;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
 
     void Update()
-    {
 
-        if (Input.GetKey(KeyCode.D))
+    {
+        DireccionJugador();   // Dirección del jugador según la variable "Horizontal" de preferencias
+        IsGrounded();
+
+        if (Input.GetButtonDown("Jump"))
         {
-            SetMovement(speed, 0);
-            Debug.Log($"Velocidad de rb = {rb.velocity.x}");
-            Debug.Log("Letra D presionada");
-            if (Input.GetKey(KeyCode.D) && Input.GetButtonDown("Jump"))
-            {
-                Saltar(rb.velocity.x * speed, jump);
-                //rb.AddForce(new Vector2(rb.velocity.x * speed, jump));
-                Debug.Log($"VALOR DE  jump = {jump}");
-                //Debug.Log($"Valor de speed = {speed}");
-                Debug.Log($"Letra presionada = {Input.GetButtonDown("Jump")}");
-            }
+            Jump();
         }
-        if (Input.GetKey(KeyCode.A))
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            SetMovement(-speed, 0);
-            Debug.Log($"Velocidad de rb en X = {rb.velocity.x}");
-            Debug.Log("Letra A presionada");
-            if (Input.GetButtonDown("Jump"))
-            {
-                Saltar(rb.velocity.x, jump);
-                Debug.Log($"VALOR DE  jump = {jump}");
-                Debug.Log($"Letra presionada = {Input.GetButtonDown("Jump")}");
-            }
+            attack = true;
+            anim.SetBool("transAtaque1", attack);
         }
-        //if (Input.GetKey(KeyCode.S))
+        //if (Input.GetKeyUp(KeyCode.E))
         //{
-        //    setMovement(0, 0, -speed);
-        //    Debug.Log($"Velocidad de rb en X = {rb.velocity.x}");
-        //    //Debug.Log($"Valor de speed = {speed}");
-        //    Debug.Log("Letra S presionada");
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    setMovement(speed, 0, 0);
-        //    Debug.Log($"Velocidad de rb en X = {rb.velocity.x}");
-        //    //Debug.Log($"Valor de speed = {speed}");
-        //    Debug.Log("Letra D presionada");
+        //    anim.SetBool("transAtaque1", false);
         //}
 
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    Saltar(0, jump);
-        //    //rb.velocity = new Vector2(0, jump);
-        //    Debug.Log($"Velocidad de rb en y = {rb.velocity.y}");
-        //    Debug.Log($"Valor de speed = {speed}");
-        //    Debug.Log($"Letra presionada = {Input.GetButtonDown("Jump")}");
-        //}
 
     }
-    public void SetMovement(float x1, float y1)
+
+    public void DireccionJugador()
     {
-        rb.velocity = new Vector2(x1, y1);
+        xMovement = Input.GetAxisRaw("Horizontal");
+        Debug.Log(xMovement);
+        rb.velocity = new Vector2(xMovement * speed, rb.velocity.y);
     }
-    public void Saltar(float x1, float y1)
+    public void Jump()
     {
-        rb.velocity = new Vector2(x1, y1);
+        if (IsGrounded())
+        {
+            rb.velocity = new Vector2(0, jump);
+        }
     }
+    public bool IsGrounded()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.down, 10f);
+        if (ray.distance < 0.01f)
+        {
+            return true;
+        }
+        return false;
+
+    }
+    //public void SetMovement(float x1, float y1)
+    //{
+    //    rb.velocity = new Vector2(x1, y1);
+    //}
+    //public void Saltar(float x1, float y1)
+    //{
+    //    rb.velocity = new Vector2(x1, y1);
+    //}
 }
-//if (Input.GetKey(KeyCode.D))   
-//{
-//    rb.velocity = new Vector3(0, speed, speed);
-//    Debug.Log($"Letra W y D presionadas a velocity.y =   {rb.velocity.y}"  + $" speed=  {speed}" );
-//}
