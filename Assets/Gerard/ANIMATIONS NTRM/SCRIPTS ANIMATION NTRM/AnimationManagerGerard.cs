@@ -9,7 +9,6 @@ public class AnimationManagerGerard : MonoBehaviour
     private Animator anim;                  //  se asigna el componente "Animator". 
     private SpriteRenderer sr;             //  se asigna el componente "spriteRenderer".
     private Rigidbody2D rb;               // hago de forma privada que el Rigidbody2D sea accesible desde el parametro rb.
-    public bool attack;                 // nos indicará cuando el personaje está atacando.
     private MovementGerard pi;
 
     private void Start()
@@ -37,15 +36,10 @@ public class AnimationManagerGerard : MonoBehaviour
         {
             sr.flipX = false;                                                // se desactiva el flip en el eje X del sprite "sr".
         }
-        anim.SetBool("Attack", attack);                                      // se setea el bool "Attack" con el valor que hay en la variable "attack".
+        
        
     }
 
-    public void AttackAnimation()                                             // activa el bool "attack". 
-    {
-        attack = true;
-        Debug.Log("2");
-    }
-
+    
 
 }

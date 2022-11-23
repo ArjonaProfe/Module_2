@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4907d8f82a0d0264eb20933663454e90
+guid: 7075f979ad186014ebc50d441a505359
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,29 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Up_swing (80 x 64)_0
+      name: Hollyshoot-Sheet_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 41
-        height: 44
+        x: 0
+        y: 64
+        width: 35
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a5e413c02777234f9e8dbbe5908617d
-      internalID: 1147186694
+      spriteID: ede28b11e60be9042b18ec0ce95eed0e
+      internalID: -1176451860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Up_swing (80 x 64)_1
+      name: Hollyshoot-Sheet_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 0
-        width: 53
-        height: 45
+        x: 35
+        y: 64
+        width: 35
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0314ee920a6da2d4989953f472730af5
-      internalID: 2135847906
+      spriteID: c863a0543ac8ff24f88b60d35d1e17ed
+      internalID: -1505314983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Up_swing (80 x 64)_2
+      name: Hollyshoot-Sheet_2
       rect:
         serializedVersion: 2
-        x: 165
-        y: 0
-        width: 69
-        height: 42
+        x: 70
+        y: 64
+        width: 35
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12291759569beb44c8de9e9b281c5957
-      internalID: 1329581142
+      spriteID: e209478d410801546a9da02b6fee73f6
+      internalID: -1142734790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Up_swing (80 x 64)_3
+      name: Hollyshoot-Sheet_3
       rect:
         serializedVersion: 2
-        x: 268
-        y: 0
-        width: 52
-        height: 46
+        x: 105
+        y: 64
+        width: 35
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a795bbf0039e8464fa6623cbb8589dc9
-      internalID: 12278074
+      spriteID: 00baf5fdb2f03234c9097985dc7248f4
+      internalID: 751582938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Up_swing (80 x 64)_4
+      name: Hollyshoot-Sheet_4
       rect:
         serializedVersion: 2
-        x: 352
-        y: 0
-        width: 34
-        height: 55
+        x: 0
+        y: 32
+        width: 35
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fed2068e09898854d8c0c909a61c3516
-      internalID: 531005880
+      spriteID: 202327d1fd6face41879493f4707a7b8
+      internalID: 769772404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Up_swing (80 x 64)_5
+      name: Hollyshoot-Sheet_5
       rect:
         serializedVersion: 2
-        x: 433
-        y: 0
-        width: 36
-        height: 40
+        x: 35
+        y: 32
+        width: 35
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30ea59c06504aaf42a32da795812fb37
-      internalID: -1136695914
+      spriteID: 1a0248b49512aa141b51d447b10bee7b
+      internalID: -554805942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Up_swing (80 x 64)_6
+      name: Hollyshoot-Sheet_6
       rect:
         serializedVersion: 2
-        x: 508
-        y: 0
-        width: 30
-        height: 41
+        x: 70
+        y: 32
+        width: 35
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +245,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1573cc84d3cdb06458f25e3e2e1a93f8
-      internalID: 353736451
+      spriteID: 338a0664cdb1f0447a989191aea8cb7c
+      internalID: -765641054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hollyshoot-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 32
+        width: 35
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8921d145c2e73b04ba460f6bdc23f661
+      internalID: 519752238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hollyshoot-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 35
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ffc9f90ebe324a4f805bf8bf13443e7
+      internalID: 1810899341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hollyshoot-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 35
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cbdda7897976643808751e6bd5d52b
+      internalID: -1885789597
       vertices: []
       indices: 
       edges: []
@@ -274,13 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Up_swing (80 x 64)_6: 353736451
-      Up_swing (80 x 64)_1: 2135847906
-      Up_swing (80 x 64)_4: 531005880
-      Up_swing (80 x 64)_2: 1329581142
-      Up_swing (80 x 64)_5: -1136695914
-      Up_swing (80 x 64)_0: 1147186694
-      Up_swing (80 x 64)_3: 12278074
+      Hollyshoot-Sheet_1: -1505314983
+      Hollyshoot-Sheet_5: -554805942
+      Hollyshoot-Sheet_9: -1885789597
+      Hollyshoot-Sheet_6: -765641054
+      Hollyshoot-Sheet_3: 751582938
+      Hollyshoot-Sheet_4: 769772404
+      Hollyshoot-Sheet_0: -1176451860
+      Hollyshoot-Sheet_2: -1142734790
+      Hollyshoot-Sheet_7: 519752238
+      Hollyshoot-Sheet_8: 1810899341
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
