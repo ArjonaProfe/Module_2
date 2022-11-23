@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MovementGerard : MonoBehaviour
 {
 
+    private Animator anim;                  //  se asigna el componente "Animator". 
+
     public Transform rayOrigin;                // aquí se asigna el punto desde el que se lanza el raycast.
     private Rigidbody2D rb;                   // hago privado la asiganción de RigidBody2D a rb.
 
@@ -15,12 +17,14 @@ public class MovementGerard : MonoBehaviour
 
     private float xMovement;                   // aquí se guarda el valor del Axis X que mueve al personaje.
     private AnimationManagerGerard am;        // aquí se referencia el script "AnimationManagerGerard".
+    public bool putounity;                 // nos indicará cuando el personaje está atacando.
 
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();                // le añado del rigidbody2D al objeto que pongamos en "rb".
+        anim = GetComponent<Animator>();             // se asigna el componente "Animator" a la variable "anim".
     }
 
 
@@ -36,11 +40,12 @@ public class MovementGerard : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))                                // si se pulsa el botón 'Fire1'
 
         {
-            Debug.Log("1");
-            am = FindObjectOfType<AnimationManagerGerard>();                 // se busca el objeto que tenga el script 'AnimationManager' y se guarda en la variable 'am'
-            am.AttackAnimation();                                     // se llama a la función 'AttackAnimation()' del script 'AnimationManager' 
             
-        }
+                            // se busca el objeto que tenga el script 'AnimationManager' y se guarda en la variable 'am'
+            AttackAnimation();                                     // se llama a la función 'AttackAnimation()' del script 'AnimationManager' 
+            
+        }    
+
     }
 
     private void PlayerMovement()                                           // función PlayerMovement()
@@ -68,4 +73,12 @@ public class MovementGerard : MonoBehaviour
             isGrounded = false;                                                      // desactiva el bool "isGrounded".
         }
     }
+
+    public void AttackAnimation()                                             // activa el bool "attack". 
+    {
+        anim.SetBool("Attack", putounity);                                      // se setea el bool "Attack" con el valor que hay en la variable "attack".
+        putounity = true;
+
+    }
+
 }
