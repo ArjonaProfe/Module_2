@@ -13,6 +13,7 @@ public class PlayerMovementMery : MonoBehaviour
     public float speed;                 // velocidad de movimiento
     public float jump;                  // potencia de salto
     public bool isGrounded;             // tocar el suelo 
+    public bool isShooting;             // si está disparando
 
     private float xMovement;            // guarda el Axis X (horizontal)
 
@@ -26,7 +27,8 @@ public class PlayerMovementMery : MonoBehaviour
     private void Update()
     {
         PlayerMovement();   // Funciones (a definir en voids)
-        IsGrounded();       
+        IsGrounded();
+        IsShooting();
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)    // If pulsa 'Jump' y la variable 'isGrounded' es true
         {
@@ -57,6 +59,18 @@ public class PlayerMovementMery : MonoBehaviour
         else                        
         {
             isGrounded = false;     
+        }
+    }
+
+    void IsShooting()
+    {
+        if (Input.GetButton("Fire1") == true)
+        {
+            isShooting = true;
+        }
+        else
+        {
+            isShooting = false;
         }
     }
 }
