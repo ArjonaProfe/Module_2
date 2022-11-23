@@ -15,20 +15,13 @@ public class MainMenu_AC : MonoBehaviour
 {
     public void EscenaMenu()                         //pública para que el usuario pueda interactuar
     {
-        SceneManager.LoadScene("MainMenu_AC");       //el nombre exacto que le hemos puesto a la escena creada
+        SceneManager.LoadScene("MainMenuScene_AC");       //el nombre exacto que le hemos puesto a la escena creada
     }
     public void EscenaJuego()                        //pública para que el usuario pueda interactuar
     {
         SceneManager.LoadScene("Juego_AC");         //el nombre exacto que le hemos puesto a la escena creada
     }
-    public void EscenaOpciones()                    //pública para que el usuario pueda interactuar
-    {
-        SceneManager.LoadScene("Opciones_AC");     //el nombre exacto que le hemos puesto a la escena creada
-    }
-    public void EscenaPausa()                     //pública para que el usuario pueda interactuar
-    {
-        SceneManager.LoadScene("Pausa_AC");       //el nombre exacto que le hemos puesto a la escena creada
-    }
+
     public void Salir()                           //variable para poder salir del juego
     {
         Application.Quit();                       //Función para salir del juego
