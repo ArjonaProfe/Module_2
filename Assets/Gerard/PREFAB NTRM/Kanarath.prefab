@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 4892162052080993529}
   m_Layer: 0
   m_Name: Kanarath
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,6 +271,8 @@ MonoBehaviour:
   jump: 12
   isGrounded: 0
   putounity: 0
+  puedeDoubleJump: 0
+  doubleJump: 0
 --- !u!114 &4892162052080993522
 MonoBehaviour:
   m_ObjectHideFlags: 0
