@@ -1,32 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AceitunaMove_AC : MonoBehaviour
 {
+    private float horizontal;       // el movimiento de acción será en eje x
+    private float speed = 8f;       //variable de velocidad, le ponemos un valor X
+    private Rigidbody rb;           //mencionamos el Rigidbody
 
-    public GameObject Circle;
-    private float Speed = 2f;
-    private Rigidbody2D rb;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-   /*
+   
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))  //buttonPressed = RIGHT
         {
-            rb.velocity = new Vector2(-Speed, rb.velocity.y);
+            transform.position += transform.right * (Time.deltaTime * speed);  // with plus will go left side
+
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.A))   //buttonPressed = LEFT
         {
-            rb.velocity = new Vector2(Speed, rb.velocity.y);
+            transform.position -= transform.right * (Time.deltaTime * speed);  // with minus will go left side
         }
-              
+       
     }
-    */
+    
 }

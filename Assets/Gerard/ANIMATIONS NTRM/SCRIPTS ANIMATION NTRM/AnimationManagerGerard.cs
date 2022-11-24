@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationManagerGerard : MonoBehaviour
 {
 
-
+/*
     private Animator anim;                  //  se asigna el componente "Animator". 
     private SpriteRenderer sr;             //  se asigna el componente "spriteRenderer".
     private Rigidbody2D rb;               // hago de forma privada que el Rigidbody2D sea accesible desde el parametro rb.
@@ -40,6 +40,6 @@ public class AnimationManagerGerard : MonoBehaviour
        
     }
 
-    
+    */
 
 }
