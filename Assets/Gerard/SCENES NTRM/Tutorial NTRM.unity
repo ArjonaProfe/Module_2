@@ -495,8 +495,12 @@ PrefabInstance:
       value: Kanarath
       objectReference: {fileID: 0}
     - target: {fileID: 4892162052080993523, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
+      propertyPath: doubleJump
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892162052080993523, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
       propertyPath: puedeDoubleJump
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4892162052080993534, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
       propertyPath: m_RootOrder

@@ -17,7 +17,7 @@ public class MovementGerard : MonoBehaviour
     private AnimationManagerGerard am;        // aquí se referencia el script "AnimationManagerGerard".
     public bool putounity;                   // nos indicará cuando el personaje está atacando.
     public bool puedeDoubleJump;            // creo un boleano para, más adelante, usarlo y saber si está en estado de doble salto o no.
-    
+    public float doubleJump;               // hago público parametro doubleJump
 
 
 
@@ -40,21 +40,31 @@ public class MovementGerard : MonoBehaviour
     {
         if (isGrounded == true)                                             // si "isGrounded" es true;
         {
-            rb.velocity = new Vector2(0, jump);                            // te permite saltar.
+            rb.velocity = new Vector2(0, jump);                            // te hace saltar.
         }
     }
 
-    void IsGrounded()                                                   // función IsGrounded()
+    void DoubleJump()                                                               // función DoubleJump()
+    {
+        if (isGrounded == false)                                                   // si "isGrounded" es false;
+        {
+            rb.velocity = new Vector2(0, doubleJump);                            // te hace saltar de nuevo.
+        }
+    }
+
+    void IsGrounded()                                                                         // función IsGrounded()
     {
         RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.down, 10f);         // usa un raycast 2D desde la posición "rayOrigin" en dirección hacia abajo y con un alcance de 10 unidades de Unity.
 
         if (ray.distance < 0.01f)                                                          // si el rayo choca con un objeto que este a una distancia menor de 0.01.
         {
             isGrounded = true;                                                           // activa el bool "isGrounded". 
+            puedeDoubleJump = true;                                                     // cambiamos el valor a "puedeDoublejump" a "true".                                          
         }
         else                                                                           // si el rayo no choca con un objeto que está a una distancia menor de 0.01.
         {
             isGrounded = false;                                                      // desactiva el bool "isGrounded".
+            
         }
     }
 
@@ -74,13 +84,15 @@ public class MovementGerard : MonoBehaviour
         if (Input.GetButtonDown("Jump"))                                           // si se pulsa el botón 'Jump'
         {
             if (isGrounded)                                                      // si "isGrounded" es true.
-                Jump();                                                             // se llama a la función 'Jump'.
-            puedeDoubleJump = true;                                            // cambiamos el valor a "doublejump" a "true".
+            { 
+                Jump();                                                         // se llama a la función 'Jump'.
+            
+            }
         }
 
-        else if (isGrounded = false && puedeDoubleJump = true)                      // si "puedeDoubleJump" es "true" y "isGrounded" es falso, entonces saltaremos de nuevo.
+        else if (isGrounded == false && puedeDoubleJump == true)            // si "puedeDoubleJump" es "true" y "isGrounded" es falso, entonces saltaremos de nuevo.
         {         
-            Jump();
+            DoubleJump();
             puedeDoubleJump = false;                                     // cambiamos el valor de "puedeDoubleJump" a "false".          
         }
 
