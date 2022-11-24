@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938937780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.29, y: -6.26, z: 10.009569}
+  m_LocalPosition: {x: -23.7, y: -6.26, z: 10.009569}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123,8 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   damping: 1
-  maxPosition: {x: 30, y: 100}
-  minPosition: {x: -30, y: 1}
+  maxPosition: {x: 200, y: 100}
+  minPosition: {x: -200, y: -100}
 --- !u!81 &7421761742492933707
 AudioListener:
   m_ObjectHideFlags: 0
