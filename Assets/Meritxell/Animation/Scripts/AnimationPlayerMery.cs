@@ -25,6 +25,7 @@ public class AnimationPlayerMery : MonoBehaviour
     {
         anim.SetInteger("SpeedMovement", Mathf.RoundToInt(rb.velocity.x));   // Se setea el entero 'SpeedMovement' del animator con el valor 'rb.velocity.x' 
         anim.SetBool("Ground", pm.isGrounded);                               // Se setea el bool 'Ground' del animator con el valor que hay en la variable 'isGrounded' del script 'pi'
+      
         if (rb.velocity.x < -0.1)                                            // Si la velocidad en X es menor de -0.1
         {
             sr.flipX = true;                                                 // Se flipea en el eje X
@@ -34,9 +35,9 @@ public class AnimationPlayerMery : MonoBehaviour
             sr.flipX = false;                                                
         }
 
-        anim.SetBool("isShooting", pm.isShooting);
+        anim.SetBool("isShooting", pm.isShooting);              // detecta si el personaje está disparando en pm
         {
-            if (Input.GetButton("Fire1") == true)
+            if (Input.GetButton("Fire1") == true)              //input
             {
                 isShooting = true;
             }
@@ -45,5 +46,6 @@ public class AnimationPlayerMery : MonoBehaviour
                 isShooting = false;
             }
         }
+        
     }
 }

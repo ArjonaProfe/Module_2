@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerMovementMery : MonoBehaviour
 {
     // private referencia que solo se usará esta información internamente en el script; public is que utilizará elementos externos
-    private Rigidbody2D rb;             // Aquí se asignará el componente 'rigidbody2D'
-    public Transform rayOrigin;         // Aquí se asignará el punto desde el que se lanzará el raycast
+    private Rigidbody2D rb;             // 'rigidbody2D'
+    public Transform rayOrigin;         // raycasr
 
 
     public float speed;                 // velocidad de movimiento
@@ -61,7 +61,6 @@ public class PlayerMovementMery : MonoBehaviour
             isGrounded = false;     
         }
     }
-
     void IsShooting()
     {
         if (Input.GetButton("Fire1") == true)
