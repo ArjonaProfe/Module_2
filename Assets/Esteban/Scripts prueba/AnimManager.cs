@@ -16,10 +16,17 @@ public class AnimManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int n = Mathf.RoundToInt(rb.velocity.x);
 
+       //int iValue = (int)n;
+       //Debug.Log("int val: " + iValue);
+
+
+         n = Mathf.RoundToInt(rb.velocity.x);
         anim.SetInteger("transicionCorrer", n);
+        Debug.Log("int val: " + n);
 
-        
     }
 }
+
+
+

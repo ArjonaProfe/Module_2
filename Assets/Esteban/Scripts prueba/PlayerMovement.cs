@@ -8,18 +8,25 @@ public class PlayerMovement : MonoBehaviour
     //public int secondNumber;
     //public bool interruptor;
     //public GameObject cubeCharacer;
+    private BlockFlash blockFlash;
     public Transform rayOrigin;
     private float xMovement;
     public float speed = 1;
     public float jump = 10;
     private Rigidbody2D rb;
-    private Animator anim;
+    private Animator anim1;
+    
     public bool attack;
+    public bool ataqueBlockFlash;
 
     void Start()
     {
+        blockFlash = gameObject.AddComponent<BlockFlash>();
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim1 = GetComponent<Animator>();
+        blockFlash.GetAnimator();
+
+        //Debug.Log(blockFlash.name);
     }
 
     // Update is called once per frame
@@ -29,23 +36,32 @@ public class PlayerMovement : MonoBehaviour
     {
         DireccionJugador();   // Dirección del jugador según la variable "Horizontal" de preferencias
         IsGrounded();
-
-        if (Input.GetButtonDown("Jump"))
+        attack = false;
+        if (Input.GetButton("Jump"))
         {
             Jump();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            attack = true;
-            anim.SetBool("transAtaque1", attack);
+
+            PararAtaque(true);
+            //anim1.SetBool("transAtaque1", attack);
         }
-        //if (Input.GetKeyUp(KeyCode.E))
-        //{
-        //    anim.SetBool("transAtaque1", false);
-        //}
+        if (Input.GetButton("Fire2"))//tecla "R"
+        {
+            AtaqueBlockFlash();
+        }
 
+    }
+    private void LateUpdate()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
 
+            PararAtaque(false);
+
+        }
     }
 
     public void DireccionJugador()
@@ -71,12 +87,15 @@ public class PlayerMovement : MonoBehaviour
         return false;
 
     }
-    //public void SetMovement(float x1, float y1)
-    //{
-    //    rb.velocity = new Vector2(x1, y1);
-    //}
-    //public void Saltar(float x1, float y1)
-    //{
-    //    rb.velocity = new Vector2(x1, y1);
-    //}
+    private void PararAtaque(bool ataque)
+    {
+        anim1.SetBool("transAtaque1", ataque);
+        attack = false;
+    }
+    private void AtaqueBlockFlash()
+    {
+
+        blockFlash.StopBlockFlash();
+
+    }
 }
