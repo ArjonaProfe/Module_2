@@ -88,13 +88,15 @@ public class MovementGerard : MonoBehaviour
                 Jump();                                                         // se llama a la función 'Jump'.
             
             }
+
+            else if (isGrounded == false && puedeDoubleJump == true)            // si "puedeDoubleJump" es "true" y "isGrounded" es falso, entonces saltaremos de nuevo.
+            {
+                DoubleJump();
+                puedeDoubleJump = false;                                     // cambiamos el valor de "puedeDoubleJump" a "false".          
+            }
         }
 
-        else if (isGrounded == false && puedeDoubleJump == true)            // si "puedeDoubleJump" es "true" y "isGrounded" es falso, entonces saltaremos de nuevo.
-        {         
-            DoubleJump();
-            puedeDoubleJump = false;                                     // cambiamos el valor de "puedeDoubleJump" a "false".          
-        }
+        
 
         if (Input.GetButtonDown("Fire1"))                             // si se pulsa el botón 'Fire1'
 
