@@ -155,7 +155,7 @@ MonoBehaviour:
   Anim: {fileID: 2021005621459127212}
   Target: {fileID: 0}
   TarDist: 0
-  RangedDist: 6
+  RangedDist: 12
   MeleeDist: 1
   GroundPoint: {fileID: 2021005620850856810}
   Grounded: 0

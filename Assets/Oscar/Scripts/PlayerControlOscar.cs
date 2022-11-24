@@ -27,6 +27,11 @@ public class PlayerControlOscar : MonoBehaviour
     public GameObject FireProp;
     public int FirePow;
 
+    //Grab and throw
+    public LayerMask IsGrabbable;
+    public GameObject Carried;
+    public Vector2 ThrowVec;
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,16 +71,32 @@ public class PlayerControlOscar : MonoBehaviour
         else { Anim.SetBool("MeleeCharge", false);}
         Anim.SetFloat("CharTime", CharTimer);
 
+        //Fireball shot
         if (Input.GetButtonDown("Fire2"))
         {
             Anim.SetTrigger("Fireball");
         }
 
+        //Groundpound
         if(Input.GetAxisRaw("Vertical") < 0 && Grounded == false)
         {
             Anim.SetBool("GroundPound", true);
         }
         else { Anim.SetBool("GroundPound", false); }
+
+        //Grab
+        if (Input.GetButtonDown("Fire3"))
+        {
+            if(Carried == null) { Anim.SetTrigger("Grabbing"); }
+            else { Anim.SetTrigger("Throwing"); }
+        }
+
+        if(Carried != null)
+        {
+            Anim.SetBool("Carrying", true);
+            Carried.transform.position = CanonPoint.position;
+        }
+        else { Anim.SetBool("Carrying", false); }
     }
 
     //Attacks
@@ -139,6 +160,26 @@ public class PlayerControlOscar : MonoBehaviour
         if(transform.localScale.x < 0) { Dir.y = 180; }
         GameObject NewFire = Instantiate(FireProp, CanonPoint.position, Quaternion.Euler(Dir));
         NewFire.GetComponent<BulletOscar>().Power = FirePow;
+    }
+
+    //Grab and Throw
+    public void GrabItem()
+    {
+        Collider2D[] Grabbed = Physics2D.OverlapCircleAll(CanonPoint.transform.position, 0.3f, IsGrabbable);
+        if(Grabbed.Length != 0)
+        {
+            Carried = Grabbed[0].gameObject;
+            Carried.GetComponent<GrabItemOscar>().Carried = true;
+        }
+    }
+
+    public void ThrowItem()
+    {
+        Vector3 Dir = new Vector3(1, 1, 1);
+        if (transform.localScale.x < 0) { Dir.x = -1; }
+        Carried.GetComponent<Rigidbody2D>().velocity = ThrowVec * Dir;
+        if(Carried.GetComponent<GrabItemOscar>().MyType == GrabItemOscar.GrabType.Barrel) { Carried.GetComponent<GrabItemOscar>().Thrown = true; }
+        Carried = null;
     }
 
     //Grafics for visualization

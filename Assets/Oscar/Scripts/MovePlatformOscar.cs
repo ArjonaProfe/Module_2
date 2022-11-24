@@ -50,12 +50,4 @@ public class MovePlatformOscar : MonoBehaviour
     {
         collision.transform.SetParent(null);
     }
-
-    public void OnDisable()
-    {
-        if(transform.GetChild(0) != null)
-        {
-            transform.SetParent(null);
-        }
-    }
 }
