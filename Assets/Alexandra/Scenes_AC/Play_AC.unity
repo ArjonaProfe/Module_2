@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569897515213922702, guid: c723a829359847f4f8b944680f0837d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.45
+      value: -3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4569897515213922702, guid: c723a829359847f4f8b944680f0837d1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 1673742857}
   - component: {fileID: 1673742856}
   m_Layer: 5
-  m_Name: Tapeo Roll
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
