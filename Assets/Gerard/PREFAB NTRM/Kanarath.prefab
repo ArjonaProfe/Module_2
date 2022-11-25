@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4892162050326130043
 Transform:
   m_ObjectHideFlags: 0
@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 4892162052080993535}
   - component: {fileID: 4892162052080993528}
   - component: {fileID: 4892162052080993529}
+  - component: {fileID: 1755056074036819627}
   m_Layer: 0
   m_Name: Kanarath
   m_TagString: Player
@@ -268,11 +269,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayOrigin: {fileID: 4892162050848548244}
   xspeed: 2
-  jump: 12
+  jump: 9
   isGrounded: 0
   putounity: 0
   puedeDoubleJump: 0
-  doubleJump: 0
+  doubleJump: 7
 --- !u!114 &4892162052080993522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +301,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -344,3 +345,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8b5498a2461d049bb22970ac288fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1755056074036819627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892162052080993521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717376d5991e2f340907258f210db584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipped: 0
+  xRoll: 500
+  rollCD: 0

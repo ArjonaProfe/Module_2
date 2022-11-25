@@ -733,29 +733,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4892162050326130020, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892162050326130042, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4892162052080993521, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
       propertyPath: m_Name
       value: Kanarath
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892162052080993523, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
-      propertyPath: jump
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892162052080993523, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
-      propertyPath: doubleJump
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892162052080993523, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
-      propertyPath: puedeDoubleJump
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4892162052080993534, guid: efeff84a4d9441948a722d77c6b41727, type: 3}
       propertyPath: m_RootOrder
