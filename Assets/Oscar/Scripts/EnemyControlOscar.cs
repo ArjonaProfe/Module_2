@@ -10,13 +10,13 @@ public class EnemyControlOscar : MonoBehaviour
 
     //Detections
     public GameObject Target;
-    public float TarDist, RangedDist, MeleeDist;
+    public float TarDist, TarDistX, TarDistY, RangedDist, MeleeDist;
     public Transform GroundPoint;
     public bool Grounded;
     public LayerMask IsGround;
 
     //General bariables for Actions
-    public Transform CanonPoint;
+    public Transform CanonPoint, UpperPoint;
     public float ActTimer, ActCool;
     public float AtkRadius;
     public LayerMask IsEnemy;
@@ -37,33 +37,50 @@ public class EnemyControlOscar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TarDist = Vector2.Distance(transform.position, Target.transform.position);
-
-        if(ActTimer < ActCool) { ActTimer += Time.deltaTime; }
-
-        //Deciding between two actions, depending on the distance to the player
-        if(TarDist < RangedDist && TarDist > MeleeDist)
+        if(Target != null)
         {
-            if((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
+            TarDist = Vector2.Distance(transform.position, Target.transform.position);
+            TarDistX = Mathf.Abs(Target.transform.position.x - transform.position.x);
+            TarDistY = Mathf.Abs(Target.transform.position.y - transform.position.y);
+
+            if (ActTimer < ActCool) { ActTimer += Time.deltaTime; }
+
+            //Deciding between two actions, depending on the distance to the player
+            if (TarDist < RangedDist && TarDist > MeleeDist)
             {
-                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
+                {
+                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                }
+                if (ActTimer >= ActCool)
+                {
+                    Anim.SetTrigger("RangedAct");
+                    ActTimer = 0;
+                }
             }
-            if (ActTimer >= ActCool)
+            else if (TarDist <= MeleeDist && TarDistX > TarDistY)
             {
-                Anim.SetTrigger("RangedAct");
-                ActTimer = 0;
+                if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
+                {
+                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                }
+                if (ActTimer >= ActCool)
+                {
+                    Anim.SetTrigger("MeleeAct");
+                    ActTimer = 0;
+                }
             }
-        }
-        else if(TarDist <= MeleeDist)
-        {
-            if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
+            else if (TarDist <= MeleeDist && TarDistY > TarDistX)
             {
-                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            }
-            if (ActTimer >= ActCool)
-            {
-                Anim.SetTrigger("MeleeAct");
-                ActTimer = 0;
+                if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
+                {
+                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                }
+                if (ActTimer >= ActCool)
+                {
+                    Anim.SetTrigger("UpwardsAct");
+                    ActTimer = 0;
+                }
             }
         }
 
@@ -86,13 +103,27 @@ public class EnemyControlOscar : MonoBehaviour
         ActTimer = 0;
     }
 
-    //Ranged Actions
+    //Ranged actions
     public void ShotProjectile()
     {
         Vector3 Dir = new Vector3(0, 0, 0);
         if (transform.localScale.x < 0) { Dir.y = 180; }
         GameObject NewFire = Instantiate(BulletProp, CanonPoint.position, Quaternion.Euler(Dir));
         NewFire.GetComponent<BulletOscar>().Power = FirePow;
+        ActTimer = 0;
+    }
+
+    //Upwards actions
+    public void UpMeleeAttack()
+    {
+        Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(UpperPoint.transform.position, AtkRadius, IsEnemy);
+        for (int i = 0; i < EnemiesToDamage.Length; i++)
+        {
+            if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
+            {
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, false);
+            }
+        }
         ActTimer = 0;
     }
 
@@ -105,6 +136,7 @@ public class EnemyControlOscar : MonoBehaviour
         //punch
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(CanonPoint.position, AtkRadius);
+        Gizmos.DrawWireSphere(UpperPoint.position, AtkRadius);
         //Detection
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, RangedDist);

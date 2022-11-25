@@ -7,13 +7,14 @@ public class LifeNStatusOscar : MonoBehaviour
     public enum Faction { Hero, Neutral, Villain }
     public Faction MyFaction;
     public int Life, MaxLife;
-    public bool Shield;
+    public bool Shield, JustHurted;
     public Animator Anim;
 
     // Start is called before the first frame update
     void Start()
     {
         Life = MaxLife;
+        JustHurted = false;
     }
 
     // Update is called once per frame
@@ -36,17 +37,20 @@ public class LifeNStatusOscar : MonoBehaviour
                 Life -= Dmg;
                 Shield = false;
                 if(Anim != null) { Anim.SetTrigger("Hurt"); }
+                JustHurted = true;
             }
             else
             {
                 //not damage
                 if (Anim != null) { Anim.SetTrigger("Hurt"); }
+                JustHurted = true;
             }
         }
         else
         {
             Life -= Dmg;
             if (Anim != null && Life > (MaxLife/2)) { Anim.SetTrigger("Hurt"); }
+            JustHurted = true;
         }
     }
 }

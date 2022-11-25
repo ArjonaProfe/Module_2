@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovePlatformOscar : MonoBehaviour
 {
-    public float Speed, Timer, GoalTime;
+    public float Timer, GoalTime;
     public Vector3 Pos1, Pos2;
     public bool Going1, Moving;
 

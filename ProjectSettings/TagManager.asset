@@ -21,9 +21,9 @@ TagManager:
   - MoveGround
   - HitGizmo
   - Grabbable
-  - 
-  - 
-  - 
+  - Bullet
+  - Bouncer
+  - Lader
   - 
   - 
   - 

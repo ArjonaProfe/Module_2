@@ -17,7 +17,7 @@ public class PlayerControlOscar : MonoBehaviour
     //Detections
     public Transform GroundPoint;
     public bool Grounded;
-    public LayerMask IsGround;
+    public LayerMask IsGround, IsTrueGround;
 
     public Transform CanonPoint;
     public float AtkRadius;
@@ -31,6 +31,11 @@ public class PlayerControlOscar : MonoBehaviour
     public LayerMask IsGrabbable;
     public GameObject Carried;
     public Vector2 ThrowVec;
+
+    //Respawn
+    public Transform TruPointA, TruPointB;
+    public bool TruGroundedA, TruGroundedB;
+    public Vector3 PosToReturn;
 
 
     // Start is called before the first frame update
@@ -95,8 +100,29 @@ public class PlayerControlOscar : MonoBehaviour
         {
             Anim.SetBool("Carrying", true);
             Carried.transform.position = CanonPoint.position;
+
+            //Let object fall if damaged
+            if (LifeMan.JustHurted == true)
+            {
+                Carried.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1);
+                Carried = null;
+                LifeMan.JustHurted = false;
+            }
         }
         else { Anim.SetBool("Carrying", false); }
+
+        //Respawn if fall
+        TruGroundedA = Physics2D.OverlapCircle(TruPointA.position, 0.01f, IsTrueGround);
+        TruGroundedB = Physics2D.OverlapCircle(TruPointB.position, 0.01f, IsTrueGround);
+        if(TruGroundedA == true && TruGroundedB == true) { PosToReturn = transform.position; }
+
+        if (transform.position.y < -20)
+        {
+            RB2D.velocity = new Vector3(0, 0, 0);
+            transform.position = PosToReturn;
+            LifeMan.TakeDamage(10, false);
+        }
+
     }
 
     //Attacks
@@ -165,7 +191,7 @@ public class PlayerControlOscar : MonoBehaviour
     //Grab and Throw
     public void GrabItem()
     {
-        Collider2D[] Grabbed = Physics2D.OverlapCircleAll(CanonPoint.transform.position, 0.3f, IsGrabbable);
+        Collider2D[] Grabbed = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius*2, IsGrabbable);
         if(Grabbed.Length != 0)
         {
             Carried = Grabbed[0].gameObject;
@@ -188,6 +214,7 @@ public class PlayerControlOscar : MonoBehaviour
         //ground detector
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(GroundPoint.transform.position, 0.08f);
+        Gizmos.DrawWireSphere(CanonPoint.transform.position, AtkRadius*2);
         //punch
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(CanonPoint.position, AtkRadius);

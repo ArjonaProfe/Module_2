@@ -7,8 +7,8 @@ public class PlayerInAirAnimOscar : StateMachineBehaviour
     public float Speed;
     public Rigidbody2D RB2D;
     public Transform GroundPoint;
-    public float Bounce;
-    public LayerMask Poundable;
+    public float MiniBounce, BigBounce;
+    public LayerMask Poundable, Bouncer;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -36,7 +36,15 @@ public class PlayerInAirAnimOscar : StateMachineBehaviour
             }
             //Jumping after impact
             animator.SetBool("GroundPound", false);
-            RB2D.velocity = new Vector2(RB2D.velocity.x, Bounce);
+            RB2D.velocity = new Vector2(RB2D.velocity.x, MiniBounce);
+        }
+
+        //Detecting if it has steppet on a bouncer
+        Collider2D[] Bouncy = Physics2D.OverlapCircleAll(GroundPoint.position, 0.3f, Bouncer);
+        if (Bouncy.Length != 0 && RB2D.velocity.y < 0)
+        {
+            //Jumping after impact
+            RB2D.velocity = new Vector2(RB2D.velocity.x, BigBounce);
         }
     }
 

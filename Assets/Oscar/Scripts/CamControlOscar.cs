@@ -17,6 +17,9 @@ public class CamControlOscar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(Target.position.x + (Adapt.x * Target.localScale.x), Target.position.y + Adapt.y, -10), Speed * Time.deltaTime);
+        if(Target != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(Target.position.x + (Adapt.x * Target.localScale.x), Target.position.y + Adapt.y, -10), Speed * Time.deltaTime);
+        }
     }
 }

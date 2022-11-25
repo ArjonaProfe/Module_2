@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerGroundPoundOscar : StateMachineBehaviour
 {
-    public int XSpeed, YSpeed, Bounce;
+    public int XSpeed, YSpeed, MiniBounce, BigBounce;
     public Transform GroundPoint;
-    public LayerMask Poundable;
+    public LayerMask Poundable, Bouncer;
     public int Power;
     public Rigidbody2D RB2D;
 
@@ -37,7 +37,15 @@ public class PlayerGroundPoundOscar : StateMachineBehaviour
             }
             //Jumping after impact
             animator.SetBool("GroundPound", false);
-            RB2D.velocity = new Vector2(RB2D.velocity.x, Bounce);
+            RB2D.velocity = new Vector2(RB2D.velocity.x, MiniBounce);
+        }
+
+        //Detecting if it has steppet on a bouncer
+        Collider2D[] Bouncy = Physics2D.OverlapCircleAll(GroundPoint.position, 0.3f, Bouncer);
+        if (Bouncy.Length != 0 && RB2D.velocity.y < 0)
+        {
+            //Jumping after impact
+            RB2D.velocity = new Vector2(RB2D.velocity.x, BigBounce);
         }
     }
 

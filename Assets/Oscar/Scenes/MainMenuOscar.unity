@@ -333,6 +333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931c862da1e4ef241bcaa601367da885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 688700083}
+  ShardLabel: {fileID: 0}
+  CollectLabel: {fileID: 0}
+  SceneID: 0
+  LvGems: []
 --- !u!4 &688700085
 Transform:
   m_ObjectHideFlags: 0

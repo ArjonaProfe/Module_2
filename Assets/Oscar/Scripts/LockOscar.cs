@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class LockOscar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GrabItemOscar.GrabType MyType;
+    public GameObject ParSys;
 
-    // Update is called once per frame
-    void Update()
+    public void OpenSalami()
     {
-        
+        Instantiate(ParSys, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

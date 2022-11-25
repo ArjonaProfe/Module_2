@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GrabItemOscar : MonoBehaviour
 {
-    public enum GrabType { Barrel, Bomb, Key}
+    public enum GrabType { Barrel, Bomb, Key, VillainKey, PrincessKey}
     public GrabType MyType;
     public Rigidbody2D RB2D;
     public LayerMask IsEnemy, IsGizmo;
     public GameObject ParSys;
     public Animator Anim;
     public bool Carried;
+    public Vector3 StartPos;
 
     //Barrel
     public float BarrelRadius;
@@ -28,6 +29,7 @@ public class GrabItemOscar : MonoBehaviour
         RB2D = GetComponent<Rigidbody2D>();
         Carried = false;
         Thrown = false;
+        StartPos = transform.position;
     }
 
     // Update is called once per frame
@@ -37,10 +39,16 @@ public class GrabItemOscar : MonoBehaviour
         {
             if(Carried == true) { Anim.SetBool("Carried", true); }
         }
+
+        if (MyType == GrabType.Key || MyType == GrabType.VillainKey || MyType == GrabType.PrincessKey)
+        {
+            if(transform.position.y < -20) { transform.position = StartPos; RB2D.velocity = new Vector2(0, 0); }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Barrel breaks when thrown, causing normal damage
         if(MyType == GrabType.Barrel && Thrown == true)
         {
             Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(transform.position, BarrelRadius, IsEnemy);
@@ -57,10 +65,14 @@ public class GrabItemOscar : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(MyType == GrabType.Key && collision.gameObject.GetComponent<LockOscar>() != null)
+        //The key destrois the lock and itself when it enters in contact with one of it's own category
+        if(MyType == GrabType.Key || MyType == GrabType.VillainKey || MyType == GrabType.PrincessKey)
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            if(collision.gameObject.GetComponent<LockOscar>() != null && collision.gameObject.GetComponent<LockOscar>().MyType == MyType)
+            {
+                collision.gameObject.GetComponent<LockOscar>().OpenSalami();
+                Destroy(gameObject);
+            }
         }
     }
 
