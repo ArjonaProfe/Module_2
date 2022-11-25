@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f280761fe58b246a22b2c62fce6432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHurt: 0
   deathJump: 10
 --- !u!1 &3415495194767960716
 GameObject:

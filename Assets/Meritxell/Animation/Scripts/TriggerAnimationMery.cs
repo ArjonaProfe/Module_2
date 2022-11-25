@@ -9,6 +9,7 @@ public class TriggerAnimationMery : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+
     void Start()
     {
 
@@ -16,7 +17,7 @@ public class TriggerAnimationMery : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    void Update()                                         // esto se ocupa de que se detecte SpeedMovement aka si el personaje se mueve
     {
         int n = Mathf.RoundToInt(rb.velocity.x);
 
