@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3076343241566877510}
   - component: {fileID: 3076343241566877528}
   - component: {fileID: 3076343241566877509}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plincess Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

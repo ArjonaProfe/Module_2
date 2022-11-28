@@ -14,10 +14,13 @@ public class PlayerControlOscar : MonoBehaviour
     public int MeleeDmg, CharMeleeDmg;
     public float CharTimer, CharGoal;
 
+    //Movement
+    public float MoveX, MoveY;
+
     //Detections
-    public Transform GroundPoint;
-    public bool Grounded;
-    public LayerMask IsGround, IsTrueGround;
+    public Transform GroundPoint, HangPoint1, HangPoint2;
+    public bool Grounded, HangAbal, Hangging;
+    public LayerMask IsGround, IsTrueGround, IsLader;
 
     public Transform CanonPoint;
     public float AtkRadius;
@@ -48,10 +51,15 @@ public class PlayerControlOscar : MonoBehaviour
     void Update()
     {
         //Moving
-        float Move = Input.GetAxisRaw("Horizontal");
-        if(Move != 0)
+        MoveX = Input.GetAxisRaw("Horizontal");
+        MoveY = Input.GetAxisRaw("Vertical");
+        if (MoveX != 0)
         {
-            transform.localScale = new Vector3(4 * Move, 4, 1);
+            transform.localScale = new Vector3(4 * MoveX, 4, 1);
+            Anim.SetBool("Running", true);
+        }
+        else if(MoveY != 0 && Hangging == true)
+        {
             Anim.SetBool("Running", true);
         }
         else { Anim.SetBool("Running", false); }
@@ -59,7 +67,7 @@ public class PlayerControlOscar : MonoBehaviour
         //Ground detection and jump
         Grounded = Physics2D.OverlapCircle(GroundPoint.position, 0.05f, IsGround);
         Anim.SetBool("Grounded", Grounded);
-        if (Input.GetButtonDown("Jump") && Grounded == true)
+        if ((Input.GetButtonDown("Jump") || MoveY > 0) && Grounded == true)
         {
             RB2D.velocity = new Vector2(RB2D.velocity.x, JumpSpeed);
         }
@@ -90,7 +98,7 @@ public class PlayerControlOscar : MonoBehaviour
         else { Anim.SetBool("GroundPound", false); }
 
         //Grab
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3") && Hangging == false)
         {
             if(Carried == null) { Anim.SetTrigger("Grabbing"); }
             else { Anim.SetTrigger("Throwing"); }
@@ -110,6 +118,31 @@ public class PlayerControlOscar : MonoBehaviour
             }
         }
         else { Anim.SetBool("Carrying", false); }
+        //Let object fall if damaged
+        if (LifeMan.JustHurted == true)
+        {
+            LifeMan.JustHurted = false;
+        }
+
+        //Detect laders
+        HangAbal = Physics2D.OverlapArea(HangPoint1.position, HangPoint2.position, IsLader);
+        if(HangAbal == false) { Hangging = false; }
+        //Climb
+        if(Hangging == true && HangAbal == true)
+        {
+            Anim.SetBool("Climbing", true);
+
+            if (Input.GetButtonDown("Fire3"))
+            {
+                Hangging = false;
+            }
+            if (Input.GetButtonDown("Jump"))
+            {
+                RB2D.velocity = new Vector2(RB2D.velocity.x, JumpSpeed);
+                Hangging = false;
+            }
+        }
+        else { Anim.SetBool("Climbing", false); }
 
         //Respawn if fall
         TruGroundedA = Physics2D.OverlapCircle(TruPointA.position, 0.01f, IsTrueGround);
@@ -197,15 +230,22 @@ public class PlayerControlOscar : MonoBehaviour
             Carried = Grabbed[0].gameObject;
             Carried.GetComponent<GrabItemOscar>().Carried = true;
         }
+        else if(HangAbal == true)
+        {
+            Hangging = true;
+        }
     }
 
     public void ThrowItem()
     {
-        Vector3 Dir = new Vector3(1, 1, 1);
-        if (transform.localScale.x < 0) { Dir.x = -1; }
-        Carried.GetComponent<Rigidbody2D>().velocity = ThrowVec * Dir;
-        if(Carried.GetComponent<GrabItemOscar>().MyType == GrabItemOscar.GrabType.Barrel) { Carried.GetComponent<GrabItemOscar>().Thrown = true; }
-        Carried = null;
+        if(Carried != null)
+        {
+            Vector3 Dir = new Vector3(1, 1, 1);
+            if (transform.localScale.x < 0) { Dir.x = -1; }
+            Carried.GetComponent<Rigidbody2D>().velocity = ThrowVec * Dir;
+            if (Carried.GetComponent<GrabItemOscar>().MyType == GrabItemOscar.GrabType.Barrel) { Carried.GetComponent<GrabItemOscar>().Thrown = true; }
+            Carried = null;
+        }
     }
 
     //Grafics for visualization

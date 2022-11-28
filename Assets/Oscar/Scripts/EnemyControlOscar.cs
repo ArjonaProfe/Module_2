@@ -48,10 +48,6 @@ public class EnemyControlOscar : MonoBehaviour
             //Deciding between two actions, depending on the distance to the player
             if (TarDist < RangedDist && TarDist > MeleeDist)
             {
-                if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
-                {
-                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                }
                 if (ActTimer >= ActCool)
                 {
                     Anim.SetTrigger("RangedAct");
@@ -60,10 +56,6 @@ public class EnemyControlOscar : MonoBehaviour
             }
             else if (TarDist <= MeleeDist && TarDistX > TarDistY)
             {
-                if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
-                {
-                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                }
                 if (ActTimer >= ActCool)
                 {
                     Anim.SetTrigger("MeleeAct");
@@ -72,10 +64,6 @@ public class EnemyControlOscar : MonoBehaviour
             }
             else if (TarDist <= MeleeDist && TarDistY > TarDistX)
             {
-                if ((Target.transform.position.x < transform.position.x && transform.localScale.x > 0) || (Target.transform.position.x > transform.position.x && transform.localScale.x < 0))
-                {
-                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                }
                 if (ActTimer >= ActCool)
                 {
                     Anim.SetTrigger("UpwardsAct");
