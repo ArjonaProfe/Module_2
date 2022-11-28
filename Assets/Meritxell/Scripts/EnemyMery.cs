@@ -5,14 +5,17 @@ using UnityEngine;
 public class EnemyMery : MonoBehaviour
 {
     public int health = 100;    // Salud total
-    public float speed;         // velocidad del enemigo
     private Rigidbody2D rb;
-    
-    public float xMovement;
 
+    private AnimationEnemyMery ae;
+
+    private void Start()
+    {
+        ae = GetComponent<AnimationEnemyMery>();
+    }
     private void Update()
     {
-        transform.position = new Vector2(xMovement * speed, rb.velocity.y);  
+        transform.position = new Vector2(ae.xMovement * ae.speed, rb.velocity.y);  
     }
     public void TakeDamage (int damage)    // void que llama el int de daño
     {
