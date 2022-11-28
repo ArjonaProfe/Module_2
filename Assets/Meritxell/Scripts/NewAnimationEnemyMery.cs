@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D;
 using UnityEngine;
 
 public class NewAnimationEnemyMery : MonoBehaviour
@@ -8,7 +9,7 @@ public class NewAnimationEnemyMery : MonoBehaviour
     private Animator anim;            //  Animator se abreviará como anim y se asigna al Animator del objeto al que se asocie
     private SpriteRenderer sr;        //  "
     private Rigidbody2D rb;
-
+    float direction = 1;
     public float speed;
 
     private void Start()
@@ -20,8 +21,9 @@ public class NewAnimationEnemyMery : MonoBehaviour
 
     private void Update()
     {
-        
-            transform.position = new Vector3(speed + 1 * Time.deltaTime, transform.position.y, transform.position.z);
-
+       
+        direction = direction - speed * Time.deltaTime;
+        transform.position = new Vector2(direction, transform.position.y);
+        Debug.Log(direction); 
     }
 }
