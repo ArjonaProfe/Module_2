@@ -24,9 +24,9 @@ TagManager:
   - Bullet
   - Bouncer
   - Lader
-  - 
-  - 
-  - 
+  - Ground
+  - Backgound
+  - Water
   - 
   - 
   - 
@@ -42,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2475644925
+    locked: 0
+  - name: Water
+    uniqueID: 105110111
+    locked: 0
+  - name: Platforms
+    uniqueID: 162137319
+    locked: 0
+  - name: Hero
+    uniqueID: 2382895745
     locked: 0

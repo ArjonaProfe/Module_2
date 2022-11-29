@@ -10,8 +10,8 @@ public class PlayerMovementXavi : MonoBehaviour
     private PlayerInput pi;
     private Animator anim;
 
-    public float speed;
-    public float jump;
+    [SerializeField] float speed;
+    [SerializeField] float jump;
     private float xMovement;
 
     public bool isGrounded;
@@ -70,11 +70,7 @@ public class PlayerMovementXavi : MonoBehaviour
         {
             attack = true;
             
-        }
-        else if (Input.GetButtonUp("Fire1")) 
-        {
-            attack = false;
-        }
+        }  
     }
 
     void IsGrounded()// Función IsGrounded()
