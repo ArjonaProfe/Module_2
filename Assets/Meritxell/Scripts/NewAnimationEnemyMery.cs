@@ -12,18 +12,46 @@ public class NewAnimationEnemyMery : MonoBehaviour
     float direction = 1;
     public float speed;
 
+    private Vector2 change;                  // Vector 2 debería coger los valores x e y del objecto
+
+
     private void Start()
     {
+         
         anim = GetComponent<Animator>();    // Las variables deben asignarse a los componentes
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+
+
+        anim.SetFloat("xMovement", 0);            // El float que controla la direción (necesita ser asignado)
+        
     }
 
     private void Update()
     {
-       
-        direction = direction - speed * Time.deltaTime;
+        change = Vector2.zero;                    // asigna los valores x0, y0
+        change.x = speed;                   // según xMovement se modifica cuando cuando change.x lo hace, lo que se basa en el speed
+
+        MoveEnemy();
+        Animation();
+    }
+    void MoveEnemy()
+    {      
+        direction = direction - speed * Time.deltaTime;                        // Era necesario establecer cuanto iba a avanzar en esa dirección
         transform.position = new Vector2(direction, transform.position.y);
-        Debug.Log(direction); 
+    }
+
+    void Animation()                                       // si el vector2 no es igual a zero, cambia el valor de xMovement y de isMoving, cambiando la animación 
+    {
+         if (change != new Vector2(0, 0))
+         {
+              anim.SetFloat("xMovement", change.x);
+              anim.SetBool("isMoving", true);
+         }
+         else
+         {
+              anim.SetBool("isMoving", false);
+         }
     }
 }
+

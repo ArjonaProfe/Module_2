@@ -6,13 +6,12 @@ using UnityEngine;
 public class TriggerAnimationMery : MonoBehaviour
 {
 
-    private Rigidbody2D rb;
-    private Animator anim;
+    public Rigidbody2D rb;
+    public Animator anim;
 
 
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
