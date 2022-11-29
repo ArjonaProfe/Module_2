@@ -30,6 +30,6 @@ public class LifeBarControlOscar : MonoBehaviour
                 transform.position = MyLifeMan.transform.position + Adition;
             }
         }
-        else { Destroy(gameObject); }
+        if(MyLifeMan == null || MyLifeMan.Life <= 0) { Destroy(gameObject); }
     }
 }

@@ -24,7 +24,7 @@ public class LevelManagerOscar : MonoBehaviour
             int Counter = 0;
             for (int i = 0; i < LvGems[SceneID].Gems.Count; i++)
             {
-                if (LvGems[SceneID].Gems[i] == true) ;
+                if (LvGems[SceneID].Gems[i] == true) { Counter += 1; }
             }
             CollectLabel.text = "Gx" + Counter.ToString() + "/" + LvGems[SceneID].Gems.Count;
         }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class BulletOscar : MonoBehaviour
 {
     public int Power;
-    public float Speed;
+    public float Speed, Lifetime;
     public bool Potent;
+    public LifeNStatusOscar.Faction MyFaction;
 
     // Start is called before the first frame update
     void Start()
@@ -21,21 +22,26 @@ public class BulletOscar : MonoBehaviour
         transform.position += transform.right * Speed * Time.deltaTime;
 
         //Destroyed if it exist for too long
-        Destroy(gameObject, 8);
+        Destroy(gameObject, Lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<LifeNStatusOscar>() != null)
+        if(collision.GetComponent<LifeNStatusOscar>() != null && collision.GetComponent<LifeNStatusOscar>().MyFaction != MyFaction)
         {
             collision.GetComponent<LifeNStatusOscar>().TakeDamage(Power, Potent);
+            Destroy(gameObject);
+        }
+
+        if (collision.GetComponent<BulletOscar>() != null && collision.GetComponent<BulletOscar>().MyFaction != MyFaction)
+        {
+            Destroy(gameObject);
         }
 
         if (collision.GetComponent<HitGizmoOscar>() != null)
         {
             collision.GetComponent<HitGizmoOscar>().Reaction();
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }

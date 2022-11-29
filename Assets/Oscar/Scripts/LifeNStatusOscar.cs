@@ -22,7 +22,8 @@ public class LifeNStatusOscar : MonoBehaviour
     {
         if(Life <= 0)
         {
-            Destroy(gameObject);
+            if(Anim != null) { Anim.SetTrigger("Death"); }
+            else { Death(); }
         }
 
         if (Input.GetKeyDown(KeyCode.H)) { TakeDamage(10, false); }
@@ -52,5 +53,16 @@ public class LifeNStatusOscar : MonoBehaviour
             if (Anim != null && Life > (MaxLife/2)) { Anim.SetTrigger("Hurt"); }
             JustHurted = true;
         }
+    }
+
+    public void Heal(int HealAmount)
+    {
+        Life += HealAmount;
+        if(Life > MaxLife) { Life = MaxLife; }
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }

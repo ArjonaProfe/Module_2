@@ -6,6 +6,7 @@ public class PlayerControlOscar : MonoBehaviour
 {
     //Comunication with other scripts
     public LifeNStatusOscar LifeMan;
+    public LevelManagerOscar LvMan;
     public Animator Anim;
     public Rigidbody2D RB2D;
 
@@ -218,6 +219,7 @@ public class PlayerControlOscar : MonoBehaviour
         Vector3 Dir = new Vector3(0, 0, 0);
         if(transform.localScale.x < 0) { Dir.y = 180; }
         GameObject NewFire = Instantiate(FireProp, CanonPoint.position, Quaternion.Euler(Dir));
+        NewFire.GetComponent<BulletOscar>().MyFaction = LifeMan.MyFaction;
         NewFire.GetComponent<BulletOscar>().Power = FirePow;
     }
 
@@ -246,6 +248,12 @@ public class PlayerControlOscar : MonoBehaviour
             if (Carried.GetComponent<GrabItemOscar>().MyType == GrabItemOscar.GrabType.Barrel) { Carried.GetComponent<GrabItemOscar>().Thrown = true; }
             Carried = null;
         }
+    }
+
+    //Death
+    public void PlayerDeath()
+    {
+        LvMan.GoToScene(2);
     }
 
     //Grafics for visualization
