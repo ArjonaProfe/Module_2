@@ -44,7 +44,7 @@ public class PlayerMovementXavi : MonoBehaviour
     private void Movement()
     {
         xMovement = Input.GetAxisRaw("Horizontal");                     // Se asigna el valor del eje 'Horizontal' a la variable xMovement
-        rb.velocity = new Vector2(xMovement* speed, rb.velocity.y);
+        rb.velocity = new Vector2(xMovement * speed, rb.velocity.y);
         if (xMovement < 0)
         {
             sr.flipX = true;
