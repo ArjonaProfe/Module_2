@@ -46,6 +46,11 @@ public class LevelManagerOscar : MonoBehaviour
         SceneManager.LoadScene(ID);
     }
 
+    public void LevelClear()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void CollectGem(int ID)
     {
         LvGems[SceneID].Gems[ID] = true;

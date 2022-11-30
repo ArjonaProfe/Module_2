@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1710461123, guid: 1f63314ab816b984e863a5e1c4440fb2, type: 3}
   m_Color: {r: 0.4811321, g: 0.22014064, b: 0.22014064, a: 1}
   m_FlipX: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   ParSys: {fileID: 3076884572994225540, guid: 6728500d87161094c97cf535780b5807, type: 3}
   Anim: {fileID: 577221630500425202}
   Carried: 0
+  StartPos: {x: 0, y: 0, z: 0}
   BarrelRadius: 0
   BarrelDmg: 0
   Thrown: 0

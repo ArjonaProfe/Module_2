@@ -43,5 +43,7 @@ public class BulletOscar : MonoBehaviour
             collision.GetComponent<HitGizmoOscar>().Reaction();
             Destroy(gameObject);
         }
+
+        if(collision.tag == "Ground") { Destroy(gameObject); }
     }
 }

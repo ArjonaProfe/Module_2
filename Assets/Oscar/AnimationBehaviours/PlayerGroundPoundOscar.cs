@@ -28,7 +28,7 @@ public class PlayerGroundPoundOscar : StateMachineBehaviour
         }
 
         //Detecting if it has something to pound bellow
-        Collider2D[] Pounded = Physics2D.OverlapCircleAll(GroundPoint.position, 0.3f, Poundable);
+        Collider2D[] Pounded = Physics2D.OverlapCircleAll(GroundPoint.position, 0.2f, Poundable);
         if(Pounded.Length != 0 && RB2D.velocity.y < 0)
         {
             for (int i = 0; i < Pounded.Length; i++)

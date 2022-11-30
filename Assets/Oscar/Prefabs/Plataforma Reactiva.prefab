@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5157027931230161116}
   m_Layer: 11
   m_Name: Plataforma Reactiva
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pos1: {x: 0, y: 0, z: 0}
   Pos2: {x: 0, y: 0, z: 0}
+  ThingsOn: 0
+  Timer: 0
+  Percent: 0
+  PosDist: 0
 --- !u!61 &8599006852950858209
 BoxCollider2D:
   m_ObjectHideFlags: 0

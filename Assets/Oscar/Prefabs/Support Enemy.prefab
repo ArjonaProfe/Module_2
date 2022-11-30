@@ -78,12 +78,16 @@ MonoBehaviour:
   TarDistX: 0
   TarDistY: 0
   RangedDist: 15
-  MeleeDist: 1
+  MeleeDist: 1.5
   GroundPoint: {fileID: 7066199447536509504}
   Grounded: 0
   IsGround:
     serializedVersion: 2
     m_Bits: 2176
+  IsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  JustPounded: 0
   CanonPoint: {fileID: 7066199448839582035}
   UpperPoint: {fileID: 7066199449220298498}
   ActTimer: 0
@@ -96,6 +100,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   MeleeDmg: 10
+  ShotAngle: 0
+  PelletProp: {fileID: 0}
   BulletProp: {fileID: 0}
   FirePow: 3
   SuppRadius: 6

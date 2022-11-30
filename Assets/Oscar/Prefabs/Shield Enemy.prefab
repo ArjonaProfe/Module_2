@@ -86,6 +86,7 @@ MonoBehaviour:
   IsGround:
     serializedVersion: 2
     m_Bits: 2176
+  JustPounded: 0
   CanonPoint: {fileID: 2874336368510256280}
   UpperPoint: {fileID: 2874336368814188730}
   ActTimer: 0
@@ -98,6 +99,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   MeleeDmg: 25
+  ShotAngle: 0
+  PelletProp: {fileID: 0}
   BulletProp: {fileID: 0}
   FirePow: 0
   SuppRadius: 0
@@ -222,7 +225,7 @@ MonoBehaviour:
   IsGizmo:
     serializedVersion: 2
     m_Bits: 4096
-  ParSys: {fileID: 0}
+  ParSys: {fileID: 3076884572994225540, guid: 6728500d87161094c97cf535780b5807, type: 3}
   Anim: {fileID: 0}
   Carried: 0
   StartPos: {x: 0, y: 0, z: 0}

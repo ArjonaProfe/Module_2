@@ -15,6 +15,7 @@ public class EnemyControlOscar : MonoBehaviour
     public Transform GroundPoint;
     public bool Grounded;
     public LayerMask IsGround;
+    public bool JustPounded;
 
     //General bariables for Actions
     public Transform CanonPoint, UpperPoint;
@@ -39,6 +40,7 @@ public class EnemyControlOscar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Target = FindObjectOfType<PlayerControlOscar>().gameObject;
         if(MyGrab != null) { MyGrab.enabled = false; }
         if(GrabColl != null) { GrabColl.enabled = false; }
     }
@@ -69,14 +71,19 @@ public class EnemyControlOscar : MonoBehaviour
                     ActTimer = 0;
                 }
             }
-            else if (TarDist <= MeleeDist && TarDistY > TarDistX)
-            {
-                if (ActTimer >= ActCool)
-                {
-                    Anim.SetTrigger("UpwardsAct");
-                    ActTimer = 0;
-                }
-            }
+        }
+
+        //Memorize if it's been pounded, and react if going to be pounded again
+        if(TarDistY > 1 && Mathf.Abs(TarDistX) < 1 && LifeMan.JustHurted == true)
+        {
+            JustPounded = true;
+            LifeMan.JustHurted = false;
+        }
+        if (TarDistY > 2 && Mathf.Abs(TarDistX) < 1 && JustPounded == true)
+        {
+            Anim.SetTrigger("UpwardsAct");
+            ActTimer = 0;
+            JustPounded = false;
         }
 
         //Ground dectection

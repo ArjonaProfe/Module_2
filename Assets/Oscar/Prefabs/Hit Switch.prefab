@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActObj:
   - {fileID: 0}
-  - {fileID: 0}
   Anim: {fileID: 4000629652821530693}
 --- !u!61 &4000629652821530691
 BoxCollider2D:

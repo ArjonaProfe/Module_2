@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeMan: {fileID: 2021005621459127218}
   Anim: {fileID: 2021005621459127212}
+  NormalColl: {fileID: 0}
   Target: {fileID: 0}
   TarDist: 0
   TarDistX: 0
@@ -174,9 +175,17 @@ MonoBehaviour:
   IsEnemy:
     serializedVersion: 2
     m_Bits: 256
+  IsAlly:
+    serializedVersion: 2
+    m_Bits: 0
   MeleeDmg: 25
+  ShotAngle: 0
+  PelletProp: {fileID: 0}
   BulletProp: {fileID: 60234745022381009, guid: 1e09db3da0086354abd726cec3fbdfa7, type: 3}
   FirePow: 10
+  SuppRadius: 0
+  MyGrab: {fileID: 0}
+  GrabColl: {fileID: 0}
 --- !u!61 &2021005621459127215
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -299,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6782453772128731049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.033, y: 0.424, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
