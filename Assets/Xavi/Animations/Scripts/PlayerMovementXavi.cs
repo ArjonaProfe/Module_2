@@ -85,10 +85,7 @@ public class PlayerMovementXavi : MonoBehaviour
         {
             attack = true;                     
         }
-        if (Input.GetButtonUp("Fire1")) 
-        {
-            attack = false;
-        }
+        
     }
 
     void IsGrounded()// Función IsGrounded()
@@ -114,7 +111,7 @@ public class PlayerMovementXavi : MonoBehaviour
                 isAlive = false;
                 anim.SetTrigger("Dying");
                 rb.velocity = new Vector2(0, 20f);
-              //  FindObjectOfType<GameSession>().ProcessPlayerDeath();
+              //FindObjectOfType<GameSession>().ProcessPlayerDeath();
             }
 
         
