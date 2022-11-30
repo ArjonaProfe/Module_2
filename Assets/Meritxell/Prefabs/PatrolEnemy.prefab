@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 6618506567961406024}
   - component: {fileID: 6618506567961406027}
   - component: {fileID: 7561984589108674254}
-  - component: {fileID: 1225135725}
-  - component: {fileID: 1225135732}
   - component: {fileID: 1779161190}
   m_Layer: 0
   m_Name: PatrolEnemy
@@ -31,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6618506567961406026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.93041, y: -0.7, z: 0}
+  m_LocalPosition: {x: -5.444296, y: -6.711692, z: -0.5721059}
   m_LocalScale: {x: 21.374, y: 21.374, z: 21.374}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,14 +100,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &6618506567961406027
 BoxCollider2D:
@@ -150,35 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  speed: 5
   Point1: {fileID: 0}
   Point2: {fileID: 0}
-  speed: 0
---- !u!114 &1225135725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6618506567961406026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24b8159f6fdb9543881e23a0142782d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xMovement: 1
-  speed: 0
---- !u!114 &1225135732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6618506567961406026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f36a5d58fb0ef4eae3416ed2748aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1779161190
 Animator:
   serializedVersion: 4

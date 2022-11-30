@@ -6,8 +6,8 @@ using UnityEngine;
 public class TriggerAnimationMery : MonoBehaviour
 {
 
-    public Rigidbody2D rb;
-    public Animator anim;
+    private Rigidbody2D rb;
+    private Animator anim;
 
 
     void Start()

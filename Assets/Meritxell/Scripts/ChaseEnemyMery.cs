@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolEnemyMery : EnemyMery             // Script para en enemigo que patrulla de punto A a punto B
+public class ChaseEnemyMery : EnemyMery             // Script para en enemigo que patrulla de punto A a punto B
 {
     public int health = 100;       // Puntos de vida (ajustar con daño de bullet)
     private Rigidbody2D rb;        // Mantenemos el RB para colisión
@@ -10,17 +10,13 @@ public class PatrolEnemyMery : EnemyMery             // Script para en enemigo q
     private SpriteRenderer sr;     // Permite flipear
 
     public float speed;            // La velocidad a la que va a moverse (5 parece un buen default)
-    public Transform Point1;       // Puntos de patrulla
-    public Transform Point2;
+    public Transform target;           // Asignaremos al player
     float direction = 1;           // Asegura que el enemigo puede moverse sin un target seteando una dirección
 
-    private Transform target;      // Cambia de target cuando llega al contrario
     private Vector2 change;        // Vector2 controla el valor de los axis
 
     private void Start()
-    {
-        target = Point1;                              // Empieza persiguiendo el punto 1
-
+    {    
         anim = GetComponent<Animator>();              // Componentes de animación y sprite
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -43,15 +39,6 @@ public class PatrolEnemyMery : EnemyMery             // Script para en enemigo q
     {
         direction = direction - speed * Time.deltaTime;                                                         // Asegura que siempre hay una dirección incluso sin target
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);  // Mueve el enemigo hacia el target al speed marcado
-
-        if (transform.position == Point1.position)                                                              // Cuando el transform.position es igual al point1
-        {
-            target = Point2;                                                                                    // cambia el target
-        }
-        else if (transform.position == Point2.position)                                                        // pero si....
-        {
-            target = Point1;
-        }
     }
 
     void Animation()                                       // si el vector2 no es igual a zero, cambia el valor de moveX y de isMoving, cambiando la animación 
@@ -80,7 +67,7 @@ public class PatrolEnemyMery : EnemyMery             // Script para en enemigo q
         }
     }
 
-    public void TakeDamage (int damage)             // void que llama el int de daño
+    public void TakeDamage(int damage)             // void que llama el int de daño
     {
         health -= damage;                         // restar el daño a la salud
         anim.SetTrigger("isHurt");                // Aqui irá la animación de daño
@@ -97,4 +84,5 @@ public class PatrolEnemyMery : EnemyMery             // Script para en enemigo q
         Destroy(gameObject);
     }
 }
+
 
