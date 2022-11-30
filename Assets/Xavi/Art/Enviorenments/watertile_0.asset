@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: watertile
+  m_Name: watertile_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: e1e39dc6527a022478e6ed34580dc267, type: 3}
+  m_Sprite: {fileID: -458064896, guid: 0d0bee34a398eb74ea54f7cd93692b63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Oscar/Scenes/MainMenuOscar.unity
     guid: fee64c8d12d179e48984e779a255fa04
+  - enabled: 1
+    path: Assets/Xavi/Scenes/Level1Xavi.unity
+    guid: 41cd36eced0c15d4d99775ee7b829dea
   m_configObjects: {}

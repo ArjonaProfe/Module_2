@@ -9,18 +9,21 @@ public class PlayerMovementXavi : MonoBehaviour
     private SpriteRenderer sr;
     private PlayerInput pi;
     private Animator anim;
+    BoxCollider2D myCollider;
 
     [SerializeField] float speed;
     [SerializeField] float jump;
     private float xMovement;
 
     public bool isGrounded;
-    public bool attack;
+    public bool attack=false;
+    public bool isAlive = true;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myCollider = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
@@ -28,9 +31,11 @@ public class PlayerMovementXavi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive) { return; }
         Movement();
         IsGrounded();
         AttackAnimation();
+        Die();
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)    // Si se pulsa el botón 'Jump' y la variable 'isGrounded' es true
         {
@@ -39,10 +44,18 @@ public class PlayerMovementXavi : MonoBehaviour
         anim.SetInteger("xValue", Mathf.RoundToInt(rb.velocity.x));   // Se setea el entero 'SpeedMovement' del animator con el valor 'rb.velocity.x' redondeado a entero
         anim.SetBool("Ground", isGrounded);
         anim.SetBool("Attack", attack);
+
+
     }
 
     private void Movement()
     {
+        if (!isAlive) { return; }
+
+        if (attack == true)
+        {
+            return;
+        }
         xMovement = Input.GetAxisRaw("Horizontal");                     // Se asigna el valor del eje 'Horizontal' a la variable xMovement
         rb.velocity = new Vector2(xMovement * speed, rb.velocity.y);
         if (xMovement < 0)
@@ -57,6 +70,8 @@ public class PlayerMovementXavi : MonoBehaviour
 
     private void Jump()
     {
+        if (!isAlive) { return; }
+
         if (isGrounded == true)     // Si isGrounded es true
         {
             rb.velocity = new Vector2(0, jump); //Salto
@@ -68,9 +83,12 @@ public class PlayerMovementXavi : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))                         // Si se pulsa el botón 'Fire1'
         {
-            attack = true;
-            
-        }  
+            attack = true;                     
+        }
+        if (Input.GetButtonUp("Fire1")) 
+        {
+            attack = false;
+        }
     }
 
     void IsGrounded()// Función IsGrounded()
@@ -86,5 +104,19 @@ public class PlayerMovementXavi : MonoBehaviour
         {
             isGrounded = false;     // Desactiva el bool 'isGrounded'
         }
+    }
+
+    void Die()
+    {
+       
+            if (myCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
+            {
+                isAlive = false;
+                anim.SetTrigger("Dying");
+                rb.velocity = new Vector2(0, 20f);
+              //  FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            }
+
+        
     }
 }
