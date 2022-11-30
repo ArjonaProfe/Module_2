@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonUI : MonoBehaviour
 {
-    [SerializeField] private string Scene1 = "Scene1";
+    [SerializeField] private string Scene1 = "Level1Xavi";
 
    public void NewGameButton()
     {

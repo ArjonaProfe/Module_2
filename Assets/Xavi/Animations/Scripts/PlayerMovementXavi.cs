@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class PlayerMovementXavi : MonoBehaviour
     private float xMovement;
 
     public bool isGrounded;
-    public bool attack=false;
+    public bool attack = false;
     public bool isAlive = true;
 
     // Start is called before the first frame update
@@ -31,10 +31,9 @@ public class PlayerMovementXavi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isAlive) { return; }
         Movement();
         IsGrounded();
-        AttackAnimation();
+        MeleeAttack();
         Die();
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)    // Si se pulsa el botón 'Jump' y la variable 'isGrounded' es true
@@ -43,7 +42,8 @@ public class PlayerMovementXavi : MonoBehaviour
         }
         anim.SetInteger("xValue", Mathf.RoundToInt(rb.velocity.x));   // Se setea el entero 'SpeedMovement' del animator con el valor 'rb.velocity.x' redondeado a entero
         anim.SetBool("Ground", isGrounded);
-        anim.SetBool("Attack", attack);
+
+        // anim.SetBool("Attack", attack);
 
 
     }
@@ -62,7 +62,7 @@ public class PlayerMovementXavi : MonoBehaviour
         {
             sr.flipX = true;
         }
-        else if(xMovement > 0)
+        else if (xMovement > 0)
         {
             sr.flipX = false;
         }
@@ -78,20 +78,28 @@ public class PlayerMovementXavi : MonoBehaviour
             isGrounded = false;
         }
     }
-
-    public void AttackAnimation()                                             // Función encargada de activar el bool "attack" 
+    void MeleeAttack()
     {
-        if (Input.GetButtonDown("Fire1"))                         // Si se pulsa el botón 'Fire1'
+        if (Input.GetButtonDown("Fire1"))
         {
-            attack = true;                     
+            attack = true;
+            Debug.Log("attack");
+
         }
-        
+        anim.SetBool("MeleeAttack", attack);
+
     }
+    // public void AttackAnimation()                                             // Función encargada de activar el bool "attack" 
+    //{
+    //   if (Input.GetButtonDown("Fire1"))                         // Si se pulsa el botón 'Fire1'
+    // {
+    //      attack = true;                     
+    // }        
+    //}
 
     void IsGrounded()// Función IsGrounded()
     {
         RaycastHit2D ray = Physics2D.Raycast(rayOriginXavi.position, Vector2.down, 10f); // Lanza un raycast 2D desde la posición 'rayOrigin', en dirección hacia abajo y con un alcance de 10 unidades
-       
 
         if (ray.distance < 0.01f)   // Si el rayo choca con un objeto que está a una distancia menor de 0.01
         {
@@ -105,15 +113,12 @@ public class PlayerMovementXavi : MonoBehaviour
 
     void Die()
     {
-       
-            if (myCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
-            {
-                isAlive = false;
-                anim.SetTrigger("Dying");
-                rb.velocity = new Vector2(0, 20f);
-              //FindObjectOfType<GameSession>().ProcessPlayerDeath();
-            }
-
-        
+        if (myCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
+        {
+            isAlive = false;
+            anim.SetTrigger("Dying");
+            rb.velocity = new Vector2(0, 20f);
+            //FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        }
     }
 }
