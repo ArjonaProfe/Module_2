@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolEnemyMery : EnemyMery             // Script para en enemigo que patrulla de punto A a punto B
+public class PatrolEnemyMery : MonoBehaviour           // Script para en enemigo que patrulla de punto A a punto B
 {
-    public int health = 100;       // Puntos de vida (ajustar con daño de bullet)
+           // Puntos de vida (ajustar con daño de bullet)
     private Rigidbody2D rb;        // Mantenemos el RB para colisión
     private Animator anim;         // Animaciones
     private SpriteRenderer sr;     // Permite flipear
+    public EnemyMery enemy;
 
     public float speed;            // La velocidad a la que va a moverse (5 parece un buen default)
     public Transform Point1;       // Puntos de patrulla
@@ -78,23 +79,6 @@ public class PatrolEnemyMery : EnemyMery             // Script para en enemigo q
         {
             sr.flipX = false;
         }
-    }
-
-    public void TakeDamage (int damage)             // void que llama el int de daño
-    {
-        health -= damage;                         // restar el daño a la salud
-        anim.SetTrigger("isHurt");                // Aqui irá la animación de daño
-
-        if (health <= 0)                         // si baja de 0, activa void die
-        {
-            Die();
-        }
-    }
-
-    void Die()                                  // Destruye el objeto
-    {
-        anim.SetTrigger("Dead");               // Aqui irá la animación de muerte 
-        Destroy(gameObject);
     }
 }
 

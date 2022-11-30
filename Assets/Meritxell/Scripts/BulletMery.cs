@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class BulletMery : MonoBehaviour
 {
-    public float speed = 5f;
-    public int damage = 40;
+    public float speed = 5f;          // Velocidad de la bala
+    public int damage = 40;           // Daño que causa la bala
 
-    public Rigidbody2D rb;
+    public Rigidbody2D rb;         
 
-    void Start()                         // Se mueve hacia delante
+    void Start()                         
     {
-        rb.velocity = transform.right * speed;
+        rb.velocity = transform.right * speed;        // Mueve el objeto hacia delante
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)         // Destruye objeto cuando choca con un collider
+    void OnTriggerEnter2D(Collider2D hitInfo)         // Cuando entra en un collider
     {
-        PatrolEnemyMery enemy = hitInfo.GetComponent<PatrolEnemyMery>();  // Coger el script de enemy
+        EnemyMery enemy = hitInfo.GetComponent<EnemyMery>();   // Coger el script de Enemy 
 
-        if (hitInfo.CompareTag("Enemy"))
+        if (hitInfo.CompareTag("Enemy"))            // Si el objeto contra el que activa el collider tiene el tag Enemy
         {
-            if (enemy != null)     // si enemy no es null (encuentra un enemigo)
+            if (enemy != null)     // Si enemy no es null (encuentra un enemigo)
             {
-                enemy.TakeDamage(damage);   // coge el int damage para determinar el daño
+                enemy.TakeDamage();   // Llama el void TakeDamage de Enemy
             }
-            Destroy(gameObject);
+            Destroy(gameObject);          // Se destruye
         }
     }
 

@@ -1,21 +1,21 @@
-using JetBrains.Annotations;          // Preguntar
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationPlayerMery : MonoBehaviour
 {
-    // private referencia que solo se usará esta información internamente en el script; public is que utilizará elementos externos
+    // private referencia que solo se usará esta información internamente en el GameObject, public permite otros elementos interactuar
     private Animator anim;            //  Animator se abreviará como anim y se asigna al Animator del objeto al que se asocie
     private Rigidbody2D rb;           //  "
     private SpriteRenderer sr;        //  "
     private PlayerMovementMery pm;    //  Referencia al script PlayerMovement
-    public bool isShooting;
+   
+    public bool isShooting;           // Para interactuar con el bool 
 
     private void Start()
 
     {
-        anim = GetComponent<Animator>();    // Las variables deben asignarse a los componentes
+        anim = GetComponent<Animator>();    // Las variables deben asignarse a los componentes si se usan en el script
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         pm = GetComponent<PlayerMovementMery>();
@@ -23,8 +23,15 @@ public class AnimationPlayerMery : MonoBehaviour
 
     private void Update()
     {
-        anim.SetInteger("SpeedMovement", Mathf.RoundToInt(rb.velocity.x));   // Se setea el entero 'SpeedMovement' del animator con el valor 'rb.velocity.x' 
-        anim.SetBool("Ground", pm.isGrounded);                               // Se setea el bool 'Ground' del animator con el valor que hay en la variable 'isGrounded' del script 'pi'
+        int n = Mathf.RoundToInt(rb.velocity.x);                              // n equivale a la velocidad a la que el rb se mueve en el axis x
+
+        if (n != 0f)                                                          
+        {
+            anim.SetInteger("SpeedMovement", n);                             // SpeedMovement se modifica en base a n, si el valor no es zero
+        }
+
+        anim.SetInteger("SpeedMovement", Mathf.RoundToInt(rb.velocity.x));   // Se setea SpeedMovement del animator al rb.velocity.x
+        anim.SetBool("Ground", pm.isGrounded);                               // Se setea Ground al bool isGrounded del script pm
       
         if (rb.velocity.x < -0.1)                                            // Si la velocidad en X es menor de -0.1
         {
@@ -35,9 +42,9 @@ public class AnimationPlayerMery : MonoBehaviour
             sr.flipX = false;                                                
         }
 
-        anim.SetBool("isShooting", pm.isShooting);              // detecta si el personaje está disparando en pm
+        anim.SetBool("isShooting", pm.isShooting);              // Detecta si el personaje está disparando en pm
         {
-            if (Input.GetButton("Fire1") == true)              //input
+            if (Input.GetButton("Fire1") == true)              // Input (GetButton es constante mientras se pulse, GetButtonDown solo funciona una vez)
             {
                 isShooting = true;
             }
