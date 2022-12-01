@@ -6,6 +6,60 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Alexandra/Scenes_AC/MainMenuScene_AC.unity
+    guid: 2e2f445b364a10e42bbbdf723e6d3397
+  - enabled: 1
+    path: Assets/Alexandra/Scenes_AC/Play_AC.unity
+    guid: 9d0028709fcebdc4fb6568d99b777854
+  - enabled: 1
+    path: Assets/Alexandra/Scenes_AC/Level2_AC.unity
+    guid: 7c04ac011cee1d04db9d83d1181eb6f1
+  - enabled: 1
+    path: Assets/Alexandra/Scenes_AC/Level3_AC.unity
+    guid: 0dcbb8e95b20b5f4c8b523915dcb4133
+  - enabled: 1
+    path: Assets/Arjona/Animations/AnimationsScene.unity
+    guid: 29b782816e1a97040895e537bce90feb
+  - enabled: 1
+    path: Assets/Arjona/CameraFollow/CameraFollowScene.unity
+    guid: 8126906422c549e40ba429b077bd1736
+  - enabled: 1
+    path: Assets/Arjona/InputLifes/InputLifesScene.unity
+    guid: 408fcc51d00419f4996273a4ec6ffb2b
+  - enabled: 1
+    path: Assets/Arjona/Instantiate/InstantiateScene.unity
+    guid: ef7c2f2f12db0724e8e03d06bfb9a300
+  - enabled: 1
+    path: Assets/Arjona/MobilePlatforms/MobilePlatformScene.unity
+    guid: 0e1005ab69dfd6a4ca56d256ab7f7e12
+  - enabled: 1
+    path: Assets/Arjona/MoveObjects/MoveObjectsScene.unity
+    guid: 0f0df456ec380644d97f66f61c1af19f
+  - enabled: 1
+    path: Assets/Arjona/SaveLoadRemoveData/SaveLoadDataScene.unity
+    guid: 9659aabc63376d74f988077fb5318042
+  - enabled: 1
+    path: Assets/Arjona/SoundParticles/SoundParticlesScene.unity
+    guid: b39253e38ab4e3145af5b1099875077a
+  - enabled: 1
+    path: Assets/Arjona/Timer/TimerScene.unity
+    guid: 10b1481a64710454a81bbd9eddbd6130
+  - enabled: 1
+    path: Assets/Arjona/Timer/TimerScene 2.unity
+    guid: da33488daef321545a307101667acb9c
+  - enabled: 1
+    path: Assets/Arjona/TriggerEvents/TriggerEventsScene.unity
+    guid: c618cb3bd8e9bc54cb830a41f1dda548
+  - enabled: 1
+    path: Assets/Arjona/UILoadScene/Scene1.unity
+    guid: 768c876bd1be4f84983e858be3ef027a
+  - enabled: 1
+    path: Assets/Arjona/UILoadScene/Scene2.unity
+    guid: c95ac0db82bdd524da4f9f3736c439f3
+  - enabled: 1
+    path: Assets/Esteban/Scene/Scene1.unity
+    guid: 9c5d028e21111cf439a7800c6648177f
+  - enabled: 1
     path: Assets/Gerard/SCENES NTRM/Main Menu NTRM.unity
     guid: 4b9a18167d4ad2e47b027a76253efcee
   - enabled: 1
@@ -38,4 +92,82 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Gerard/SCENES NTRM/Fail Level NTRM.unity
     guid: fea37d76725c2a346b1b386dfe1db87a
+  - enabled: 1
+    path: Assets/JordiCelemin/Scene/PlataformScene_JCG.unity
+    guid: 1133ed6b53e29c249a3fd76a29c8fa7c
+  - enabled: 1
+    path: Assets/JordiCelemin/Scene/Menu_JCG.unity
+    guid: eeaf56a8c2266624b80ad992ae99a1d2
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/FinalScene.unity
+    guid: 1fee7207a0af9544795226bf1fe2a8a6
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/GameOver.unity
+    guid: 4674fa315226b3c45be5b6c06cd9d9e8
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/IntroScene.unity
+    guid: 13eb71d34a807b149909815cbed13083
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/Level1.unity
+    guid: 5fd32e9adb8a2cc49b2985ebbaa3958d
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/Level2.unity
+    guid: 816c62cde978c744eb7fc870c57839c5
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/Level3.unity
+    guid: d2a9a9c6c6e66c0469509d585775dddc
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/LevelsMenu.unity
+    guid: a7702bc3aa0973d4a96470f2b4af0a07
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/MainMenu.unity
+    guid: 2ea18a2e1da5e1b46acadea184f85daa
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/TestMenu.unity
+    guid: ec461f34323224d4889d41892353ea1c
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/OptionsMenu.unity
+    guid: 0772acc315175de488d9a050f26b7675
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/PauseMenu.unity
+    guid: 3495efd81c923e746a14bd25d4151393
+  - enabled: 1
+    path: Assets/Meritxell/Scenes/Sandbox.unity
+    guid: 4b97d0cef41c589419b287fffe795821
+  - enabled: 1
+    path: Assets/Oscar/Scenes/MainMenuOscar.unity
+    guid: fee64c8d12d179e48984e779a255fa04
+  - enabled: 1
+    path: Assets/Oscar/Scenes/Nivel1Oscar.unity
+    guid: 80604c741b22f034cbc9d0626f27d8ce
+  - enabled: 1
+    path: Assets/Oscar/Scenes/Nivel2Oscar.unity
+    guid: c6758e6f61db586408680306579897b1
+  - enabled: 1
+    path: Assets/Oscar/Scenes/Nivel3Oscar.unity
+    guid: 8747a16973547824a9c1a0e27d773679
+  - enabled: 1
+    path: Assets/Oscar/Scenes/Nivel4Oscar.unity
+    guid: 3b8930405ec23144b9489bc3c439d249
+  - enabled: 1
+    path: Assets/Oscar/Scenes/Nivel5Oscar.unity
+    guid: 0563ac7962902124380ad81222731b1c
+  - enabled: 1
+    path: Assets/Xavi/Scenes/FinalBossXavi.unity
+    guid: ae246f25cf84d9b4595073375cefece9
+  - enabled: 1
+    path: Assets/Xavi/Scenes/FinishXavi.unity
+    guid: 7bc90a1bc007f4d4fb9a0a2b7c84a698
+  - enabled: 1
+    path: Assets/Xavi/Scenes/Level1Xavi.unity
+    guid: 661db107f3ed2014cbfaf432701ea4ed
+  - enabled: 1
+    path: Assets/Xavi/Scenes/Level2Xavi.unity
+    guid: 41cd36eced0c15d4d99775ee7b829dea
+  - enabled: 1
+    path: Assets/Xavi/MainMenuXavi.unity
+    guid: b2bd731e86e34904abbeabe9f35ecb2d
+  - enabled: 1
+    path: Assets/Xavi/Test.unity
+    guid: 9140b9919866ea04080bb86e46a01a69
   m_configObjects: {}
