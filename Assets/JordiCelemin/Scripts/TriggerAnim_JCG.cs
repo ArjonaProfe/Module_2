@@ -18,9 +18,8 @@ public class TriggerAnim_JCG : MonoBehaviour
     {
         int n = Mathf.RoundToInt(rb.velocity.x);
 
-        if(rb.velocity.x > 0)
-        {
-            anim.SetInteger("IntMovement", n);
-        }
+        
+          anim.SetInteger("IntMovement", n); // esto es la animacion de movimiento si se hace un if con el rb y anim y le pones un >0 se queda loco y siempre se sube a dos porque es mayor.
+        
     }
 }
