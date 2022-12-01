@@ -21,18 +21,17 @@ public class EnemyXavi : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        blood = GetComponent<ParticleSystem>();
         target = waypoint1;     // Al principio, el objetivo será el waypoint 1
     }
     void Update()
     {
         float distance = Vector3.Distance(transform.position, target.position);
-        if (distance < 0.5 && target == waypoint1)       // Si el transform.position del enemigo es igual que el transform.position del waypoint ---->> (si los dos están en la misma posición) 
+        if (distance < 0.75 && target == waypoint1)       // Si el transform.position del enemigo es igual que el transform.position del waypoint ---->> (si los dos están en la misma posición) 
         {
             target = waypoint2;                             // El objetivo a perseguir se cambia al waypoint 2
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (distance < 0.5 && target == waypoint2)  // Si el transform.position no encaja con el anterior pero encaja con el del waypoint 2
+        else if (distance < 0.75 && target == waypoint2)  // Si el transform.position no encaja con el anterior pero encaja con el del waypoint 2
         {
             transform.localScale = new Vector3(1, 1, 1);
             target = waypoint1;                               // El objetivo pasa a ser el waypoint 1
@@ -43,10 +42,12 @@ public class EnemyXavi : MonoBehaviour
     {
         if (other.tag == "PlayerAttack")
         {
+            Instantiate(blood, new Vector2(other.transform.position.x, other.transform.position.y), Quaternion.identity);
             Debug.Log(blood);
-        //    blood.Play();
+            blood.Play();
             Destroy(gameObject);
             FindObjectOfType<GameSessionXavi>().AddToScore(pointsToAdd);
+           
         }
     }
 }
