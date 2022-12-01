@@ -16,8 +16,7 @@ public class RollGerard : MonoBehaviour
     private AnimationManagerGerard am;        // aquí se referencia el script "AnimationManagerGerard".
     public bool rollisgoing;
     private Animator anim;                      //  se asigna el componente "Animator". 
-    private float gravityZero = 0f;
-    private float gravityPlus = 0.5f;
+
 
     void Start()
     {

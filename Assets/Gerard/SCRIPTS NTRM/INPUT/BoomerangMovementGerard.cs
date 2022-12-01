@@ -4,34 +4,44 @@ using UnityEngine;
 
 public class BoomerangMovementGerard : MonoBehaviour
 {
-    public float speed;
-    public float timertocome = 3f;
-    private float resetCooldown = 0f;
+    public float speed;                           // asignamos un numero a speed para poder controlar la velocidad.
+    private float timertocome = 0.5f;                   // asignamos un valor a timertocome para poder hacer que el boomerang nos vuelva al llegar a 0 el contador.  
+    private SpriteRenderer thisSr;                      //  se asigna el componente "spriteRenderer" a thisSr.
+    public Rigidbody2D rb;                              // se asigna el componente "X" a rb.
+    public int damage = 10;
 
-    void Start()
-    {
-        resetCooldown = timertocome;
-    }
 
-   
+
     void Update()
     {
-        if(timertocome > 2.9f);
+        thisSr = GetComponent<SpriteRenderer>();
+        timertocome = timertocome - 1 * Time.deltaTime;                 // restamos tiempo al timer para que encaje en las variables.
+
+        if (timertocome > 0)
         { 
-             timertocome = timertocome - 1 * Time.deltaTime;
-             this.transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
+        rb.velocity = transform.right * speed;
         }
 
-        if (timertocome < 0);
+        else if (timertocome < 0)
         {
-            this.transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
-
-            timertocome = resetCooldown;
-
-            Object.Destroy(this, 7f);
+            thisSr.flipX = true;
+        rb.velocity = - transform.right * speed;
         }
 
+        Destroy(gameObject, 1f);
+    }
+
+
+    /*
+    void OnTriggerEnter2D(Collider2D hitInfo)                                   
+    {
+        EnemyGerard enemy = hitInfo.GetComponent<EnemyGerard>();                   // Coger el script de enemy
+        if (enemy != null)                                                    // si enemy no es null (encuentra un enemigo)
+        {
+            enemy.TakeDamage(damage);                                        // coge el int damage para determinar el daño
+        }
 
     }
+*/
 
 }
