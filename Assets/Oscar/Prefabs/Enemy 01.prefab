@@ -137,7 +137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyFaction: 2
   Life: 0
-  MaxLife: 200
+  MaxLife: 300
+  StunBuild: 0
+  StunGoal: 100
   Shield: 0
   JustHurted: 0
   Anim: {fileID: 2021005621459127212}
@@ -167,6 +169,7 @@ MonoBehaviour:
   IsGround:
     serializedVersion: 2
     m_Bits: 2176
+  JustPounded: 0
   CanonPoint: {fileID: 2021005622476252788}
   UpperPoint: {fileID: 120455964579447204}
   ActTimer: 0

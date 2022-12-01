@@ -506,7 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XSpeed: 1
   YSpeed: 20
-  MiniBounce: 20
+  MiniBounce: 25
   BigBounce: 35
   GroundPoint: {fileID: 0}
   Poundable:
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   Speed: 1.5
   RB2D: {fileID: 0}
   GroundPoint: {fileID: 0}
-  MiniBounce: 12
+  MiniBounce: 20
   BigBounce: 35
   Poundable:
     serializedVersion: 2

@@ -57,6 +57,8 @@ MonoBehaviour:
   MyFaction: 2
   Life: 0
   MaxLife: 600
+  StunBuild: 0
+  StunGoal: 120
   Shield: 0
   JustHurted: 0
   Anim: {fileID: 2874336367718436999}
@@ -90,7 +92,7 @@ MonoBehaviour:
   CanonPoint: {fileID: 2874336368510256280}
   UpperPoint: {fileID: 2874336368814188730}
   ActTimer: 0
-  ActCool: 1
+  ActCool: 0.5
   AtkRadius: 0.4
   IsEnemy:
     serializedVersion: 2

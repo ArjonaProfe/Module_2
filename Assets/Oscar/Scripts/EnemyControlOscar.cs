@@ -89,6 +89,9 @@ public class EnemyControlOscar : MonoBehaviour
         //Ground dectection
         Grounded = Physics2D.OverlapCircle(GroundPoint.position, 0.05f, IsGround);
         Anim.SetBool("Grounded", Grounded);
+
+        //Die if fall
+        if(transform.position.y < -20) { LifeMan.Death(); }
     }
 
     //Melee actions
