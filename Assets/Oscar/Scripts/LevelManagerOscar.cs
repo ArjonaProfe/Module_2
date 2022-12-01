@@ -13,20 +13,21 @@ public class LevelManagerOscar : MonoBehaviour
     [System.Serializable]
     public class Collectibles
     {
+        public bool LvClear;
         public List<bool> Gems;
     }
-    public List<Collectibles> LvGems;
+    public List<Collectibles> LvStats;
 
     private void Start()
     {
         if (CollectLabel != null)
         {
             int Counter = 0;
-            for (int i = 0; i < LvGems[SceneID].Gems.Count; i++)
+            for (int i = 0; i < LvStats[SceneID].Gems.Count; i++)
             {
-                if (LvGems[SceneID].Gems[i] == true) { Counter += 1; }
+                if (LvStats[SceneID].Gems[i] == true) { Counter += 1; }
             }
-            CollectLabel.text = "Gx" + Counter.ToString() + "/" + LvGems[SceneID].Gems.Count;
+            CollectLabel.text = "Gx" + Counter.ToString() + "/" + LvStats[SceneID].Gems.Count;
         }
     }
 
@@ -48,22 +49,23 @@ public class LevelManagerOscar : MonoBehaviour
 
     public void LevelClear()
     {
+        LvStats[SceneID].LvClear = true;
         SceneManager.LoadScene(2);
     }
 
     public void CollectGem(int ID)
     {
-        LvGems[SceneID].Gems[ID] = true;
+        LvStats[SceneID].Gems[ID] = true;
 
         //Updating the UI
         if (CollectLabel != null)
         {
             int Counter = 0;
-            for (int i = 0; i < LvGems[SceneID].Gems.Count; i++)
+            for (int i = 0; i < LvStats[SceneID].Gems.Count; i++)
             {
-                if (LvGems[SceneID].Gems[i] == true) { Counter += 1; }
+                if (LvStats[SceneID].Gems[i] == true) { Counter += 1; }
             }
-            CollectLabel.text = "Gx" + Counter.ToString() + "/" + LvGems[SceneID].Gems.Count;
+            CollectLabel.text = "Gx" + Counter.ToString() + "/" + LvStats[SceneID].Gems.Count;
         }
     }
 }

@@ -507,7 +507,7 @@ MonoBehaviour:
   XSpeed: 1
   YSpeed: 20
   MiniBounce: 20
-  BigBounce: 29
+  BigBounce: 35
   GroundPoint: {fileID: 0}
   Poundable:
     serializedVersion: 2
@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05201fdbd6b4f2742b002a76c3cbd447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1.5
+  Speed: 2
 --- !u!1102 &1386251276790041962
 AnimatorState:
   serializedVersion: 6
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   GroundPoint: {fileID: 0}
   MiniBounce: 12
-  BigBounce: 29
+  BigBounce: 35
   Poundable:
     serializedVersion: 2
     m_Bits: 512
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   GroundPoint: {fileID: 0}
   MiniBounce: 12
-  BigBounce: 29
+  BigBounce: 35
   Poundable:
     serializedVersion: 2
     m_Bits: 512

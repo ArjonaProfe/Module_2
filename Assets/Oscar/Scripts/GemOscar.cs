@@ -11,7 +11,7 @@ public class GemOscar : MonoBehaviour
     private void Start()
     {
         LvMan = FindObjectOfType<LevelManagerOscar>();
-        if(LvMan.LvGems[LvMan.SceneID].Gems[ID] == true)
+        if(LvMan.LvStats[LvMan.SceneID].Gems[ID] == true)
         {
             Anim.SetBool("Collected", true);
         }
