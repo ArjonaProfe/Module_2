@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/Oscar/Scenes/MainMenuOscar.unity
     guid: fee64c8d12d179e48984e779a255fa04
   - enabled: 1
+    path: Assets/Xavi/MainMenuXavi.unity
+    guid: b2bd731e86e34904abbeabe9f35ecb2d
+  - enabled: 1
     path: Assets/Xavi/Scenes/Level1Xavi.unity
+    guid: 661db107f3ed2014cbfaf432701ea4ed
+  - enabled: 1
+    path: Assets/Xavi/Scenes/Level2Xavi.unity
     guid: 41cd36eced0c15d4d99775ee7b829dea
+  - enabled: 1
+    path: Assets/Xavi/Scenes/FinalBossXavi.unity
+    guid: ae246f25cf84d9b4595073375cefece9
+  - enabled: 1
+    path: Assets/Xavi/Scenes/FinishXavi.unity
+    guid: 7bc90a1bc007f4d4fb9a0a2b7c84a698
   m_configObjects: {}

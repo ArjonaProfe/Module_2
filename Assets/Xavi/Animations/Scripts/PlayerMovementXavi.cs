@@ -31,9 +31,11 @@ public class PlayerMovementXavi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Movement();
         IsGrounded();
         MeleeAttack();
+        if (!isAlive) { return; }
         Die();
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)    // Si se pulsa el botón 'Jump' y la variable 'isGrounded' es true
@@ -60,11 +62,11 @@ public class PlayerMovementXavi : MonoBehaviour
         rb.velocity = new Vector2(xMovement * speed, rb.velocity.y);
         if (xMovement < 0)
         {
-            sr.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);      
         }
         else if (xMovement > 0)
         {
-            sr.flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
@@ -80,6 +82,7 @@ public class PlayerMovementXavi : MonoBehaviour
     }
     void MeleeAttack()
     {
+        if (!isAlive) { return; }
         if (Input.GetButtonDown("Fire1"))
         {
             attack = true;
@@ -118,7 +121,7 @@ public class PlayerMovementXavi : MonoBehaviour
             isAlive = false;
             anim.SetTrigger("Dying");
             rb.velocity = new Vector2(0, 20f);
-            //FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            FindObjectOfType<GameSessionXavi>().ProcessPlayerDeath();
         }
     }
 }
