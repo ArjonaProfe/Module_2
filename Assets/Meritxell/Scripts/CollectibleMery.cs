@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMery : MonoBehaviour
+public class CollectibleMery : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D other)
     {

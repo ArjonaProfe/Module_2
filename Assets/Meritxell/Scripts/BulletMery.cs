@@ -26,6 +26,10 @@ public class BulletMery : MonoBehaviour
             }
             Destroy(gameObject);          // Se destruye
         }
+        else if (hitInfo.CompareTag("Ground"))     // Si tocase partes del escenario
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnBecameInvisible()            // Destruye cuando sale de la camara

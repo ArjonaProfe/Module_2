@@ -2,31 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMery : MonoBehaviour
+public class EnemyMery : MonoBehaviour           // Script general para todos los enemigos
 {
-    public int health;
-    public Animator anim;
-    public bool isHurt;
-
-    private float timer = 0f;
-    private float waitTime = 2f;
+    public int health;                          // El health se cambiarà aqui según el tipo
+    public Animator anim;                      
+   
+    public bool isHurt;                         // No funciona???
 
 
-    public void Start()
+    private void Start()
     {
         anim = GetComponent<Animator>();
     }
-
-    public void Update()
-    {
-        timer += Time.deltaTime;
-    }
-    public void TakeDamage()             // void que llama el int de daño
+    public void TakeDamage()                   // Se llama este script desde Bullet
     {
 
-        Damage.damage = 40;
-        health -= Damage.damage;                         // restar el daño a la salud
-        HurtAnimation();
+        DamageAndCureMery.damage = 40;                         // Se coge el int de DamageandCure
+        health -= DamageAndCureMery.damage;                    // restar el daño a la salud
+        isHurt = true;                                         // No funciona????
+        Debug.Log("Entra");                                    // Pero este log si que entra...
 
 
         if (health <= 0)                         // si baja de 0, activa void die
@@ -37,21 +31,7 @@ public class EnemyMery : MonoBehaviour
 
     void Die()                                  // Destruye el objeto
     {
+        anim.SetTrigger("Dead");
         Destroy(gameObject);
     }
-
-    void HurtAnimation()
-    {
-        if (timer < waitTime)
-        {
-            anim.SetBool("isHurt", false);
-        }
-        else if (timer > waitTime)
-        {
-            anim.SetBool("isHurt", true);
-        }
-
-    }
-
-
 }
