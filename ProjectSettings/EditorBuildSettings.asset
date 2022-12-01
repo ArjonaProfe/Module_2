@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Gerard/SCENES NTRM/Level 3 NTRM.unity
     guid: cbea06c4478ee3846910ea879af01b39
   - enabled: 1
+    path: Assets/Gerard/SCENES NTRM/Level 4 NTRM.unity
+    guid: 8839d8b4c974d1b4dae5cda0e030af64
+  - enabled: 1
+    path: Assets/Gerard/SCENES NTRM/Level 5 NTRM.unity
+    guid: 6eab70610f97c504dbebc7f846093379
+  - enabled: 1
     path: Assets/Gerard/SCENES NTRM/Succeed Level NTRM.unity
     guid: f27da9d7c8598814ab3ddbeaa02a2a18
   - enabled: 1
