@@ -22,14 +22,14 @@ public class SwordAttack : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if ( other.tag == "Enemy" )
-        {
-            Debug.Log(blood);
-            blood.Play();
-            Destroy(other.gameObject);
-            FindObjectOfType<GameSessionXavi>().AddToScore(pointsToAdd);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+      //  if ( other.tag == "Enemy" )
+        //{
+          //  Debug.Log(blood);
+            //blood.Play();
+            //Destroy(other.gameObject);
+          //  FindObjectOfType<GameSessionXavi>().AddToScore(pointsToAdd);
+        //}
+    //}
 }

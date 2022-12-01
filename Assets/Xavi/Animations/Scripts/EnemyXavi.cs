@@ -7,6 +7,9 @@ public class EnemyXavi : MonoBehaviour
 
     Rigidbody2D myRigidbody;
     Animator myAnimator;
+   [SerializeField] ParticleSystem blood;
+
+    [SerializeField] int pointsToAdd = 100;
 
     [SerializeField] float speedX = 5f;
 
@@ -18,6 +21,7 @@ public class EnemyXavi : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        blood = GetComponent<ParticleSystem>();
         target = waypoint1;     // Al principio, el objetivo será el waypoint 1
     }
     void Update()
@@ -34,5 +38,15 @@ public class EnemyXavi : MonoBehaviour
             target = waypoint1;                               // El objetivo pasa a ser el waypoint 1
         }
         transform.position = Vector2.MoveTowards(transform.position, target.position, speedX * Time.deltaTime);  // Mueve la posición del enemigo desde donde esté hasta la posición del objetivo y lo hace a la velocidad 'Speed'
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "PlayerAttack")
+        {
+            Debug.Log(blood);
+        //    blood.Play();
+            Destroy(gameObject);
+            FindObjectOfType<GameSessionXavi>().AddToScore(pointsToAdd);
+        }
     }
 }
