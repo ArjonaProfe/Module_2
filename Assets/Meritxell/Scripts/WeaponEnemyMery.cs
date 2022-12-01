@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WeaponMery : MonoBehaviour
-{ 
+public class WeaponEnemyMery : MonoBehaviour
+{
     public Transform firePoint;         // coge el spawn
     public Transform firePointL;
     public GameObject bulletPrefab;     // coge la bala
@@ -19,29 +19,29 @@ public class WeaponMery : MonoBehaviour
 
     {
         anim = GetComponent<Animator>();    // Las variables deben asignarse a los componentes
-
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update () 
+    void Update()
     {
-           if (Input.GetButton("Fire1") && Time.time > nextFire)      // input asignado 
-           {
-                nextFire = Time.time + fireRate;                      // el fire rate detiene el siguiente de salir hasta que haya pasado el tiempo
-                Shoot();
-           }
+        if (Time.time > nextFire && anim.GetBool("Dead") == false)      
+        {
+            nextFire = Time.time + fireRate;                      // el fire rate detiene el siguiente de salir hasta que haya pasado el tiempo
+            Shoot();
+        }
 
-           void Shoot()                // los puntos de origen
-           {
-                if (sr.flipX == true)
-                {
-    
+        void Shoot()                // los puntos de origen
+        {
+            if (sr.flipX == false)
+            {
+
                 Instantiate(bulletPrefab, firePointL.position, firePointL.rotation);
-                }
-                else
-                {
+            }
+            else
+            {
                 Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-                }
-           }         
+            }
+        }
     }
-}
 
+}
