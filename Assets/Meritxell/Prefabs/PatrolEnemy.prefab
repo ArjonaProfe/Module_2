@@ -148,8 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7283cad10a0f6c44c9b2e584e8891247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 982956219}
-  speed: 5
   Point1: {fileID: 0}
   Point2: {fileID: 0}
 --- !u!95 &1779161190
@@ -162,7 +160,7 @@ Animator:
   m_GameObject: {fileID: 6618506567961406026}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 411ade854997aa24f951a27cb4094531, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0d8ae4382e2afe4bbe09c6c7ae9129a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -186,4 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   anim: {fileID: 1779161190}
-  isHurt: 0
+  rb: {fileID: 6618506567961406024}
+  speed: 5
