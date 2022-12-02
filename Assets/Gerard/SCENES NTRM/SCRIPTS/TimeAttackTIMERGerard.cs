@@ -13,7 +13,6 @@ public class TimeAttackTIMERGerard : MonoBehaviour
     void Update()
     {
         seconds = seconds + 1 * Time.deltaTime;         // Cada segundo que pasa se suma 1 unidad a la variable 'seconds'
-
-        timer.text = seconds.ToString("00:00.00");            // Se convierte la variable entera 'sec' a string para poder mostrarla en el texto 'clock'
+        timer.text = "Timer: \n" + seconds.ToString("00:00.00");                 // Se convierte la variable entera 'sec' a string para poder mostrarla en el texto 'clock'
     }
 }

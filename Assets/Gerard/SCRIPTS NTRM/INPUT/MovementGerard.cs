@@ -73,7 +73,6 @@ public class MovementGerard : MonoBehaviour
         putounity = true;
         anim.SetBool("Attack", putounity);                                      // se setea el bool "Attack" con el valor que hay en la variable "attack".
         
-
     }
 
     private void Update()
