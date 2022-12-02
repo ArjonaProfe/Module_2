@@ -253,7 +253,7 @@ public class PlayerControlOscar : MonoBehaviour
     //Death
     public void PlayerDeath()
     {
-        LvMan.GoToScene(2);
+        LvMan.GoToScene(43);
     }
 
     //Grafics for visualization

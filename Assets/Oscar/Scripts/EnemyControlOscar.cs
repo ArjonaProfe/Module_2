@@ -74,17 +74,21 @@ public class EnemyControlOscar : MonoBehaviour
         }
 
         //Memorize if it's been pounded, and react if going to be pounded again
-        if(TarDistY > 1 && Mathf.Abs(TarDistX) < 1 && LifeMan.JustHurted == true)
-        {
-            JustPounded = true;
-            LifeMan.JustHurted = false;
-        }
         if (TarDistY > 2 && Mathf.Abs(TarDistX) < 1 && JustPounded == true)
         {
             Anim.SetTrigger("UpwardsAct");
             ActTimer = 0;
             JustPounded = false;
         }
+
+        if (TarDistY > 1 && Mathf.Abs(TarDistX) < 1 && LifeMan.JustHurted == true)
+        {
+            JustPounded = true;
+            LifeMan.JustHurted = false;
+        }
+        if(Mathf.Abs(TarDistX) > 1 && JustPounded == true) { JustPounded = false; }
+        
+        LifeMan.JustHurted = false;
 
         //Ground dectection
         Grounded = Physics2D.OverlapCircle(GroundPoint.position, 0.05f, IsGround);
