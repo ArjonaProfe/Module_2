@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ButtonUI : MonoBehaviour
 {
-    [SerializeField] private string Scene1 = "Level1Xavi";
-
-   public void NewGameButton()
+  
+   public void GameStart()
     {
-        SceneManager.LoadScene(Scene1);
+        SceneManager.LoadScene("Level1Xavi");
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenuXavi");
+    }
+
 }

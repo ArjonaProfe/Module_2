@@ -121,7 +121,7 @@ public class PlayerMovementXavi : MonoBehaviour
             isAlive = false;
             anim.SetTrigger("Dying");
             rb.velocity = new Vector2(0, 20f);
-            FindObjectOfType<GameSessionXavi>().ProcessPlayerDeath();
+           //  FindObjectOfType<GameSessionXavi>().ProcessPlayerDeath();
         }
     }
 }
