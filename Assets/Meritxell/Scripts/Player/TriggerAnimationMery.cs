@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class TriggerAnimationMery : MonoBehaviour
+public class TriggerAnimationMery : MonoBehaviour  // Este script aseguraba que se detectase el movimiento, pero ya no lo uso. Guardado por si acaso
 {
 
     private Rigidbody2D rb;
@@ -16,7 +16,7 @@ public class TriggerAnimationMery : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()                                         // esto se ocupa de que se detecte SpeedMovement aka si el personaje se mueve
+    void Update()                                         
     {
         int n = Mathf.RoundToInt(rb.velocity.x);
 

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovementMery : MonoBehaviour
+public class PlayerMovementMery : MonoBehaviour     // Script asignado a los controles del jugador
 {
     // private referencia que solo se usará esta información internamente en el script; public is que utilizará elementos externos
     private Rigidbody2D rb;             // 'rigidbody2D'
-    public Transform rayOrigin;         // raycasr
+    public Transform rayOrigin;         // raycast
 
 
     public float speed;                 // velocidad de movimiento

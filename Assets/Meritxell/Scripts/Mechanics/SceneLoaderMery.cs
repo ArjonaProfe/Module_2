@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoaderMery : MonoBehaviour
+public class SceneLoaderMery : MonoBehaviour    // Carga las escenas. Probablemente coloque todas las funciones aqui o solo se use de referencia para el resto
 {
     public string SceneName;                    // Variable donde guardaremos el nombre de la escena a cargar 
     public string Sandbox;                    

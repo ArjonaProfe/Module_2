@@ -11,7 +11,7 @@ public class WeaponEnemyMery : MonoBehaviour         // Script que controla el "
     private Animator anim;               // El animator se coge para detectar el bool de muerte          
     private SpriteRenderer sr;           // El Srpite se necesita para detectar si se ha flipeado
 
-    public float fireRate = 0.5f;       // no se puede disparar hasta que...
+    public float fireRate;              // no se puede disparar hasta que...
     public float nextFire = 0.0f;       // Resetea el tiempo desde el disparo anterior
     public bool isFlipped;              // Mirar si necesito esto
 

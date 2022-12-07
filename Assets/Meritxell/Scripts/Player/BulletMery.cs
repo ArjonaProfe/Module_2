@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletMery : MonoBehaviour
+public class BulletMery : MonoBehaviour           // Script de las balas que dispara el personaje
 {
     public float speed = 5f;          // Velocidad de la bala
     public int damage = 40;           // Daño que causa la bala
@@ -12,6 +12,10 @@ public class BulletMery : MonoBehaviour
     void Start()                         
     {
         rb.velocity = transform.right * speed;        // Mueve el objeto hacia delante
+    }
+    private void Update()
+    {
+        DestroyTimer();                              // Llama la función 
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)         // Cuando entra en un collider
@@ -28,8 +32,12 @@ public class BulletMery : MonoBehaviour
         }
         else if (hitInfo.CompareTag("Ground"))     // Si tocase partes del escenario
         {
-            Destroy(gameObject);
+            Destroy(gameObject);         // Se destruye
         }
+    }
+    void DestroyTimer()                 // Si ha pasado 1 unidad de tiempo y la bala no ha chocado con nada, se destruye
+    {
+        Destroy(gameObject, 1f);        
     }
 
     void OnBecameInvisible()            // Destruye cuando sale de la camara

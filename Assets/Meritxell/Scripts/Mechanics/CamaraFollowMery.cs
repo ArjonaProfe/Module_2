@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamaraFollowMery : MonoBehaviour
+public class CamaraFollowMery : MonoBehaviour        // Script de control de camara
 {
-    public Transform target;       // Target al que sigue
-    public float damping;          // Suavizado
+    public Transform target;          // Target al que sigue
+    public float damping;             // Suavizado
     public Vector2 maxPosition;       // Bordes de camara que no va a superar (x e y globales)
     public Vector2 minPosition;
 

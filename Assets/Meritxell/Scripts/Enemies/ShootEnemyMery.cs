@@ -21,12 +21,13 @@ public class ShootEnemyMery : MonoBehaviour        // Script para el enemigo que
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    public void Update()
     {   
         Flip();                                       // Se llaman las funciones
         Animation();
         IsAttacking();
     }
+
     private void Flip()                                              
     {
         if (rb.position.x < target.position.x)               // Si la posición en x del RB es menor a la posición en x del target
@@ -46,20 +47,19 @@ public class ShootEnemyMery : MonoBehaviour        // Script para el enemigo que
 
     void IsAttacking()                   // No vamos a setear directamente porque tenemos que poner un raycast aqui
     {   
-        RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.right, 20f);
-        RaycastHit2D rayL = Physics2D.Raycast(rayOriginL.position, Vector2.left, 20f);
+        RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.right, 50f);
+        RaycastHit2D rayL = Physics2D.Raycast(rayOriginL.position, Vector2.left, 50f);
         Debug.DrawRay(rayOriginL.position, Vector2.left, Color.green, 20f, true);
 
-        if (rayL.collider.CompareTag("Player"))
+       
+        if (rayL.collider != null && (rayL.collider.CompareTag("Player")))
         {
                 isAttacking = true;
-            Debug.Log("IsHitting");
+                Debug.Log("IsHitting");
         }
-        else if
-            (ray.collider.CompareTag("Player"))
+        else if (ray.collider != null && ray.collider.CompareTag("Player"))
         {
-            isAttacking = true;
-            Debug.Log("IsHitting");
+                isAttacking = true;
         }
         else
         {

@@ -7,8 +7,8 @@ public class ChaseEnemyMery : MonoBehaviour             // Script para en enemig
     private Rigidbody2D rb;        // Mantenemos el RB para colisión
     private Animator anim;         // Animaciones
     private SpriteRenderer sr;     // Permite flipear
-    private EnemyMery enemy;
-
+    private EnemyMery enemy;       // La velocidad se coge de este script
+  
     public Transform target;       // Asignaremos al player
     float direction = 1;           // Asegura que el enemigo puede moverse sin un target seteando una dirección
 
@@ -20,7 +20,9 @@ public class ChaseEnemyMery : MonoBehaviour             // Script para en enemig
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
 
-        enemy = GetComponent<EnemyMery>();
+        target = target.transform;                    // Se enlaza el target a su movimiento?
+
+        enemy = GetComponent<EnemyMery>();            // Para el valor speed
 
         anim.SetFloat("moveX", 0);                    // Float que controla si el objeto se está moviendo en el axis x
         anim.SetFloat("SpeedMovement", 0);            // El float que controla la velocidad
@@ -29,7 +31,7 @@ public class ChaseEnemyMery : MonoBehaviour             // Script para en enemig
     private void Update()
     {
         change = Vector2.zero;                        // Asigna los valores x0, y0 (esto es global y no local)
-        change.x = transform.localPosition.x;         // Cambia el axis x
+        change.x = transform.position.x;              // Cambia el axis x
 
         Flip();                                       // Llama las funciones
         MoveEnemy();
@@ -59,12 +61,12 @@ public class ChaseEnemyMery : MonoBehaviour             // Script para en enemig
         if (change != new Vector2(0, 0))                  // Si el vector2 que estamos controlando no es igual a un nuevo vector2   
         {
             anim.SetFloat("SpeedMovement", enemy.speed);        // El SM se setea en función del speed asignado
-            anim.SetBool("isMoving", true);               // isMoving se setea en verdadero
-            anim.SetFloat("moveX", change.x);             // moveX cambia en función a change.x
+            anim.SetBool("isMoving", true);                     // isMoving se setea en verdadero
+            anim.SetFloat("moveX", change.x);                  // moveX cambia en función a change.x
         }
-        else                                             // De lo contrario
+        else                                                   // De lo contrario
         {
-            anim.SetBool("isMoving", false);             // isMoving se setea en falso 
+            anim.SetBool("isMoving", false);                   // isMoving se setea en falso 
         }
     }
 }

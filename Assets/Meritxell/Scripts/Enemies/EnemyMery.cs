@@ -7,6 +7,7 @@ public class EnemyMery : MonoBehaviour           // Script general para todos lo
     public int health;                          // Puntos de salud
     public Animator anim;                       // Animator para las animaciones de daño y muerte
     public Rigidbody2D rb;                      // Para la interación con otros scripts funcione bien
+    public Collider2D col;                      // Para que enemigos derrotados no tengan colisión
 
     public float speed = 5f;                    // Velocidad del enemigo
 
@@ -14,7 +15,7 @@ public class EnemyMery : MonoBehaviour           // Script general para todos lo
     {
         anim = GetComponent<Animator>();         // Coger componentes
         rb = GetComponent<Rigidbody2D>();
-      
+        col = GetComponent<Collider2D>();
     }
     public void TakeDamage()                     // Se llama este script desde Bullet
     {
@@ -33,12 +34,14 @@ public class EnemyMery : MonoBehaviour           // Script general para todos lo
 
     void Die()                                   
     {
-        anim.SetBool("Dead", true);              // Setea el bool Dead a true
-        speed = 0f;                             // coge la velocidad
-        Destroy(this.gameObject, 1.5f);
+        anim.SetBool("Dead", true);                               // Setea el bool Dead a true
+        speed = 0f;                                               // El enemigo dejarà de moverse al morir
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;   // Esto evita que el enemigo caiga del escenario al perder la colisión
+        Destroy(this.col);                                        // Destruye el collider
+        Destroy(this.gameObject, 2f);                             // Destruye el enemigo después del tiempo establecido 
     }
     private void SetBoolBack()
     {
-        anim.SetBool("isHurt", false);
+        anim.SetBool("isHurt", false);           // Vuelve a poner el bool en falso
     }
 }

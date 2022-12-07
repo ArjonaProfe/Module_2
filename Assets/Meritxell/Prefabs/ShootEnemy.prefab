@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661252018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.62, y: -0.3, z: 0}
+  m_LocalPosition: {x: -0.62, y: -0.4, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 542044226553466600}
   - component: {fileID: 542044226553466603}
   - component: {fileID: 6655215182029225158}
-  - component: {fileID: 2251201717678698099}
   - component: {fileID: 2251201717678698098}
+  - component: {fileID: 2251201717678698099}
   - component: {fileID: 6892379393028536942}
   m_Layer: 0
   m_Name: ShootEnemy
@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 542044226553466602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.39, y: -0.5, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5704130899131785164}
@@ -192,6 +192,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2251201717678698098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542044226553466602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571d4428b04d67f40b75ff9a8f859e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  anim: {fileID: 6655215182029225158}
+  rb: {fileID: 542044226553466600}
+  col: {fileID: 542044226553466603}
+  speed: 5
 --- !u!114 &2251201717678698099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,22 +225,6 @@ MonoBehaviour:
   rayOriginL: {fileID: 1661252019}
   target: {fileID: 0}
   isAttacking: 0
---- !u!114 &2251201717678698098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542044226553466602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 571d4428b04d67f40b75ff9a8f859e93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  anim: {fileID: 6655215182029225158}
-  rb: {fileID: 542044226553466600}
-  speed: 5
 --- !u!114 &6892379393028536942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +240,7 @@ MonoBehaviour:
   firePoint: {fileID: 1427632112008966237}
   firePointL: {fileID: 5704130899131785164}
   bulletPrefab: {fileID: 7404300312449711289, guid: fe13c3902a3542045a3678b75545da9a, type: 3}
-  fireRate: 1
+  fireRate: 2
   nextFire: 0
   isFlipped: 0
 --- !u!1 &2768272825051423333
@@ -297,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4455634014064664231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.4, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []

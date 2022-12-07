@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationPlayerMery : MonoBehaviour
+public class AnimationPlayerMery : MonoBehaviour      // Script que controla la mayoria de animaciones del player
 {
     // private referencia que solo se usará esta información internamente en el GameObject, public permite otros elementos interactuar
     private Animator anim;            //  Animator se abreviará como anim y se asigna al Animator del objeto al que se asocie
