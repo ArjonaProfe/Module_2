@@ -14,6 +14,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     public float jump;                  // potencia de salto
     public bool isGrounded;             // tocar el suelo 
     public bool isShooting;             // si está disparando
+    public bool isDucking;
 
     private float xMovement;            // guarda el Axis X (horizontal)
 
@@ -29,6 +30,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
         PlayerMovement();   // Funciones (a definir en voids)
         IsGrounded();
         IsShooting();
+        IsDucking();
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)    // If pulsa 'Jump' y la variable 'isGrounded' es true
         {
@@ -70,6 +72,27 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
         else
         {
             isShooting = false;
+        }
+    }
+
+    void IsDucking()
+    {
+        if(isDucking == false)
+        {
+            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.3f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.15f);
+        }
+
+
+        if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            isDucking = true;
+            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.18f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.09f);
+        }
+        else
+        {
+            isDucking = false;
         }
     }
 }

@@ -11,6 +11,7 @@ public class AnimationPlayerMery : MonoBehaviour      // Script que controla la 
     private PlayerMovementMery pm;    //  Referencia al script PlayerMovement
    
     public bool isShooting;           // Para interactuar con el bool 
+    public bool isDucking;
 
     private void Start()
 
@@ -43,16 +44,8 @@ public class AnimationPlayerMery : MonoBehaviour      // Script que controla la 
         }
 
         anim.SetBool("isShooting", pm.isShooting);              // Detecta si el personaje está disparando en pm
-        {
-            if (Input.GetButton("Fire1") == true)              // Input (GetButton es constante mientras se pulse, GetButtonDown solo funciona una vez)
-            {
-                isShooting = true;
-            }
-            else
-            {
-                isShooting = false;
-            }
-        }
-        
+
+        anim.SetBool("isDucking", pm.isDucking);              // Detecta si el personaje está disparando en pm
+
     }
 }

@@ -9,6 +9,8 @@ public class PlayerLivesMery : MonoBehaviour     // Script que controla que ocur
     private static Rigidbody2D rb;         
     private static Animator anim;
 
+    public string resetScene;
+
     public static float deathJump = 10;         // Salto físico al morir
 
     public int lives;                           // Las vidas se cogen del contador
@@ -38,7 +40,7 @@ public class PlayerLivesMery : MonoBehaviour     // Script que controla que ocur
         anim.SetBool("isHurt", true);                  // Setea el bool isHurt a verdadero
         rb.velocity = new Vector2(0, deathJump);       // Vector2 que no afecta x pero causará el valor de hurtJump en x sobre el RB
         col.enabled = false;                           // Desactiva el collider del personaje
-
+        CollectibleCounterMery.collected = 0;
 
         HealthCounterMery.lives = HealthCounterMery.lives - 1;     // Se resta una vida  directamente del contador
     }
@@ -48,7 +50,7 @@ public class PlayerLivesMery : MonoBehaviour     // Script que controla que ocur
         timer = timer - 1 * Time.deltaTime;             // Se resta 1 unidad cada segundo en tiempo real (deltaTime) al valor asignado a timer
         if (timer < 0)                                  // Si el resultado baja de cero
         {
-            SceneManager.LoadScene("sandboxMery");      // Se carga la scena (nota: el nombre puede cambiarse por una public string, por ejemplo SceneName, para diferenciar niveles)
+            SceneManager.LoadScene(resetScene);      // Se carga la scena (nota: el nombre puede cambiarse por una public string, por ejemplo SceneName, para diferenciar niveles)
             HealthCounterMery.ResetHealth();            // Se llama la función ResetHealth en el contador
         }
         

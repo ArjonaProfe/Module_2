@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 6390241170863093529}
   - component: {fileID: 4784293397480462299}
   - component: {fileID: 1157110890}
+  - component: {fileID: 1394239377}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -278,9 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f280761fe58b246a22b2c62fce6432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  healthPoints: 100
-  deathJump: 10
+  healthPoints: 5
   hurtJump: 15
 --- !u!114 &1157110890
 MonoBehaviour:
@@ -302,6 +301,20 @@ MonoBehaviour:
   fireRate: 0.5
   nextFire: 0
   isFlipped: 0
+--- !u!114 &1394239377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041530983711444829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbe8c09bb8cdb0459e69f82225801d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 0
+  timer: 1
 --- !u!1 &3415495194767960716
 GameObject:
   m_ObjectHideFlags: 0

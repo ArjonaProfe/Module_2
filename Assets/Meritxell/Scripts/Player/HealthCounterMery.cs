@@ -17,9 +17,8 @@ public class HealthCounterMery : MonoBehaviour     // Script contador con los pu
     
     public static void ResetLives()     // Función llamada al perder todas las vidas y mandar al jugador al Game Over
     {
-        if (lives == 0)         // "
-        {
+        
             lives = 3;
-        }
+        
     }
 }
