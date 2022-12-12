@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletMery : MonoBehaviour           // Script de las balas que dispara el personaje
 {
     public float speed = 5f;          // Velocidad de la bala
-    public int damage = 40;           // Daño que causa la bala
+    public int damage = 1;           // Daño que causa la bala
 
     public Rigidbody2D rb;         
 

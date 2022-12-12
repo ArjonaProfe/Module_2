@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyMery : MonoBehaviour           // Script general para todos los enemigos
 {
     public int health;                          // Puntos de salud
-    public Animator anim;                       // Animator para las animaciones de daño y muerte
-    public Rigidbody2D rb;                      // Para la interación con otros scripts funcione bien
-    public Collider2D col;                      // Para que enemigos derrotados no tengan colisión
+    private Animator anim;                       // Animator para las animaciones de daño y muerte
+    private Rigidbody2D rb;                      // Para la interación con otros scripts funcione bien
+    private Collider2D col;                      // Para que enemigos derrotados no tengan colisión
 
     public float speed = 5f;                    // Velocidad del enemigo
 
@@ -21,7 +21,7 @@ public class EnemyMery : MonoBehaviour           // Script general para todos lo
     {
         if (health > 0)                          // Si los puntos de salud son mayor que zero
         {
-        DamageAndCureMery.damage = 40;           // Se coge el int de DamageandCure
+        DamageAndCureMery.damage = 1;           // Se coge el int de DamageandCure
         health -= DamageAndCureMery.damage;      // restar el daño a la salud
         anim.SetBool("isHurt", true);            // Se setea el bool isHurt a verdaderp
         Invoke("SetBoolBack", 0.5f);             // Se llama la función tras el tiempo establecido

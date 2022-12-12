@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3ffc17156c7dd42b46c8916a66a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 4627819217204401293, guid: 878b4aa129acd5443a3e073767695d1d, type: 3}
   damping: 1
   maxPosition: {x: 200, y: 100}
   minPosition: {x: -200, y: -100}

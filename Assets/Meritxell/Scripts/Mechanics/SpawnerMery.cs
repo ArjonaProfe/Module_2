@@ -18,9 +18,9 @@ public class SpawnerMery : MonoBehaviour
 
     void Update()
     {
-            if (sceneName == "Level1Mery")       
+            if (sceneName == "Level1Mery" && GameObject.FindGameObjectsWithTag("Player") == null)       
             {
-              Instantiate(player, levelSpawner);
+              Instantiate(player, levelSpawner.position, levelSpawner.rotation);
             }
         
     }

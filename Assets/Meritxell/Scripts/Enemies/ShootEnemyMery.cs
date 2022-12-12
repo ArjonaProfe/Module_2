@@ -55,7 +55,7 @@ public class ShootEnemyMery : MonoBehaviour        // Script para el enemigo que
         if (rayL.collider != null && (rayL.collider.CompareTag("Player")))
         {
                 isAttacking = true;
-                Debug.Log("IsHitting");
+                
         }
         else if (ray.collider != null && ray.collider.CompareTag("Player"))
         {
@@ -64,7 +64,7 @@ public class ShootEnemyMery : MonoBehaviour        // Script para el enemigo que
         else
         {
                 isAttacking = false;
-            Debug.Log("isNotHitting");
+            
         }
 
     }
