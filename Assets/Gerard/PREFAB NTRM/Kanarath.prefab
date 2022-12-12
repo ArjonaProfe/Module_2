@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 405484086301921248}
   - component: {fileID: 254226791935948457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: COLLIDER
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.23}
   m_SpriteTilingProperty:
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8719455754967299211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NinjaStarRight
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 147989396942207820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NinjaStarLeft
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 2927444074113235151}
   - component: {fileID: 8295379430902813923}
   - component: {fileID: 8295379430902813924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kanarath
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -370,10 +370,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoomerangShoot: {fileID: 3504590504136751690, guid: 32d490a838c3a7a439f58de1129d09b5, type: 3}
-  waypointRight: {fileID: 0}
-  waypointLeft: {fileID: 0}
-  anim: {fileID: 0}
-  sr: {fileID: 0}
+  waypointRight: {fileID: 8719455754967299211}
+  waypointLeft: {fileID: 147989396942207820}
+  anim: {fileID: 8295379430455593624}
+  sr: {fileID: 8295379430455593625}
   boomerangRate: 5
   nextBoomerang: 0
   isFlipped: 0
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 8295379431402873631}
   - component: {fileID: 8295379431402873601}
   - component: {fileID: 8295379431402873600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackTrigger
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8295379431924771824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundedDirection
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}

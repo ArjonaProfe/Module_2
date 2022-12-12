@@ -10,6 +10,8 @@ public class ScoreManagerGerard : MonoBehaviour
     public Text highscoreText;
     public Text minusscoreText;
 
+    private int minusScoreHolder;
+
     public int score = 0;
     public int highscore = 0;
     public int minusScore = 0;
@@ -26,7 +28,7 @@ public class ScoreManagerGerard : MonoBehaviour
  
     void Update()
     {
-        score = score + minusScore;
+
         scoreText.text = "Actual Score:\n"  + score.ToString();
         minusscoreText.text = "Minus Score:\n" + minusScore.ToString();
         Debug.Log(minusScore);

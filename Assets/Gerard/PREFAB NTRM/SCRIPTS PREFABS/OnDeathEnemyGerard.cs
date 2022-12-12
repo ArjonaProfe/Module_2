@@ -14,6 +14,9 @@ public class OnDeathEnemyGerard : MonoBehaviour
     public float attacktimereseter;
     public int minuspoints;
 
+    public int numberEnemies;
+
+
     public Text life;
 
     public AnimationManager anim;
@@ -49,11 +52,10 @@ public class OnDeathEnemyGerard : MonoBehaviour
         Debug.Log(attacktime);
         if (attacktime < 0)
         {
-            Debug.Log(attacking);
+
             attacking = true;
             an.SetBool("Attack", attacking);
             attacktime = attacktimereseter;
-            Debug.Log(attacking);
         }
     }
 
@@ -65,7 +67,10 @@ public class OnDeathEnemyGerard : MonoBehaviour
 
     void MinusPoints()
     {
+        smg = FindObjectOfType<ScoreManagerGerard>();
         smg.minusScore = smg.minusScore + minuspoints;
+        smg.score = smg.score + minuspoints;
+        Debug.Log(minuspoints);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,7 +81,7 @@ public class OnDeathEnemyGerard : MonoBehaviour
         }
 
 
-        else if (other.tag == "PlayerAttack")
+        if (other.tag == "PlayerAttack")
         {
 
             GotHit();

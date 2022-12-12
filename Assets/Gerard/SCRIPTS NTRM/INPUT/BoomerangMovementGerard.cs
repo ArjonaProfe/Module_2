@@ -8,7 +8,7 @@ public class BoomerangMovementGerard : MonoBehaviour
     private float timertocome = 0.5f;                   // asignamos un valor a timertocome para poder hacer que el boomerang nos vuelva al llegar a 0 el contador.  
     private SpriteRenderer thisSr;                      //  se asigna el componente "spriteRenderer" a thisSr.
     public Rigidbody2D rb;                              // se asigna el componente "X" a rb.
-    public int damage = 10;
+
 
 
 
@@ -32,16 +32,6 @@ public class BoomerangMovementGerard : MonoBehaviour
     }
 
 
-    /*
-    void OnTriggerEnter2D(Collider2D hitInfo)                                   
-    {
-        EnemyGerard enemy = hitInfo.GetComponent<EnemyGerard>();                   // Coger el script de enemy
-        if (enemy != null)                                                    // si enemy no es null (encuentra un enemigo)
-        {
-            enemy.TakeDamage(damage);                                        // coge el int damage para determinar el daño
-        }
 
-    }
-*/
 
 }
