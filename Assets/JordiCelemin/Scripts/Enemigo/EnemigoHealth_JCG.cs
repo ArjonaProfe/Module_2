@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemigoHealth_JCG : MonoBehaviour
 {
-    Enemigo_JCG enemy;
+    Enemy_JCG enemy;
 
     public void Start()
     {
-        enemy = GetComponent<Enemigo_JCG>();
+        enemy = GetComponent<Enemy_JCG>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

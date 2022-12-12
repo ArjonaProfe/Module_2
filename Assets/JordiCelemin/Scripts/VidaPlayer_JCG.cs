@@ -39,4 +39,14 @@ public class VidaPlayer_JCG : MonoBehaviour
         }
         
     }   
+    public int GetHearts()
+    {
+        return hearts.Length;
+    }
+    public void SetHealth(int playerHealth)
+    {
+        life = playerHealth;
+        TakeDamage(0);
+        
+    }
 }

@@ -8,6 +8,9 @@ TagManager:
   - PlayerAttack
   - Goal
   - Ground
+  - Bala
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemigo_JCG : MonoBehaviour
+public class Enemy_JCG : MonoBehaviour
 {
+
     public string Enemigo_JCGName;
     public float healthPoints;
     private Rigidbody2D rb;
@@ -15,11 +16,9 @@ public class Enemigo_JCG : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-
-       
-
-
+        
     }
 }
