@@ -21,7 +21,7 @@ public class PlayerControlOscar : MonoBehaviour
     //Detections
     public Transform GroundPoint, HangPoint1, HangPoint2;
     public bool Grounded, HangAbal, Hangging;
-    public LayerMask IsGround, IsTrueGround, IsLader;
+    public LayerMask IsGround, IsTrueGround, IsLader, Bouncer;
 
     public Transform CanonPoint;
     public float AtkRadius;
@@ -65,7 +65,7 @@ public class PlayerControlOscar : MonoBehaviour
         }
         else { Anim.SetBool("Running", false); }
 
-        //Ground detection and jump
+        //Ground detection, jump
         Grounded = Physics2D.OverlapCircle(GroundPoint.position, 0.05f, IsGround);
         Anim.SetBool("Grounded", Grounded);
         if ((Input.GetButtonDown("Jump") || MoveY > 0) && Grounded == true)

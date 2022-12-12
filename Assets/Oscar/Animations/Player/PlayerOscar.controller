@@ -875,7 +875,8 @@ AnimatorState:
   - {fileID: -9142243829939316664}
   - {fileID: -731777496694048356}
   - {fileID: -4481096421302925352}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 5093748735423308609}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1386,6 +1387,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
+  RB2D: {fileID: 0}
+  GroundPoint: {fileID: 0}
+  BigBounce: 35
+  Bouncer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!1102 &1386251276790041962
 AnimatorState:
   serializedVersion: 6
@@ -1658,6 +1665,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0
+  RB2D: {fileID: 0}
+  GroundPoint: {fileID: 0}
+  BigBounce: 0
+  Bouncer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1101 &4373392578265475759
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1731,6 +1744,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1.5
+  RB2D: {fileID: 0}
+  GroundPoint: {fileID: 0}
+  BigBounce: 35
+  Bouncer:
+    serializedVersion: 2
+    m_Bits: 32768
+--- !u!114 &5093748735423308609
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ec8e8317f9afb4eb852df522833037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RB2D: {fileID: 0}
+  GroundPoint: {fileID: 0}
+  BigBounce: 35
+  Bouncer:
+    serializedVersion: 2
+    m_Bits: 32768
+--- !u!114 &5385180108139904705
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ec8e8317f9afb4eb852df522833037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RB2D: {fileID: 0}
+  GroundPoint: {fileID: 0}
+  BigBounce: 35
+  Bouncer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!1102 &5785446893520782761
 AnimatorState:
   serializedVersion: 6
@@ -1746,7 +1801,8 @@ AnimatorState:
   - {fileID: -7260806034004140471}
   - {fileID: 6959425890704816311}
   - {fileID: -7233682406882806370}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 5385180108139904705}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

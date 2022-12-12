@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRunAnimOscar : StateMachineBehaviour
+public class PlayerIdleAnim : StateMachineBehaviour
 {
-    public float Speed;
     public Rigidbody2D RB2D;
     public Transform GroundPoint;
     public float BigBounce;
@@ -20,9 +19,6 @@ public class PlayerRunAnimOscar : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Running
-        animator.transform.position += new Vector3(animator.transform.localScale.x, 0, 0) * Speed * Time.deltaTime;
-
         //Detecting if it has steppet on a bouncer
         Collider2D[] Bouncy = Physics2D.OverlapCircleAll(GroundPoint.position, 0.3f, Bouncer);
         if (Bouncy.Length != 0 && RB2D.velocity.y >= 0)

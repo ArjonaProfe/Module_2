@@ -35,7 +35,8 @@ public class BulletOscar : MonoBehaviour
 
         if (collision.GetComponent<BulletOscar>() != null && collision.GetComponent<BulletOscar>().MyFaction != MyFaction)
         {
-            Destroy(gameObject);
+            Power -= collision.GetComponent<BulletOscar>().Power;
+            if(Power < 0) { Destroy(gameObject); }
         }
 
         if (collision.GetComponent<HitGizmoOscar>() != null)

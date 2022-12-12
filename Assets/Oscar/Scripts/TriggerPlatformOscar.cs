@@ -6,7 +6,7 @@ public class TriggerPlatformOscar : MonoBehaviour
 {
     public Vector3 Pos1, Pos2;
     public int ThingsOn;
-    public float Timer, Percent, PosDist;
+    public float Goal, Timer, Percent, PosDist;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +22,12 @@ public class TriggerPlatformOscar : MonoBehaviour
 
         if (ThingsOn > 0 && transform.position != Pos2)
         {
-            Timer += Time.deltaTime;
+            Timer += Time.deltaTime / Goal;
             transform.position = Vector3.Lerp(Pos1, Pos2, Timer);
         }
         else if (ThingsOn == 0 && transform.position != Pos1)
         {
-            Timer -= Time.deltaTime;
+            Timer -= Time.deltaTime / Goal;
             transform.position = Vector3.Lerp(Pos2, Pos1, 1 - Timer);
         }
         //else { Timer = 0; }
@@ -35,10 +35,12 @@ public class TriggerPlatformOscar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        collision.transform.SetParent(transform);
         ThingsOn += 1;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        collision.transform.SetParent(null);
         ThingsOn -= 1;
     }
 }
