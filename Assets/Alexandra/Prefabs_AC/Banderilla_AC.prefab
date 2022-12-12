@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 5750113438061995750}
   - component: {fileID: 6618069299317246665}
   - component: {fileID: 186506047191909132}
+  - component: {fileID: 3233652033943619987}
   m_Layer: 0
   m_Name: Banderilla_AC
   m_TagString: Untagged
@@ -277,6 +278,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Respawn: 1
+--- !u!114 &3233652033943619987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350092509048257617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39f7bd4f3eec2d489ec6fa63d02b09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2991427213301786183
 GameObject:
   m_ObjectHideFlags: 0
