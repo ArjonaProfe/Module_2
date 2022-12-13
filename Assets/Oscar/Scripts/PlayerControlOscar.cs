@@ -152,9 +152,8 @@ public class PlayerControlOscar : MonoBehaviour
 
         if (transform.position.y < -20)
         {
-            RB2D.velocity = new Vector3(0, 0, 0);
-            transform.position = PosToReturn;
-            LifeMan.TakeDamage(10, false);
+            ReturnToPos();
+            LifeMan.TakeDamage(10, LifeNStatusOscar.DmgType.Weak);
         }
 
     }
@@ -168,7 +167,7 @@ public class PlayerControlOscar : MonoBehaviour
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
             {
-                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, false);
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, LifeNStatusOscar.DmgType.Weak);
             }
         }
         for (int i = 0; i < Gizmos.Length; i++)
@@ -186,7 +185,7 @@ public class PlayerControlOscar : MonoBehaviour
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
             {
-                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(CharMeleeDmg, true);
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(CharMeleeDmg, LifeNStatusOscar.DmgType.Strong);
             }
         }
         for (int i = 0; i < Gizmos.Length; i++)
@@ -204,7 +203,7 @@ public class PlayerControlOscar : MonoBehaviour
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
             {
-                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage((int)((float)MeleeDmg * 1.5f), false);
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage((int)((float)MeleeDmg * 1.5f), LifeNStatusOscar.DmgType.Weak);
             }
         }
         for (int i = 0; i < Gizmos.Length; i++)
@@ -250,10 +249,17 @@ public class PlayerControlOscar : MonoBehaviour
         }
     }
 
+    //Return to last safe pos
+    public void ReturnToPos()
+    {
+        RB2D.velocity = new Vector3(0, 0, 0);
+        transform.position = PosToReturn;
+    }
+
     //Death
     public void PlayerDeath()
     {
-        LvMan.GoToScene(43);
+        LvMan.GoToScene(42);
     }
 
     //Grafics for visualization

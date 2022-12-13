@@ -22,7 +22,11 @@ public class TouchHazardOscar : MonoBehaviour
     {
         if(collision.GetComponent<LifeNStatusOscar>() != null)
         {
-            collision.GetComponent<LifeNStatusOscar>().TakeDamage(Damage, false);
+            collision.GetComponent<LifeNStatusOscar>().TakeDamage(Damage, LifeNStatusOscar.DmgType.Weak);
+            if(collision.GetComponent<PlayerControlOscar>() != null)
+            {
+                collision.GetComponent<PlayerControlOscar>().ReturnToPos();
+            }
         }
     }
 }

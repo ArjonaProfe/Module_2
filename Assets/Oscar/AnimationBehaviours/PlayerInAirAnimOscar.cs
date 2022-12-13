@@ -32,7 +32,7 @@ public class PlayerInAirAnimOscar : StateMachineBehaviour
         {
             for (int i = 0; i < Pounded.Length; i++)
             {
-                Pounded[i].GetComponent<LifeNStatusOscar>().TakeDamage(5, true);
+                Pounded[i].GetComponent<LifeNStatusOscar>().TakeDamage(5, LifeNStatusOscar.DmgType.Weak);
             }
             //Jumping after impact
             animator.SetBool("GroundPound", false);

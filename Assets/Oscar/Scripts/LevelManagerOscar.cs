@@ -39,7 +39,7 @@ public class LevelManagerOscar : MonoBehaviour
         }
         
         //To menu if player dies
-        if(Player == null) { GoToScene(43); }
+        if(Player == null) { GoToScene(42); }
     }
 
     public void GoToScene(int ID)
@@ -50,7 +50,7 @@ public class LevelManagerOscar : MonoBehaviour
     public void LevelClear()
     {
         LvStats[SceneID].LvClear = true;
-        SceneManager.LoadScene(43);
+        SceneManager.LoadScene(42);
     }
 
     public void CollectGem(int ID)

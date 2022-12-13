@@ -59,7 +59,8 @@ MonoBehaviour:
   MaxLife: 600
   StunBuild: 0
   StunGoal: 120
-  Shield: 0
+  Shield: 1
+  ExpShield: 0
   JustHurted: 0
   Anim: {fileID: 2874336367718436999}
 --- !u!114 &2874336367718437051

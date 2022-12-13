@@ -6,7 +6,7 @@ public class BulletOscar : MonoBehaviour
 {
     public int Power;
     public float Speed, Lifetime;
-    public bool Potent;
+    public LifeNStatusOscar.DmgType Potency;
     public LifeNStatusOscar.Faction MyFaction;
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class BulletOscar : MonoBehaviour
     {
         if(collision.GetComponent<LifeNStatusOscar>() != null && collision.GetComponent<LifeNStatusOscar>().MyFaction != MyFaction)
         {
-            collision.GetComponent<LifeNStatusOscar>().TakeDamage(Power, Potent);
+            collision.GetComponent<LifeNStatusOscar>().TakeDamage(Power, Potency);
             Destroy(gameObject);
         }
 

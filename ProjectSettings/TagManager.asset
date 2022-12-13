@@ -11,6 +11,12 @@ TagManager:
   - Bala
   - Key
   - Door
+  - Enemy1
+  - Suelo_pozo
+  - Particulas
+  - Destructible_Object
+  - Lava
+  - Objeto_a_recoger
   layers:
   - Default
   - TransparentFX
@@ -36,7 +42,7 @@ TagManager:
   - Hazards
   - Goal
   - Interactables
-  - 
+  - Camera
   - 
   - 
   - 

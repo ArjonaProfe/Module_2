@@ -106,7 +106,7 @@ public class EnemyControlOscar : MonoBehaviour
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
             {
-                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, false);
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, LifeNStatusOscar.DmgType.Weak);
             }
         }
         ActTimer = 0;
@@ -157,7 +157,7 @@ public class EnemyControlOscar : MonoBehaviour
         {
             if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
             {
-                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, false);
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(MeleeDmg, LifeNStatusOscar.DmgType.Weak);
             }
         }
         ActTimer = 0;

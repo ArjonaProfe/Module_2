@@ -39,7 +39,7 @@ public class EnemyDmgDashOscar : StateMachineBehaviour
                 {
                     if (EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().MyFaction != LifeMan.MyFaction)
                     {
-                        EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(Damage, true);
+                        EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(Damage, LifeNStatusOscar.DmgType.Strong);
                         if (EnemiesToDamage[i].GetComponent<Rigidbody2D>() != null)
                         {
                             Vector3 Dir = new Vector3(1, 1, 1);

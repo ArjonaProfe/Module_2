@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7046250767220797359}
   - component: {fileID: 8599006852950858209}
   - component: {fileID: 5157027931230161116}
+  - component: {fileID: 2570833849015665789}
   m_Layer: 11
   m_Name: Plataforma Reactiva
   m_TagString: Ground
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8599006852950858211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 8.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 917371534, guid: 1f63314ab816b984e863a5e1c4440fb2, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.22655034, a: 1}
+  m_Sprite: {fileID: -1538102031, guid: 1f63314ab816b984e863a5e1c4440fb2, type: 3}
+  m_Color: {r: 0, g: 0.4509804, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -106,6 +107,7 @@ MonoBehaviour:
   Timer: 0
   Percent: 0
   PosDist: 0
+  Anim: {fileID: 2570833849015665789}
 --- !u!61 &8599006852950858209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,3 +160,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.1}
   m_EdgeRadius: 0
+--- !u!95 &2570833849015665789
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599006852950858211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dffb3b406490dcf43847faa919fa8e59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

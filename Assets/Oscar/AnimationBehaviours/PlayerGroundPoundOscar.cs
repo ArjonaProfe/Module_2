@@ -33,7 +33,7 @@ public class PlayerGroundPoundOscar : StateMachineBehaviour
         {
             for (int i = 0; i < Pounded.Length; i++)
             {
-                Pounded[i].GetComponent<LifeNStatusOscar>().TakeDamage(Power, true);
+                Pounded[i].GetComponent<LifeNStatusOscar>().TakeDamage(Power, LifeNStatusOscar.DmgType.Strong);
             }
             //Jumping after impact
             animator.SetBool("GroundPound", false);

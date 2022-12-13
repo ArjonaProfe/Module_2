@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabItemOscar : MonoBehaviour
 {
-    public enum GrabType { Barrel, Bomb, Key, VillainKey, PrincessKey}
+    public enum GrabType { Barrel, Bomb, Key, VillainKey, PrincessKey, Weight}
     public GrabType MyType;
     public Rigidbody2D RB2D;
     public LayerMask IsEnemy, IsGizmo;
@@ -55,7 +55,7 @@ public class GrabItemOscar : MonoBehaviour
             Collider2D[] Gizmos = Physics2D.OverlapCircleAll(transform.position, BarrelRadius, IsGizmo);
             for (int i = 0; i < EnemiesToDamage.Length; i++)
             {
-                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(BarrelDmg, false);
+                EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(BarrelDmg, LifeNStatusOscar.DmgType.Strong);
             }
             for (int i = 0; i < Gizmos.Length; i++)
             {
@@ -76,13 +76,21 @@ public class GrabItemOscar : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<TouchHazardOscar>() != null)
+        {
+            transform.position = StartPos; RB2D.velocity = new Vector2(0, 0);
+        }
+    }
+
     public void Explode()
     {
         Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(transform.position, BombRadius, IsEnemy);
         Collider2D[] Gizmos = Physics2D.OverlapCircleAll(transform.position, BombRadius, IsGizmo);
         for (int i = 0; i < EnemiesToDamage.Length; i++)
         {
-            EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(BombDmg, true);
+            EnemiesToDamage[i].GetComponent<LifeNStatusOscar>().TakeDamage(BombDmg, LifeNStatusOscar.DmgType.Explosive);
         }
         for (int i = 0; i < Gizmos.Length; i++)
         {

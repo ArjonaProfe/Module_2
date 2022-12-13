@@ -7,8 +7,9 @@ public class LifeNStatusOscar : MonoBehaviour
     public enum Faction { Hero, Neutral, Villain }
     public Faction MyFaction;
     public int Life, MaxLife, StunBuild, StunGoal;
-    public bool Shield, JustHurted;
+    public bool Shield, ExpShield, JustHurted;
     public Animator Anim;
+    public enum DmgType { Weak, Strong, Explosive, Fire }
 
     // Start is called before the first frame update
     void Start()
@@ -26,48 +27,113 @@ public class LifeNStatusOscar : MonoBehaviour
             else { Death(); }
         }
 
-        if (Input.GetKeyDown(KeyCode.H)) { TakeDamage(10, false); }
+        if (Input.GetKeyDown(KeyCode.H)) { TakeDamage(10, DmgType.Weak); }
     }
 
-    public void TakeDamage(int Dmg, bool Potent)
+    public void TakeDamage(int Dmg, DmgType Type)
     {
-        if(Shield == true)
+        switch (Type)
         {
-            if(Potent == true)
-            {
-                Life -= Dmg;
-                Shield = false;
-                if(Anim != null)
+            case DmgType.Weak:
+                if(Shield == false && ExpShield == false)
                 {
-                    StunBuild += (int)((float)Dmg * 1.5f);
-                    if(StunBuild >= StunGoal)
+                    Life -= Dmg;
+                    if (Anim != null)
                     {
-                        Anim.SetTrigger("Hurt");
-                        StunBuild = 0;
+                        StunBuild += Dmg;
+                        if (StunBuild >= StunGoal)
+                        {
+                            Anim.SetTrigger("Hurt");
+                            StunBuild = 0;
+                        }
+                    }
+                    JustHurted = true;
+                }
+                break;
+            case DmgType.Strong:
+                if(ExpShield == false)
+                {
+                    if (Shield == true)
+                    {
+                        Life -= Dmg;
+                        Shield = false;
+                        if (Anim != null)
+                        {
+                            StunBuild += Dmg;
+                            if (StunBuild >= StunGoal)
+                            {
+                                Anim.SetTrigger("Hurt");
+                                StunBuild = 0;
+                            }
+                        }
+                        JustHurted = true;
+                    }
+                    else
+                    {
+                        Life -= Dmg;
+                        if (Anim != null)
+                        {
+                            StunBuild += Dmg;
+                            if (StunBuild >= StunGoal)
+                            {
+                                Anim.SetTrigger("Hurt");
+                                StunBuild = 0;
+                            }
+                        }
+                        JustHurted = true;
                     }
                 }
-                JustHurted = true;
-            }
-            else
-            {
-                //not damage
-                if (Anim != null) { Anim.SetTrigger("Hurt"); }
-                JustHurted = true;
-            }
-        }
-        else
-        {
-            Life -= Dmg;
-            if (Anim != null)
-            {
-                StunBuild += Dmg;
-                if (StunBuild >= StunGoal)
+                break;
+            case DmgType.Explosive:
+                if (ExpShield == true)
                 {
-                    Anim.SetTrigger("Hurt");
-                    StunBuild = 0;
+                    Life -= Dmg;
+                    ExpShield = false;
+                    Shield = false;
+                    if (Anim != null)
+                    {
+                        StunBuild += Dmg;
+                        if (StunBuild >= StunGoal)
+                        {
+                            Anim.SetTrigger("Hurt");
+                            StunBuild = 0;
+                        }
+                    }
+                    JustHurted = true;
                 }
-            }
-            JustHurted = true;
+                else
+                {
+                    Life -= Dmg;
+                    if (Anim != null)
+                    {
+                        StunBuild += Dmg;
+                        if (StunBuild >= StunGoal)
+                        {
+                            Anim.SetTrigger("Hurt");
+                            StunBuild = 0;
+                        }
+                    }
+                    JustHurted = true;
+                }
+                break;
+            case DmgType.Fire:
+                if (Shield == false && ExpShield == false)
+                {
+                    Life -= Dmg;
+                    if (Anim != null)
+                    {
+                        StunBuild += Dmg;
+                        if (StunBuild >= StunGoal)
+                        {
+                            Anim.SetTrigger("Hurt");
+                            StunBuild = 0;
+                        }
+                    }
+                    JustHurted = true;
+                }
+                break;
+            default:
+                break;
         }
     }
 
