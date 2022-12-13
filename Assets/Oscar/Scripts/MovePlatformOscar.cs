@@ -48,6 +48,9 @@ public class MovePlatformOscar : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        collision.transform.SetParent(null);
+        if (collision.transform.parent == transform)
+        {
+            collision.transform.SetParent(null);
+        }
     }
 }
