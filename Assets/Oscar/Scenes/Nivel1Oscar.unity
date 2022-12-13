@@ -15654,6 +15654,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cam mod
       objectReference: {fileID: 0}
+    - target: {fileID: 7384309036553746775, guid: e2f8af00971ec584faa050a2f8d55c3f, type: 3}
+      propertyPath: m_Size.x
+      value: 86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384309036553746775, guid: e2f8af00971ec584faa050a2f8d55c3f, type: 3}
+      propertyPath: m_Size.y
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f8af00971ec584faa050a2f8d55c3f, type: 3}
 --- !u!1001 &7500868073202521580
@@ -15663,6 +15671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6499627043798321683, guid: 0d69cf5675f64694084b18afde455f01, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7500868071352175171, guid: 0d69cf5675f64694084b18afde455f01, type: 3}
       propertyPath: m_Name
       value: Canvas
