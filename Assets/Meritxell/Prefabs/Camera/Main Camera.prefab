@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7421761742492933705}
   - component: {fileID: 7421761742492933706}
   - component: {fileID: 7421761742492933704}
+  - component: {fileID: -4365607946270839398}
   - component: {fileID: 7421761742492933707}
   m_Layer: 0
   m_Name: Main Camera
@@ -121,10 +122,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3ffc17156c7dd42b46c8916a66a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4627819217204401293, guid: 878b4aa129acd5443a3e073767695d1d, type: 3}
+  target: {fileID: 0}
   damping: 1
-  maxPosition: {x: 200, y: 100}
-  minPosition: {x: -200, y: -100}
+  maxPosition: {x: 353, y: 100}
+  minPosition: {x: 20, y: -11}
+--- !u!114 &-4365607946270839398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7421761742492933708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b93e8114d145f3489f73db26eb54cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam1: {fileID: 7421761742492933706}
+  cam2: {fileID: 0}
 --- !u!81 &7421761742492933707
 AudioListener:
   m_ObjectHideFlags: 0

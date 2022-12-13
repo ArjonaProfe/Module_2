@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovementMery : MonoBehaviour     // Script asignado a los controles del jugador
 {
     // private referencia que solo se usará esta información internamente en el script; public is que utilizará elementos externos
-    private Rigidbody2D rb;             // 'rigidbody2D'
+    private static Rigidbody2D rb;             // 'rigidbody2D'
     public Transform rayOrigin;         // raycast
 
 
@@ -17,7 +17,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     public bool isDucking;
 
     private float xMovement;            // guarda el Axis X (horizontal)
-
+    public static bool switchedCam;
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     {
         if (isGrounded == true)     
         {
-            rb.velocity = new Vector2(0, jump); //Salto
+            rb.velocity = new Vector2(0, jump);       //Salto
         }
     }
     void IsGrounded()
@@ -63,13 +63,13 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
             isGrounded = false;     
         }
     }
-    void IsShooting()
+    void IsShooting()                               
     {
-        if (Input.GetButton("Fire1") == true)
+        if (Input.GetButton("Fire1") == true)      // Si el input está (continuamente) presionado, entonces isShooting es true
         {
             isShooting = true;
         }
-        else
+        else                                      // Si no, es false
         {
             isShooting = false;
         }
@@ -77,23 +77,40 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
 
     void IsDucking()
     {
-        if(isDucking == false)
+        if(isDucking == false)                    // Mientras el bool isDucking es falso
         {
-            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.3f);
+            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.29f);            // El collider tiene este tamaño
             GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.15f);
         }
 
 
-        if (Input.GetAxisRaw("Vertical") < 0)
+        if (Input.GetAxisRaw("Vertical") < 0)    // Si el input vertical es menor a 0, aka estás pulsando abajo (nota: get axis raw solo reconoce 1, 0 y -1; sin float)
         {
-            isDucking = true;
-            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.18f);
-            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.09f);
+            isDucking = true;                                                        // El bool es verdadero y el collider tiene este otro tamaño
+            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.2f);   
+            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.105f);
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
         else
         {
             isDucking = false;
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
+
+    public static void MovePlayer()
+    {
+        if(CameraMery.switchedCam == true)
+        {
+            rb.transform.position = new Vector2(243, -49);
+        }
+        else if (CameraMery.switchedCam == false)
+        {
+            rb.transform.position = new Vector2(244, 2);
+        }
+
+    }
+
 }
 

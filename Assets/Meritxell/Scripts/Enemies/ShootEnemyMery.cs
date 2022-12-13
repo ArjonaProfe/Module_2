@@ -47,8 +47,8 @@ public class ShootEnemyMery : MonoBehaviour        // Script para el enemigo que
 
     void IsAttacking()                   // No vamos a setear directamente porque tenemos que poner un raycast aqui
     {   
-        RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.right, 50f);
-        RaycastHit2D rayL = Physics2D.Raycast(rayOriginL.position, Vector2.left, 50f);
+        RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.right, 10f);
+        RaycastHit2D rayL = Physics2D.Raycast(rayOriginL.position, Vector2.left, 10f);
         Debug.DrawRay(rayOriginL.position, Vector2.left, Color.green, 20f, true);
 
        
