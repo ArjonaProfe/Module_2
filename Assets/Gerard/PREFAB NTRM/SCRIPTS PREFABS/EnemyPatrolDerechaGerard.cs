@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrolGerard : MonoBehaviour
+public class EnemyPatrolDerechaGerard : MonoBehaviour
 {
 
     private Rigidbody2D rb;
@@ -40,12 +40,12 @@ public class EnemyPatrolGerard : MonoBehaviour
         if (distance < 0.5 && target == waypointA)       // Si el transform.position del enemigo es igual que el transform.position del waypoint 
         {
             target = waypointB;                             // El objetivo a perseguir se cambia al waypoint B
-            sp.flipX = true;
+            sp.flipX = false;
         }
         else if (distance < 0.5 && target == waypointB)  // Si el transform.position no encaja con el anterior pero encaja con el del waypoint B
         {
             target = waypointA;                               // El objetivo pasa a ser el waypoint A
-            sp.flipX = false;
+            sp.flipX = true;
         }
     }
 
@@ -69,9 +69,7 @@ public class EnemyPatrolGerard : MonoBehaviour
             speed = speedValue;
             timerAttackPrivate = timerAttack;
             timerSpeedPrivate = timerSpeed;
-            odeg.attacktime = odeg.attacktimereseter;
-            Debug.Log(odeg.attacktime);
-            Debug.Log(timerSpeedPrivate);
+           // odeg.attacktime = odeg.attacktimereseter;
             stopRun = false;
 
 

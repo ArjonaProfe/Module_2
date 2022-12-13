@@ -12,7 +12,7 @@ public class OnDeathEnemyGerard : MonoBehaviour
     public bool attacking;
     public bool gothit;
     public float attacktimereseter;
-    public int minuspoints;
+  //  public int minuspoints;
 
     public int numberEnemies;
 
@@ -37,7 +37,7 @@ public class OnDeathEnemyGerard : MonoBehaviour
     {
         smg = FindObjectOfType<ScoreManagerGerard>();
         smg.score = smg.score + deadpoints;
-        Debug.Log(smg.score);
+
     }
 
     void GotHit()
@@ -65,23 +65,34 @@ public class OnDeathEnemyGerard : MonoBehaviour
         an.SetBool("Dead", dead);
     }
 
+    void EnemyNumbers()
+    {
+        smg = FindObjectOfType<ScoreManagerGerard>();
+        smg.enemiesNumber = smg.enemiesNumber - 1;
+    }
+
+
+    /*
     void MinusPoints()
     {
         smg = FindObjectOfType<ScoreManagerGerard>();
         smg.minusScore = smg.minusScore + minuspoints;
         smg.score = smg.score + minuspoints;
-        Debug.Log(minuspoints);
     }
+    */
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+      
+        /*
+        if (other.CompareTag ("Player"))
         {
             MinusPoints();
         }
+        */
 
 
-        if (other.tag == "PlayerAttack")
+        if (other.CompareTag ("PlayerAttack"))
         {
 
             GotHit();
@@ -92,6 +103,7 @@ public class OnDeathEnemyGerard : MonoBehaviour
             {
                 Dead();
                 DeadPoints();
+                EnemyNumbers();
                 Destroy(gameObject, 0.7f);
 
             }
