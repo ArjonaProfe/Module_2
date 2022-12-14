@@ -7,7 +7,7 @@ public class DoorMery : MonoBehaviour
     public Camera cam1;
     public Camera cam2;
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)                                  // Preguntar por axis vertical y porque no funciona
     {
         if (other.CompareTag("Player") && Input.GetButtonDown("Fire2"))
 

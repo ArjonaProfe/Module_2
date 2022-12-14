@@ -5,10 +5,10 @@ using UnityEngine;
 public class CameraMery : MonoBehaviour
 {
     
-    public Camera cam1;
+    public Camera cam1;                     // Se asignarán las camaras
     public Camera cam2;
 
-    public static Camera mainCam;
+    public static Camera mainCam;           // Para usar OnTrigger los valores deben ser estáticos
     public static Camera secCam;
 
     public static bool switchedCam;

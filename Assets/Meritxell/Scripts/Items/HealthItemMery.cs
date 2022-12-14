@@ -16,11 +16,11 @@ public class HealthItemMery : MonoBehaviour          // Los items de cura
         cure = DamageAndCureMery.cure = 1;
     }
  
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (Partial == true)
         {
-            if (other.CompareTag("Player") && Input.GetButtonDown("Fire2") && HealthCounterMery.healthPoints! < 5)            // Si la vida es menor de 5, añade un punto
+            if (other.CompareTag("Player") && HealthCounterMery.healthPoints! < 5)            // Si la vida es menor de 5, añade un punto
             {
                 HealthCounterMery.healthPoints = HealthCounterMery.healthPoints + cure;
                 Destroy(gameObject);
@@ -29,7 +29,7 @@ public class HealthItemMery : MonoBehaviour          // Los items de cura
              
         if (Full == true)
         {
-             if (other.CompareTag("Player") && Input.GetButtonDown("Fire2") && HealthCounterMery.healthPoints != 5)           // Si la vida no es cinco, la vuelve cinco
+             if (other.CompareTag("Player")  && HealthCounterMery.healthPoints != 5)           // Si la vida no es cinco, la vuelve cinco
              {
                     HealthCounterMery.healthPoints = 5;
                     Destroy(gameObject);

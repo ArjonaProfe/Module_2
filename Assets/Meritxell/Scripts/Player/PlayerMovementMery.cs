@@ -87,19 +87,19 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
         if (Input.GetAxisRaw("Vertical") < 0)    // Si el input vertical es menor a 0, aka estás pulsando abajo (nota: get axis raw solo reconoce 1, 0 y -1; sin float)
         {
             isDucking = true;                                                        // El bool es verdadero y el collider tiene este otro tamaño
-            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.2f);   
+            GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.2f);        
             GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.105f);
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;                 // Constraints evita que el personaje pueda moverse mientras se agacha
         }
         else
         {
-            isDucking = false;
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            isDucking = false; 
+            rb.constraints = RigidbodyConstraints2D.None;                           // Es importante quitar los constraints o no podrá moverse de nuevo!
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;                 // None quitará todas las constraints incluida la rotación así que hay que volver a ponerla
         }
     }
 
-    public static void MovePlayer()
+    public static void MovePlayer()                                  // Teletransporte en las puertas. Necesitará revisión cuando haya más de un nivel (probablemente valga con detectar la scene activa)
     {
         if(CameraMery.switchedCam == true)
         {
