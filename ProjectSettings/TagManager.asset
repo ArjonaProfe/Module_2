@@ -6,17 +6,20 @@ TagManager:
   tags:
   - Enemy
   - PlayerAttack
+  - Destructible_Object
+  - Enemy1
+  - Suelo_pozo
+  - Objeto_a_recoger
+  - Fuego
+  - Particulas
+  - Lava
+  - Plat_Horizontal_1
   - Goal
   - Ground
   - Bala
   - Key
   - Door
-  - Enemy1
-  - Suelo_pozo
-  - Particulas
-  - Destructible_Object
-  - Lava
-  - Objeto_a_recoger
+  - Camera
   layers:
   - Default
   - TransparentFX
@@ -31,6 +34,7 @@ TagManager:
   - Breakable
   - MoveGround
   - HitGizmo
+  - Enemy1
   - Grabbable
   - Bullet
   - Bouncer
@@ -42,7 +46,7 @@ TagManager:
   - Hazards
   - Goal
   - Interactables
-  - Camera
+  - 
   - 
   - 
   - 
@@ -51,8 +55,26 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fondo
+    uniqueID: 1948915235
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemigos
+    uniqueID: 2718912507
+    locked: 0
+  - name: Player
+    uniqueID: 1588992807
+    locked: 0
+  - name: Hierba
+    uniqueID: 3527376697
+    locked: 0
+  - name: Suelo
+    uniqueID: 1461951765
+    locked: 0
+  - name: Particulas
+    uniqueID: 1976279861
     locked: 0
   - name: Water
     uniqueID: 105110111
