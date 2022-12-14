@@ -5,16 +5,14 @@ using UnityEngine.UI;
 
 public class EnemyPatrolGerard : MonoBehaviour
 {
-    public bool hasRangedAttack;
-    public float attackCD;
-    public float rangedCD;
+
+
+    public float attackCooldown;
+    private float attackCD;
     private float speedTimerInterno = 1f;
-    public bool rangedAttacking;
 
-
-    public bool attackCheck;
-    public bool rangedCheck;
-
+    public bool hasRangedAttack;
+    public bool hasMeleeAttack;
 
     public bool isFlipped;
     public SpriteRenderer sr;
@@ -23,16 +21,11 @@ public class EnemyPatrolGerard : MonoBehaviour
     public Transform waypointLeft;
     
 
-    public AnimationManager anim;
     public Animator an;
 
-
-    private float timerInterno = 0f;
-    public bool gothit;
-    public int deadpoints;
     public bool attacking;
-    public Text life;
-    public int lifepoints;
+
+
 
     private SpriteRenderer sp;
 
@@ -54,23 +47,12 @@ public class EnemyPatrolGerard : MonoBehaviour
         target = waypointA;                          // Al principio, el objetivo será el waypoint A
         speedValue = speed;
         an = GetComponent<Animator>();
-        attackCheck = false;
-        rangedCheck = false;
+        attackCD = attackCooldown;
 
     }
 
 
 
-
-    void GlobalTimer()
-    {
-
-        timerInterno = timerInterno + 1 * Time.deltaTime;
-        if (timerInterno > 10)
-        {
-            timerInterno = 0f;
-        }
-    }
 
 
     void MovingToWaypoints()
@@ -86,31 +68,40 @@ public class EnemyPatrolGerard : MonoBehaviour
             target = waypointA;                               // El objetivo pasa a ser el waypoint A
             sp.flipX = false;
         }
+
     }
+
+
+    void EnemyAttackingMelee()
+    {
+            AttackEnemy();
+            attackCD = attackCooldown;
+
+    }
+
+
+    void EnemyAttackingRanged()
+    {
+            Bullet();
+            attackCD = attackCooldown;
+    }
+
 
     void AttackEnemy()
     {
-        attackCheck = true;
-        speedTimerInterno = speedTimerInterno - 1f * Time.deltaTime;
-        stopRun = true;
         speed = 0;
+        speedTimerInterno = speedTimerInterno - 1f * Time.deltaTime;
         attacking = true;
+        Debug.Log(attacking = true);
         an.SetBool("Attack", attacking);
 
-        if (speedTimerInterno < 0.5f)
+        if (speedTimerInterno < 0f)
         {
             speed = speedValue;
             stopRun = false;
             speedTimerInterno = 1f;
-
-        }
-
-        if (speedTimerInterno < 00.5f && hasRangedAttack == false)
-        {
-            speed = speedValue;
-            stopRun = false;
-            speedTimerInterno = 1f;
-            timerInterno = 0f;
+            attacking = false;
+            Debug.Log(attacking = false);
 
         }
 
@@ -119,7 +110,7 @@ public class EnemyPatrolGerard : MonoBehaviour
 
     void BulletFlip()
     {
-        if (sr.flipX == true)
+        if (sr.flipX == false)
         {
             Instantiate(BulletEnemy, waypointLeft.position, waypointLeft.rotation);
         }
@@ -131,40 +122,45 @@ public class EnemyPatrolGerard : MonoBehaviour
 
     void Bullet()
     {
-        speedTimerInterno = speedTimerInterno - 1 * Time.deltaTime;
-        stopRun = true;
         speed = 0;
+        speedTimerInterno = speedTimerInterno - 1 * Time.deltaTime;
+        attacking = true;
         BulletFlip();
-        an.SetBool("RangedAttack", rangedAttacking);
+        an.SetBool("Attack", attacking);
 
-        if (speedTimerInterno < 0.5f)
+        if (speedTimerInterno < 0f)
         {
             speed = speedValue;
             stopRun = false;
             speedTimerInterno = 1f;
-            timerInterno = 0f;
+            attacking = false;
         }
 
     }
 
     void Update()
     {
-        GlobalTimer();
+
         MovingToWaypoints();
+        attackCD = attackCD - 1f * Time.deltaTime;
 
-        if(timerInterno > attackCD && attackCheck == false)
+
+        if (hasMeleeAttack == true && attackCD < 0)
         {
-            AttackEnemy();
+            stopRun = true;
+            EnemyAttackingMelee();
+            attacking = false;
+
         }
 
-        attackCheck = true;
-
-        if (timerInterno >= rangedCD)
+        if (hasRangedAttack == true && attackCD < 0)
         {
-            Bullet();
+            stopRun = true;
+            EnemyAttackingRanged();
+            attacking = false;
         }
 
-        else if (stopRun == false)
+        if (stopRun == false)
         {
             speed = speedValue;
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);  // Mueve la posición del enemigo desde donde esté hasta la posición del objetivo y lo hace a la velocidad 'Speed'
