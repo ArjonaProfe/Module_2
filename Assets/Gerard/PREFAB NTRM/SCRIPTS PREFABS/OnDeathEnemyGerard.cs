@@ -12,7 +12,6 @@ public class OnDeathEnemyGerard : MonoBehaviour
 
     public Text life;
 
-    public AnimationManager anim;
     public Animator an;
 
     public ScoreManagerGerard smg;
@@ -20,7 +19,7 @@ public class OnDeathEnemyGerard : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<AnimationManager>();
+
         dead = false;
         an = GetComponent <Animator>();
     }
@@ -59,7 +58,7 @@ public class OnDeathEnemyGerard : MonoBehaviour
             lifepoints = lifepoints - 1;
             life.text = lifepoints.ToString();
 
-            if (lifepoints == 0)
+            if (lifepoints <= 0)
             {
                 Dead();
                 DeadPoints();

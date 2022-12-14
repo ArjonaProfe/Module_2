@@ -14,8 +14,8 @@ public class AttackTriggerEnemyGerard : MonoBehaviour
     void MinusPoints()
     {
         smg = FindObjectOfType<ScoreManagerGerard>();
-        smg.minusScore = smg.minusScore + minuspoints;
-        smg.score = smg.score + minuspoints;
+        smg.minusScore = smg.minusScore - minuspoints;
+        smg.score = smg.score - minuspoints;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
