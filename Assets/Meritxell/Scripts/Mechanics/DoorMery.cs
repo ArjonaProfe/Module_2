@@ -13,6 +13,7 @@ public class DoorMery : MonoBehaviour
 
         {
             Debug.Log("Detect player");
+            SceneTransitionMery.FadeTransition();
             CameraMery.SwitchCamera();
             PlayerMovementMery.MovePlayer();
         }

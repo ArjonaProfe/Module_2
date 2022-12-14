@@ -22,19 +22,23 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();     // RB se asigna a rb
+
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        PlayerMovement();   // Funciones (a definir en voids)
-        IsGrounded();
-        IsShooting();
-        IsDucking();
-
-        if (Input.GetButtonDown("Jump") && isGrounded == true)    // If pulsa 'Jump' y la variable 'isGrounded' es true
+        if (PauseManagerMery.isPaused == false)
         {
-            Jump();                                               
+            PlayerMovement();   // Funciones (a definir en voids)
+            IsGrounded();
+            IsShooting();
+            IsDucking();
+
+            if (Input.GetButtonDown("Jump") && isGrounded == true)    // If pulsa 'Jump' y la variable 'isGrounded' es true
+            {
+                Jump();
+            }
         }
     }
 

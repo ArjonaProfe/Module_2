@@ -22,7 +22,6 @@ public class MainMenuMery : MonoBehaviour                 // Script del main men
       public void NewGame()                                // Cargar Level1. Resetea las vidas y los coleccionables
       {
          surePanel.SetActive(true);
-                      
       }
 
     public void NGYes()
