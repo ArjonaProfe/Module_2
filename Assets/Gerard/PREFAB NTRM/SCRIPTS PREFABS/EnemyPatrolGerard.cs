@@ -1,38 +1,77 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyPatrolGerard : MonoBehaviour
 {
+    public bool hasRangedAttack;
+    public float attackCD;
+    public float rangedCD;
+    private float speedTimerInterno = 1f;
+    public bool rangedAttacking;
 
-    private Rigidbody2D rb;
+
+    public bool attackCheck;
+    public bool rangedCheck;
+
+
+    public bool isFlipped;
+    public SpriteRenderer sr;
+    public GameObject BulletEnemy;
+    public Transform waypointRight;
+    public Transform waypointLeft;
+    
+
+    public AnimationManager anim;
+    public Animator an;
+
+
+    private float timerInterno = 0f;
+    public bool gothit;
+    public int deadpoints;
+    public bool attacking;
+    public Text life;
+    public int lifepoints;
+
     private SpriteRenderer sp;
-
-    public OnDeathEnemyGerard odeg;
 
     public Transform waypointA;   // primer waypoint de la ruta
     public Transform waypointB;   // segundo waypoint de la ruta  
 
-    public float timerSpeed;           //timer para parar de moverse
-    public float timerAttack;             //timer para hacer animación de ataque y volver a correr.
-    public float timerSpeedPrivate;        // timer privado para cambiar valores.
-    public float timerAttackPrivate;       // timer privado para cambiar valores.
     public float speedValue;
 
     public bool stopRun;
 
     public float speed;           // velocidad del enemigo
     private Transform target;     // objetivo que va a perseguir el enemigo
+    public ScoreManagerGerard smg;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+
         sp = GetComponent<SpriteRenderer>();
-        target = waypointA;       // Al principio, el objetivo será el waypoint A
+        target = waypointA;                          // Al principio, el objetivo será el waypoint A
         speedValue = speed;
-        timerSpeedPrivate = timerSpeed;
-        timerAttackPrivate = timerAttack;
+        an = GetComponent<Animator>();
+        attackCheck = false;
+        rangedCheck = false;
+
     }
+
+
+
+
+    void GlobalTimer()
+    {
+
+        timerInterno = timerInterno + 1 * Time.deltaTime;
+        if (timerInterno > 10)
+        {
+            timerInterno = 0f;
+        }
+    }
+
 
     void MovingToWaypoints()
     {
@@ -49,43 +88,85 @@ public class EnemyPatrolGerard : MonoBehaviour
         }
     }
 
-
-    void RunTimer()
+    void AttackEnemy()
     {
+        attackCheck = true;
+        speedTimerInterno = speedTimerInterno - 1f * Time.deltaTime;
+        stopRun = true;
+        speed = 0;
+        attacking = true;
+        an.SetBool("Attack", attacking);
 
-        timerSpeedPrivate = timerSpeedPrivate - 1f * Time.deltaTime;
-       
-        if (timerSpeedPrivate < 0)
+        if (speedTimerInterno < 0.5f)
         {
-            stopRun = true;
-            speed = 0;
-            timerAttackPrivate = timerAttackPrivate -1f * Time.deltaTime;
+            speed = speedValue;
+            stopRun = false;
+            speedTimerInterno = 1f;
+
         }
 
-        if (timerAttackPrivate < 0)
+        if (speedTimerInterno < 00.5f && hasRangedAttack == false)
         {
-
-            odeg = FindObjectOfType<OnDeathEnemyGerard>();
             speed = speedValue;
-            timerAttackPrivate = timerAttack;
-            timerSpeedPrivate = timerSpeed;
-            odeg.attacktime = odeg.attacktimereseter;
-            Debug.Log(odeg.attacktime);
-            Debug.Log(timerSpeedPrivate);
             stopRun = false;
+            speedTimerInterno = 1f;
+            timerInterno = 0f;
+
+        }
+
+    }
 
 
+    void BulletFlip()
+    {
+        if (sr.flipX == true)
+        {
+            Instantiate(BulletEnemy, waypointLeft.position, waypointLeft.rotation);
+        }
+        else
+        {
+            Instantiate(BulletEnemy, waypointRight.position, waypointRight.rotation);
+        }
+    }
+
+    void Bullet()
+    {
+        speedTimerInterno = speedTimerInterno - 1 * Time.deltaTime;
+        stopRun = true;
+        speed = 0;
+        BulletFlip();
+        an.SetBool("RangedAttack", rangedAttacking);
+
+        if (speedTimerInterno < 0.5f)
+        {
+            speed = speedValue;
+            stopRun = false;
+            speedTimerInterno = 1f;
+            timerInterno = 0f;
         }
 
     }
 
     void Update()
     {
+        GlobalTimer();
         MovingToWaypoints();
-        RunTimer();
 
-        if(stopRun == false)
+        if(timerInterno > attackCD && attackCheck == false)
         {
+            AttackEnemy();
+        }
+
+        attackCheck = true;
+
+        if (timerInterno >= rangedCD)
+        {
+            Bullet();
+        }
+
+        else if (stopRun == false)
+        {
+            speed = speedValue;
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);  // Mueve la posición del enemigo desde donde esté hasta la posición del objetivo y lo hace a la velocidad 'Speed'
         }
 
