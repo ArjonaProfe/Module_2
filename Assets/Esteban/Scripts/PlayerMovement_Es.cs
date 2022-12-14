@@ -21,16 +21,24 @@ public class PlayerMovement_Es : MonoBehaviour
     [SerializeField] private Vector3 dimensionesCaja;
     [SerializeField] private bool enSuelo;
     private bool salto = false;
+    private BlockFlash blockFlashBool;
+
+
 
     public float XMovement { get => xMovement; set => xMovement = value; }
     public bool EnSuelo { get => enSuelo; set => enSuelo = value; }
     public float Vida { get => vida; set => vida = value; }
+    public BlockFlash BlockFlashBool { get => blockFlashBool; set => blockFlashBool = value; }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim1 = GetComponent<AnimManager_Es>();
         ataqueEspada = GetComponent<AtaquePlayer>();
+        Transform transformCircle = gameObject.transform.Find("Circle");
+        blockFlashBool = transformCircle.gameObject.GetComponent<BlockFlash>();
+        
+
     }
     void Update()
     {
@@ -100,7 +108,7 @@ public class PlayerMovement_Es : MonoBehaviour
         //Debug.Log(collision.collider.tag);
         Debug.Log(collision.gameObject.name);
 
-        if (collision.collider.CompareTag("Enemy1"))
+        if (collision.collider.CompareTag("Enemy1") && blockFlashBool.BlockFlashBool == false)
         {
             Enemy1Damage_Es enemyDamage = collision.gameObject.GetComponent<Enemy1Damage_Es>();
             if (!enemyDamage.Muerto)
@@ -111,12 +119,13 @@ public class PlayerMovement_Es : MonoBehaviour
 
             }
 
+
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
 
-        if (collision.collider.CompareTag("Enemy1"))
+        if (collision.collider.CompareTag("Enemy1") && blockFlashBool.BlockFlashBool == false)
         {
             Enemy1Damage_Es enemyDamage = collision.gameObject.GetComponent<Enemy1Damage_Es>();
             if (!enemyDamage.Muerto)

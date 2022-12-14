@@ -8,9 +8,11 @@ public class BlockFlash : MonoBehaviour
     public float recargaBF;
 
     public Text txtContadorBF;
-    private bool blockFlash;
+    private bool blockFlashBool;
     private Animator animBlockFlash;
     private BarraBlockSplash_Es barraBlockSplash;
+
+    public bool BlockFlashBool { get => blockFlashBool; set => blockFlashBool = value; }
 
     //public float DuracionBF { get => duracionBF; set => duracionBF = value; }
     //public float RecargaBF { get => recargaBF; set => recargaBF = value; }
@@ -28,17 +30,17 @@ public class BlockFlash : MonoBehaviour
     {
         if (duracionBF == 0.0f && recargaBF == 0.0f)
         {
-            if (getStateBlockFlash() == false && Input.GetKeyDown(KeyCode.X))
+            if (BlockFlashBool == false && Input.GetKeyDown(KeyCode.X))
             {
                 recargaBF = 0.0f;//Recarga a 0
                 duracionBF = 5.40f;//Duración del blockFlash
                 barraBlockSplash.setTiempoMaximo(duracionBF);
-                blockFlash = true;
-                animBlockFlash.SetBool("circleFlash", blockFlash);//Se activa la animación
-                Debug.Log("BlockFlash true " + blockFlash);
+                blockFlashBool = true;
+                animBlockFlash.SetBool("circleFlash", blockFlashBool);//Se activa la animación
+                Debug.Log("BlockFlash true " + blockFlashBool);
             }
         }
-        if (duracionBF > 0.0f && recargaBF == 0.0f && getStateBlockFlash() == true)
+        if (duracionBF > 0.0f && recargaBF == 0.0f && BlockFlashBool == true)
         {
             duracionBF -= Time.deltaTime; //Se pone en marcha el contador de duración de la animación            
             barraBlockSplash.setTiempoActual(duracionBF);
@@ -46,15 +48,15 @@ public class BlockFlash : MonoBehaviour
             txtContadorBF.color = Color.green;
             txtContadorBF.text = duracionBF.ToString("00");//Lo seteo en el Text
         }
-        if (duracionBF < 0.0f && recargaBF == 0.0f && getStateBlockFlash() == true)
+        if (duracionBF < 0.0f && recargaBF == 0.0f && BlockFlashBool == true)
         {
             duracionBF = 0.0f;//Duración apagada durante la recarga
             recargaBF = 10.40f;//Tiempo de recarga
             barraBlockSplash.setTiempoMaximo(recargaBF);            
-            blockFlash = false;
-            animBlockFlash.SetBool("circleFlash", blockFlash);//Se desactiva la animación
+            blockFlashBool = false;
+            animBlockFlash.SetBool("circleFlash", blockFlashBool);//Se desactiva la animación
         }
-        if (duracionBF == 0.0f && recargaBF > 0.0f && getStateBlockFlash() == false)
+        if (duracionBF == 0.0f && recargaBF > 0.0f && BlockFlashBool == false)
         {
             recargaBF -= Time.deltaTime;//Cuenta atrás de la recarga
             barraBlockSplash.setColorBarrra("recarga");
@@ -62,10 +64,10 @@ public class BlockFlash : MonoBehaviour
             txtContadorBF.color = Color.red;
             txtContadorBF.text = recargaBF.ToString("00");//Seteo en el Text la cuenta atrás
         }
-        if (duracionBF == 0.0f && recargaBF < 0.0f && getStateBlockFlash() == false)
+        if (duracionBF == 0.0f && recargaBF < 0.0f && BlockFlashBool == false)
         {
             recargaBF = 0.0f;//Resetear la recarga
-            blockFlash = false;//Reseteo blockFlash
+            blockFlashBool = false;//Reseteo blockFlash
             txtContadorBF.color = Color.black;
             barraBlockSplash.setTiempoMaximo(1);
             barraBlockSplash.setTiempoActual(1);
@@ -73,10 +75,10 @@ public class BlockFlash : MonoBehaviour
             txtContadorBF.text = "00";
         }
     }
-    public bool getStateBlockFlash()
-    {
-        return blockFlash;
-    }
+    //public bool getStateBlockFlash()
+    //{
+    //    return blockFlashBool;
+    //}
 
 
 
