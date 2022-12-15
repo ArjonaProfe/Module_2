@@ -17,8 +17,7 @@ public class EnemyDmgDashOscar : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         LifeMan = animator.GetComponent<LifeNStatusOscar>();
-        Me = animator.GetComponent<EnemyControlOscar>();
-        CanonPoint = Me.CanonPoint;
+        if(animator.GetComponent<EnemyControlOscar>() != null) { Me = animator.GetComponent<EnemyControlOscar>(); CanonPoint = Me.CanonPoint; }
         Running = true;
     }
 
@@ -49,12 +48,12 @@ public class EnemyDmgDashOscar : StateMachineBehaviour
                     }
                 }
                 Running = false;
-                Me.ActTimer = 0;
+                if(Me != false) { Me.ActTimer = 0; }
             }
             if(Bonk == true)
             {
                 Running = false;
-                Me.ActTimer = 0;
+                if (Me != false) { Me.ActTimer = 0; }
             }
         }
     }

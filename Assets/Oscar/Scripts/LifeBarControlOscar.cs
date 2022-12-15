@@ -16,6 +16,7 @@ public class LifeBarControlOscar : MonoBehaviour
     void Start()
     {
         transform.SetParent(FindObjectOfType<Canvas>().transform);
+        transform.localScale = new Vector3(1, 1, 1);
     }
 
     // Update is called once per frame

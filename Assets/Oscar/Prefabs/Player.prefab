@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyFaction: 0
   Life: 0
-  MaxLife: 100
+  MaxLife: 200
   StunBuild: 0
   StunGoal: 0
   Shield: 0
@@ -287,10 +287,10 @@ MonoBehaviour:
     m_Bits: 128
   IsLader:
     serializedVersion: 2
-    m_Bits: 65536
+    m_Bits: 196608
   Bouncer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   CanonPoint: {fileID: 7254699854256907993}
   AtkRadius: 0.4
   IsEnemy:
@@ -303,7 +303,7 @@ MonoBehaviour:
   FirePow: 10
   IsGrabbable:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 24576
   Carried: {fileID: 0}
   ThrowVec: {x: 8, y: 8}
   TruPointA: {fileID: 7254699854816057112}

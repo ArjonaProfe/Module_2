@@ -5,6 +5,7 @@ using UnityEngine;
 public class TouchHazardOscar : MonoBehaviour
 {
     public int Damage;
+    public Vector3 Repel;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,11 @@ public class TouchHazardOscar : MonoBehaviour
         if(collision.GetComponent<LifeNStatusOscar>() != null)
         {
             collision.GetComponent<LifeNStatusOscar>().TakeDamage(Damage, LifeNStatusOscar.DmgType.Weak);
-            if(collision.GetComponent<PlayerControlOscar>() != null)
+            if(collision.GetComponent<Rigidbody2D>() != null)
             {
-                collision.GetComponent<PlayerControlOscar>().ReturnToPos();
+                Vector3 Dir = new Vector3(1, 1, 1);
+                if (collision.transform.localScale.x < 0) { Dir.x = -1; }
+                collision.GetComponent<Rigidbody2D>().velocity = Vector3.Scale(Repel, Dir);
             }
         }
     }

@@ -137,10 +137,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyFaction: 2
   Life: 0
-  MaxLife: 300
+  MaxLife: 200
   StunBuild: 0
   StunGoal: 100
   Shield: 0
+  ExpShield: 0
   JustHurted: 0
   Anim: {fileID: 2021005621459127212}
 --- !u!114 &2021005621459127219

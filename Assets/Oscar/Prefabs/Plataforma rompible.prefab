@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyLook: {fileID: 5738539046568058101}
   MyBox: {fileID: 5738539046568058103}
+  MyDetect: {fileID: 7760130167783430656}
   Anim: {fileID: 5738539046568058104}
   Touched: 0
 --- !u!61 &5738539046568058103

@@ -5,17 +5,15 @@ using UnityEngine;
 public class EnemyChargeAtkOscar : StateMachineBehaviour
 {
     public GameObject WarnPropR, WarnPropL, Warning;
-    public Transform CanonPoint;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        CanonPoint = animator.GetComponent<EnemyControlOscar>().CanonPoint;
         if (animator.transform.localScale.x < 0)
         {
-            Warning = Instantiate(WarnPropL, CanonPoint.position, Quaternion.identity);
+            Warning = Instantiate(WarnPropL, animator.transform.position, Quaternion.identity);
         }
-        else { Warning = Instantiate(WarnPropR, CanonPoint.position, Quaternion.identity); }
+        else { Warning = Instantiate(WarnPropR, animator.transform.position, Quaternion.identity); }
         
     }
 

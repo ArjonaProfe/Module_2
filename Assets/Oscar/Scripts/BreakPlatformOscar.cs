@@ -5,7 +5,7 @@ using UnityEngine;
 public class BreakPlatformOscar : MonoBehaviour
 {
     public SpriteRenderer MyLook;
-    public BoxCollider2D MyBox;
+    public BoxCollider2D MyBox, MyDetect;
     public Animator Anim;
     public bool Touched;
 
@@ -22,6 +22,7 @@ public class BreakPlatformOscar : MonoBehaviour
     {
         MyLook.enabled = false;
         MyBox.enabled = false;
+        MyDetect.enabled = false;
     }
 
     public void Remake()
@@ -29,6 +30,7 @@ public class BreakPlatformOscar : MonoBehaviour
         Touched = false;
         MyLook.enabled = true;
         MyBox.enabled = true;
+        MyDetect.enabled = true;
         Anim.SetTrigger("Restore");
     }
 }

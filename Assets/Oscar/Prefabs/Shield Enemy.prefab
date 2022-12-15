@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyFaction: 2
   Life: 0
-  MaxLife: 600
+  MaxLife: 500
   StunBuild: 0
   StunGoal: 120
   Shield: 1

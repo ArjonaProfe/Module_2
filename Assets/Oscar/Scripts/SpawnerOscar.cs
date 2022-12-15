@@ -7,7 +7,8 @@ public class SpawnerOscar : MonoBehaviour
     //General
     public enum SpawnType { Timed, Replace, Single, Hordes }
     public SpawnType MyType;
-    public GameObject Prop;
+    public GameObject Prop, LifeBar;
+    public bool SendBar;
     public float Timer;
     public float PlayDist, TrigDist;
     public Transform Player;
@@ -39,7 +40,6 @@ public class SpawnerOscar : MonoBehaviour
     // Start is called before the first frame update
 void Start()
     {
-        Timer = 0;
         SpawnDone = false;
         HordeCount = 0;
     }
@@ -54,7 +54,13 @@ void Start()
                 Timer += Time.deltaTime;
                 if(Timer >= Goal)
                 {
-                    Instantiate(Prop, transform.position, Quaternion.identity);
+                    GameObject NewProp = Instantiate(Prop, transform.position, Quaternion.identity);
+                    if(SendBar == true)
+                    {
+                        GameObject Bar = Instantiate(LifeBar, transform.position, Quaternion.identity);
+                        Bar.GetComponent<LifeBarControlOscar>().MyLifeMan = NewProp.GetComponent<LifeNStatusOscar>();
+                        Bar.GetComponent<LifeBarControlOscar>().Follower = true;
+                    }
                     Timer = 0;
                 }
                 break;
@@ -66,6 +72,12 @@ void Start()
                     if (Timer >= Goal)
                     {
                         ToReplace = Instantiate(Prop, transform.position, Quaternion.identity);
+                        if (SendBar == true)
+                        {
+                            GameObject Bar = Instantiate(LifeBar, transform.position, Quaternion.identity);
+                            Bar.GetComponent<LifeBarControlOscar>().MyLifeMan = ToReplace.GetComponent<LifeNStatusOscar>();
+                            Bar.GetComponent<LifeBarControlOscar>().Follower = true;
+                        }
                         Timer = 0;
                     }
                 }
@@ -77,6 +89,12 @@ void Start()
                 if(SpawnDone == false && PlayDist <= TrigDist)
                 {
                     CurrentProp = Instantiate(Prop, transform.position, Quaternion.identity);
+                    if (SendBar == true)
+                    {
+                        GameObject Bar = Instantiate(LifeBar, transform.position, Quaternion.identity);
+                        Bar.GetComponent<LifeBarControlOscar>().MyLifeMan = CurrentProp.GetComponent<LifeNStatusOscar>();
+                        Bar.GetComponent<LifeBarControlOscar>().Follower = true;
+                    }
 
                     for (int i = 0; i < ToDisable.Count; i++)
                     {
@@ -143,7 +161,14 @@ void Start()
                         }
                         for (int i = 0; i < HordesList[HordeCount].Props.Count; i++)
                         {
-                            CurrentHorde.Add(Instantiate(HordesList[HordeCount].Props[i], HordesList[HordeCount].Positions[i], Quaternion.identity));
+                            GameObject NewProp = Instantiate(HordesList[HordeCount].Props[i], HordesList[HordeCount].Positions[i], Quaternion.identity);
+                            CurrentHorde.Add(NewProp);
+                            if (SendBar == true)
+                            {
+                                GameObject Bar = Instantiate(LifeBar, transform.position, Quaternion.identity);
+                                Bar.GetComponent<LifeBarControlOscar>().MyLifeMan = NewProp.GetComponent<LifeNStatusOscar>();
+                                Bar.GetComponent<LifeBarControlOscar>().Follower = true;
+                            }
                         }
                         HordeCount += 1;
                     }

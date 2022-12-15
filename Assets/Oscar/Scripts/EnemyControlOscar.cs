@@ -173,6 +173,7 @@ public class EnemyControlOscar : MonoBehaviour
         gameObject.layer = Lay;
         NormalColl.enabled = false;
         GrabColl.enabled = true;
+        this.enabled = false;
     }
 
     //Grafics for visualization

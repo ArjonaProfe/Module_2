@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 60234745022381019}
   - component: {fileID: 60234745022381015}
   - component: {fileID: 60234745022381008}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2003775316, guid: 9745bcdb29b787444be8b90952cc19ce, type: 3}
   m_Color: {r: 0.9716981, g: 0.4813021, b: 0.03208439, a: 1}
   m_FlipX: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   Power: 15
   Speed: 12
   Lifetime: 2
-  Potent: 0
+  Potency: 0
   MyFaction: 0
 --- !u!61 &60234745022381015
 BoxCollider2D:

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7140703533214121228}
   - component: {fileID: 7140703533214121216}
   - component: {fileID: 7140703533214121223}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: Shotgun Pellet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   Power: 15
   Speed: 12
   Lifetime: 0.2
-  Potent: 0
+  Potency: 0
   MyFaction: 0
 --- !u!61 &7140703533214121216
 BoxCollider2D:

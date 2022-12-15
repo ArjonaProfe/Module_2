@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyType: 2
   Prop: {fileID: 2021005621459127209, guid: 660084d3b506445409f58664a33c5c64, type: 3}
+  LifeBar: {fileID: 2092343617717627317, guid: 5a159108a104f2144aeb8c91293b0ca9, type: 3}
+  SendBar: 0
   Timer: 0
   PlayDist: 0
   TrigDist: 5

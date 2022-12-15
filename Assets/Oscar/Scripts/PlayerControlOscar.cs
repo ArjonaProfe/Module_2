@@ -150,8 +150,9 @@ public class PlayerControlOscar : MonoBehaviour
         TruGroundedB = Physics2D.OverlapCircle(TruPointB.position, 0.01f, IsTrueGround);
         if(TruGroundedA == true && TruGroundedB == true) { PosToReturn = transform.position; }
 
-        if (transform.position.y < -20)
+        if (transform.position.y < -50)
         {
+            print("Caida");
             ReturnToPos();
             LifeMan.TakeDamage(10, LifeNStatusOscar.DmgType.Weak);
         }
@@ -228,6 +229,7 @@ public class PlayerControlOscar : MonoBehaviour
         Collider2D[] Grabbed = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius*2, IsGrabbable);
         if(Grabbed.Length != 0)
         {
+            print(Grabbed[0].name);
             Carried = Grabbed[0].gameObject;
             Carried.GetComponent<GrabItemOscar>().Carried = true;
         }
