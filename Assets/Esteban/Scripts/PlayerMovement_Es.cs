@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class PlayerMovement_Es : MonoBehaviour
 {
-    [SerializeField] private float vida = 100f;
+    [SerializeField] private float vida = 100f;//este valor se puede modificar en el Inspector
+    private float vidaMaxima;
     [SerializeField] private float cantidadVidas = 4;
+    private ProgressBarravida_Es barraProgresovida;
     private float xMovement;
     [SerializeField] private float speed;
     [Range(0f, 0.3f)][SerializeField] private float smoothMovement;
@@ -37,7 +39,8 @@ public class PlayerMovement_Es : MonoBehaviour
         ataqueEspada = GetComponent<AtaquePlayer>();
         Transform transformCircle = gameObject.transform.Find("Circle");
         blockFlashBool = transformCircle.gameObject.GetComponent<BlockFlash>();
-        
+        barraProgresovida = transform.Find("CanvasProgresoVida").GetComponent<ProgressBarravida_Es>();
+        vidaMaxima = vida;
 
     }
     void Update()
@@ -61,17 +64,21 @@ public class PlayerMovement_Es : MonoBehaviour
         rb.velocity = Vector3.SmoothDamp(rb.velocity, speedObject, ref velocidad, smoothMovement);
         if (xMovement > 0 && !mirandoDerecha)
         {
+
             Girar();
         }
         else if (xMovement < 0 && mirandoDerecha)
         {
             Girar();
+
         }
     }
     public void Girar()
     {
         mirandoDerecha = !mirandoDerecha;
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
+        barraProgresovida.transform.Find("ProgressVida").transform.eulerAngles =
+        new Vector3(0, barraProgresovida.transform.Find("ProgressVida").transform.eulerAngles.y -180, 0);
 
         /*Vector3 escala = transform.localScale;
         escala.x *= -1;
@@ -94,6 +101,8 @@ public class PlayerMovement_Es : MonoBehaviour
     public void Damage(float cantDamage)
     {
         vida -= cantDamage;
+        barraProgresovida.setVidaMaxima(vidaMaxima);
+        barraProgresovida.setVidaActual(vida);
         if (vida <= 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);

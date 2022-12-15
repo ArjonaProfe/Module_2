@@ -104,6 +104,10 @@ public class AtaquePlayer : MonoBehaviour
 
                 coll.transform.GetComponent<Enemy1Damage_Es>().Damage(damage);
             }
+            else if (coll.CompareTag("Enemy"))//Enemy es scorpion
+            {
+                coll.transform.GetComponent<Enemy2Damage_Es>().Damage(damage);
+            }
         }
 
 

@@ -1,22 +1,24 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy1Damage_Es : MonoBehaviour
+public class Enemy2Damage_Es : MonoBehaviour
 {
-    private AnimationManagerEnemy1_Es animationManagerEnemy;
-    [SerializeField] private float vida = 30f;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    private bool muerto;
-    private Rigidbody2D rb;
+    private Animator animator;
+    [SerializeField] private float vida = 400f;
+    private float vidaMaxima;
+    private SpriteRenderer spriteRenderer;
+    private bool muerto;    
     private PlayerMovement_Es playerMovement_Es;
+    private ProgressBarravida_Es progressBarravida_Es;
 
     public bool Muerto { get => muerto; set => muerto = value; }
 
     void Start()
     {
-        animationManagerEnemy = GetComponent<AnimationManagerEnemy1_Es>();
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+        progressBarravida_Es= transform.Find("CanvasProgresoVida").GetComponent<ProgressBarravida_Es>();
+        vidaMaxima = vida;        
         //blockFlash = GetComponent<BlockFlash>();
     }
 
@@ -28,14 +30,12 @@ public class Enemy1Damage_Es : MonoBehaviour
     public void Damage(int damage)
     {
         vida -= damage;
+        progressBarravida_Es.setVidaActual(vida);
+        progressBarravida_Es.setVidaMaxima(vidaMaxima);
         //Debug.Log(vida);
         if (vida > 0)
         {
             StartCoroutine(ColorBlancoRojo());
-
-            //spriteRenderer.color = new Color(255, 255, 255, (vida / (100 - damage)));
-
-            //Debug.Log("VIDA DE OBJECT " + (vida / (100 - damage)));
         }
         else if (vida <= 0)
         {
@@ -45,8 +45,8 @@ public class Enemy1Damage_Es : MonoBehaviour
     public void Muerte()
     {
         muerto = true;
-        animationManagerEnemy.Muerte();
-        rb.simulated = false;
+        //animationManagerEnemy.Muerte();
+        //rb.simulated = false;
         //Debug.Log("Muerte");
         //Debug.Log(gameObject.tag);
         Destroy(transform.root.gameObject, 1.2f);
@@ -64,12 +64,13 @@ public class Enemy1Damage_Es : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
+            Debug.Log("entra en enemigo2");
             Transform transformCircle = collision.gameObject.transform.Find("Circle");
             BlockFlash blockFlashBool = transformCircle.gameObject.GetComponent<BlockFlash>();
-            
+
             if (blockFlashBool.BlockFlashBool)
             {
-                Damage(10);
+                Damage(1);
             }
         }
     }
@@ -81,7 +82,7 @@ public class Enemy1Damage_Es : MonoBehaviour
             BlockFlash blockFlashBool = transformCircle.gameObject.GetComponent<BlockFlash>();
             if (blockFlashBool.BlockFlashBool)
             {
-                Damage(10);
+                Damage(1);
             }
         }
     }

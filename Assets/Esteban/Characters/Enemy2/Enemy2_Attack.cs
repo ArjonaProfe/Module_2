@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy2_Attack : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 1.8f;
     [SerializeField] private Transform attackToPoint;
     [SerializeField] private float waitTime = 10f;
     [SerializeField] private float startWaitTime = 10f;
@@ -26,7 +26,7 @@ public class Enemy2_Attack : MonoBehaviour
 
         if (!isMovingBack)
         {
-            speed= 4;
+            speed = 4;
             animator.SetBool("run", true);
             comienzaCuentaAtras = false;
             //Debug.Log("pasa2");
@@ -35,14 +35,14 @@ public class Enemy2_Attack : MonoBehaviour
             //isMovingBack = true;
 
         }
-        if (Mathf.Abs(transform.position.x) == attackToPoint.transform.position.x )
+        if (Mathf.Abs(transform.position.x) == attackToPoint.transform.position.x)
         {
             //Debug.Log("play attack");
             animator.Play("attack_Enemy2");
         }
-            if (Mathf.Abs(transform.position.x) == attackToPoint.transform.position.x || isMovingBack)
+        if (Mathf.Abs(transform.position.x) == attackToPoint.transform.position.x || isMovingBack)
         {
-            speed=2;
+            speed = 1.8f;
             //Debug.Log("pasa1");
             transform.position = Vector2.MoveTowards(transform.position, posicionInicial,
             speed * Time.deltaTime);
@@ -58,7 +58,7 @@ public class Enemy2_Attack : MonoBehaviour
         {
             if (waitTime <= 0)
             {
-        
+
                 waitTime = startWaitTime;
                 isMovingBack = false;
                 comienzaCuentaAtras = false;
@@ -92,10 +92,17 @@ public class Enemy2_Attack : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log(collision.gameObject.name);
+
         if (collision.gameObject.name == "Norbut")
         {
             Debug.Log(collision.gameObject.name);
-            animator.Play("attack_Enemy2");
+            Transform transformCircle = collision.gameObject.transform.Find("Circle");
+            BlockFlash blockFlashBool = transformCircle.gameObject.GetComponent<BlockFlash>();
+            if (!blockFlashBool.BlockFlashBool)
+            {                
+                animator.Play("attack_Enemy2");
+                collision.gameObject.GetComponent<PlayerMovement_Es>().Damage(5);
+            }
         }
     }
 
