@@ -134,7 +134,7 @@ MonoBehaviour:
   - {fileID: 7141885713732446153}
   - {fileID: 7141885713195660679}
   - {fileID: 7141885713616918560}
-  time: 3
+  time: 2
 --- !u!1 &7141885713616918561
 GameObject:
   m_ObjectHideFlags: 0

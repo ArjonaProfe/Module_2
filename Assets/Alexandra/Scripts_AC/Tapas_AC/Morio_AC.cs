@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Morio_AC : MonoBehaviour
 {
-    public GameObject Pop1;      //en Unity indicaremos el objeto
-    public GameObject Pop2;      //en Unity indicaremos el objeto
+    public GameObject Pop;      //en Unity indicaremos el objeto
 
     private void OnTriggerEnter2D(Collider2D other)
     {
