@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeMan: {fileID: 0}
-  Speed: 9
+  Speed: 7
   Damage: 10
   CanonPoint1: {fileID: 0}
   CanonPoint2: {fileID: 0}
@@ -1336,10 +1336,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Me: {fileID: 0}
+  RB2D: {fileID: 0}
+  GroundPoint: {fileID: 0}
   StartCord: 0
   TarCord: 0
   Timer: 0
   Goal: 1
+  Poundable:
+    serializedVersion: 2
+    m_Bits: 256
+  PushDir: {x: 50, y: 30, z: 0}
 --- !u!1107 &7673214502286524064
 AnimatorStateMachine:
   serializedVersion: 6

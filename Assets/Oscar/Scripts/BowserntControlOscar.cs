@@ -8,6 +8,7 @@ public class BowserntControlOscar : MonoBehaviour
     public LifeNStatusOscar LifeMan;
     public Rigidbody2D RB2D;
     public Animator Anim;
+    public LevelManagerOscar LvMan;
 
     //Detections
     public GameObject Target;
@@ -81,6 +82,9 @@ public class BowserntControlOscar : MonoBehaviour
             default:
                 break;
         }
+
+        //Calculate the nearest platform to the player
+
     }
 
     public void NextMove()
@@ -161,7 +165,6 @@ public class BowserntControlOscar : MonoBehaviour
             NewPellet.GetComponent<BulletOscar>().MyFaction = LifeMan.MyFaction;
             NewPellet.GetComponent<BulletOscar>().Power = RainDmg;
         }
-        State = 0;
     }
     public void FireRainTrue()
     {
@@ -171,6 +174,7 @@ public class BowserntControlOscar : MonoBehaviour
             NewPellet.GetComponent<BulletOscar>().MyFaction = LifeMan.MyFaction;
             NewPellet.GetComponent<BulletOscar>().Power = RainDmg;
         }
+        State = 0;
     }
 
     public void BombRain()
@@ -191,6 +195,13 @@ public class BowserntControlOscar : MonoBehaviour
             Meteors[i].GetComponent<DetonMeteorOscar>().Deton();
         }
         Meteors.Clear();
+        State = 0;
+    }
+
+    //Level Complere when killed
+    public void LVClearOnDefeat()
+    {
+        LvMan.LevelClear();
     }
 
     //Grafics for visualization

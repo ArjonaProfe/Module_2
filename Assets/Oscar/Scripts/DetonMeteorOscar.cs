@@ -29,11 +29,11 @@ public class DetonMeteorOscar : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Phase = 1;
-        print("Impacto");
     }
 
     public void Deton()
     {
+        print("boom");
         GameObject Boom = Instantiate(Bomb, transform.position, Quaternion.identity);
         Boom.GetComponent<GrabItemOscar>().Anim.SetBool("Carried", true);
         Destroy(gameObject);
