@@ -4,9 +4,9 @@ using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SavedScore_AC : MonoBehaviour
+public class Score_AC : MonoBehaviour
 {
-    public Text highscoreText;
+    public Text Text;
     public Text scoreText;
     float score;
     int highscore;
@@ -14,20 +14,20 @@ public class SavedScore_AC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        score = 0;          //score al inicio
     }
 
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime * 5;
-        highscore = (int)score;
-        scoreText.text = highscore.ToString();
+        score += Time.deltaTime * 1;                    //incrementar 1punto acorde con el tiempo del PC
+        highscore = (int)score;                         //sale en pantalla en score on going
+        scoreText.text = highscore.ToString();          //en pantalla
         if (PlayerPrefs.GetInt("score") <= highscore)
             PlayerPrefs.SetInt("score", highscore);
     }
     public void highscorefun ()
     {
-        highscoreText.text = PlayerPrefs.GetInt("score").ToString();
+        Text.text = PlayerPrefs.GetInt("score").ToString();
     }
 }

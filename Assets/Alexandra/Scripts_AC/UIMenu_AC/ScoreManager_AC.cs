@@ -2,24 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class ScoreManager_AC : MonoBehaviour
-{
-    private float puntos;       //el float es con decimal
-  //  private TextMeshProUGUI TextMesh;
+{/*
+    public static ScoreManager_AC instance;
+    public Text scoreText;
+    public Text highscoreTExt;
+    int score = 0;
+    int highscore = 0;
+    public GameObject Score_AC;
 
-
-    private void Start ()
+    public void Awake()
     {
-      //  TextMesh = GetComponent<TextMeshProUGUI>(); //sea igual al texto en pantalla
+        instance = this;
     }
 
-
-    private void Update()
+    private void Start()
     {
-        puntos += Time.deltaTime;  //nos sume puntos cada segundo
-       // TextMesh.text = puntos.ToString("0");   //para quitar decimales le indicamos el 0 como nªentero. Nos modifica el texto según puntuación en pantalla y para que salga en pantalla ponemos el String
+        Score_AC.SetActive(true);
+        highscore = PlayerPrefs.GetInt("highscore", 0);
+        scoreText.text = score.ToString() + " POINTS";
+        highscoreTExt.text = "HIGHSCORE: " + highscore.ToString();
     }
+
+    public void AddPoint()
+    {
+        scoreText.text = score.ToString() + " POINTS";
+        if (highscore < score)
+            PlayerPrefs.SetInt("highscore", score);
+    }
+    */
 
 }
