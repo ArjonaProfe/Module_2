@@ -19,6 +19,11 @@ public class MainMenuMery : MonoBehaviour                 // Script del main men
              HealthCounterMery.ResetHealth();
       }
 
+    public void Levels()
+    {
+        SceneManager.LoadScene("LevelsMenuMery");
+    }
+
       public void NewGame()                                // Cargar Level1. Resetea las vidas y los coleccionables
       {
          surePanel.SetActive(true);
@@ -30,6 +35,8 @@ public class MainMenuMery : MonoBehaviour                 // Script del main men
         CollectibleCounterMery.ResetCollectibles();
         HealthCounterMery.ResetLives();
         HealthCounterMery.ResetHealth();
+
+        DataManagerMery.DeleteData();
     }
 
     public void NGNo()

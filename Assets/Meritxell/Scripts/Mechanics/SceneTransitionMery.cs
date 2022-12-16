@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneTransitionMery : MonoBehaviour
 {
     public GameObject FadePanel;
-    private static Animator anim;
+    private Animator anim;
 
     public static bool fading;
     public static bool done;
@@ -20,20 +20,21 @@ public class SceneTransitionMery : MonoBehaviour
         fading = false;
         done = true;
 
+    }
+
+    public void FadeTransition()
+    {
+        anim.SetBool("Fading", true);
+        fading = true;
+        Debug.Log("FadeIn");
+        Invoke("SetFadeBack", 0.5f);
         
     }
-    public static void FadeTransition()
-    {
-        var variable = new SceneTransitionMery();
 
-        fading = true;
-        done = false;
-        variable.Invoke("SetBoolBack", 1f);
-    }
-
-    void SetBoolBack()
+    public void SetFadeBack()
     {
         anim.SetBool("Fading", false);
-        anim.SetBool("Done", true); 
+        fading = false;
+        Debug.Log("FadeOut");
     }
 }

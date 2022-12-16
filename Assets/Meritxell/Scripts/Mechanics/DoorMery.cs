@@ -7,16 +7,28 @@ public class DoorMery : MonoBehaviour
     public Camera cam1;
     public Camera cam2;
 
-    void OnTriggerStay2D(Collider2D other)                                  // Preguntar por axis vertical y porque no funciona
+    public GameObject fadePanel;
+
+    public static bool fading;
+    public static bool done;
+
+    public SceneTransitionMery fade;
+
+    void OnTriggerEnter2D(Collider2D other)                                  // Preguntar por axis vertical y porque no funciona
     {
-        if (other.CompareTag("Player") && Input.GetButtonDown("Fire2"))
+        if (other.CompareTag("Player"))
 
         {
             Debug.Log("Detect player");
-            SceneTransitionMery.FadeTransition();
             CameraMery.SwitchCamera();
             PlayerMovementMery.MovePlayer();
+            FadingEffect();
         }
+    }
+
+    void FadingEffect()
+    {
+        fade.FadeTransition();
     }
 }
 

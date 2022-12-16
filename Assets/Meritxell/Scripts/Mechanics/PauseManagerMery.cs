@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PauseManagerMery : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class PauseManagerMery : MonoBehaviour
     public void Start()
     {
         isPaused = false;
+        pausePanel.SetActive(false);
     }
 
     public void Update()

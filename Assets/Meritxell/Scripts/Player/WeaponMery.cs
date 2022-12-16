@@ -22,26 +22,30 @@ public class WeaponMery : MonoBehaviour  // Script que controla el "arma" del pe
 
     }
 
-    void Update () 
+    void FixedUpdate () 
     {
-           if (Input.GetButton("Fire1") && Time.time > nextFire)      // input asignado. Si se pulsa el input Fire1 y el tiempo pasado en time is mayor a nextFire
-           {
+        if(PauseManagerMery.isPaused == false)
+        {
+            if (Input.GetButton("Fire1") && Time.time > nextFire)      // input asignado. Si se pulsa el input Fire1 y el tiempo pasado en time is mayor a nextFire
+            {
                 nextFire = Time.time + fireRate;                      // nextFire corresponde a tiempo sumado con el fireRate
                 Shoot();                                              // Llama a la función 
-           }
+            }
 
-           void Shoot()                     // Dispara
-           {
+            void Shoot()                     // Dispara
+            {
                 if (sr.flipX == true)       // Si el sprite está flipeado se instancia la bala desde firePointL
                 {
-    
-                Instantiate(bulletPrefab, firePointL.position, firePointL.rotation);
+
+                    Instantiate(bulletPrefab, firePointL.position, firePointL.rotation);
                 }
                 else                       // Si no, se instancia desde FirePoint
                 {
-                Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                    Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
                 }
-           }         
+            }
+        }
+              
     }
 }
 

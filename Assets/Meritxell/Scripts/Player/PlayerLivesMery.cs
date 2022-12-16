@@ -40,6 +40,9 @@ public class PlayerLivesMery : MonoBehaviour     // Script que controla que ocur
         anim.SetBool("isHurt", true);                  // Setea el bool isHurt a verdadero
         rb.velocity = new Vector2(0, deathJump);       // Vector2 que no afecta x pero causará el valor de hurtJump en x sobre el RB
         col.enabled = false;                           // Desactiva el collider del personaje
+
+        DataManagerMery.isDeath = "Yes";
+
         CollectibleCounterMery.collected = 0;
 
         HealthCounterMery.lives = HealthCounterMery.lives - 1;     // Se resta una vida  directamente del contador
