@@ -21,7 +21,7 @@ public class EnemyPatrolGerard : MonoBehaviour
     public Animator an;
 
     public bool attacking;
-
+    private bool stopRunningCheck = true;
 
 
     private SpriteRenderer sp;
@@ -69,6 +69,11 @@ public class EnemyPatrolGerard : MonoBehaviour
     }
 
 
+    void CheckAnimatorRun()
+    {
+         stopRun = false;
+    }
+
     void EnemyAttackingMelee()
     {
             AttackEnemy();
@@ -83,13 +88,13 @@ public class EnemyPatrolGerard : MonoBehaviour
         speed = 0;
         speedTimerInterno = speedTimerInterno - 1f * Time.deltaTime;
         attacking = true;
-        Debug.Log(attacking = true);
+        stopRun = stopRunningCheck;
         an.SetBool("Attack", attacking);
 
         if (speedTimerInterno < 0f)
         {
             speed = speedValue;
-            stopRun = false;
+            CheckAnimatorRun();
             speedTimerInterno = 1f;
             attacking = false;
             Debug.Log(attacking = false);
@@ -108,14 +113,14 @@ public class EnemyPatrolGerard : MonoBehaviour
 
         if (attackCD < 0)
         {
-            stopRun = true;
+            
             EnemyAttackingMelee();
             attacking = false;
 
         }
 
 
-        if (stopRun == false)
+        else 
         {
             speed = speedValue;
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);  // Mueve la posición del enemigo desde donde esté hasta la posición del objetivo y lo hace a la velocidad 'Speed'

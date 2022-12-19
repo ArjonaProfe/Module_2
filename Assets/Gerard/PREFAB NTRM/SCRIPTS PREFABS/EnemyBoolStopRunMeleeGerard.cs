@@ -5,20 +5,17 @@ using UnityEngine;
 public class EnemyBoolStopRunMeleeGerard : MonoBehaviour
 {
 
-    public EnemyPatrolGerard epg;
+    public Animator an;
+    public bool stopRun;
 
 
-
-    private void Start()
-    {
-        epg = FindObjectOfType<EnemyPatrolGerard>();
-    }
 
 
 
 
     void Update()
     {
-        epg.stopRun = false;
+        stopRun = false;
+        an.SetBool("GotHit", stopRun);
     }
 }

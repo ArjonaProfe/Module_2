@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 2927444074113235151}
   - component: {fileID: 8295379430902813923}
   - component: {fileID: 8295379430902813924}
+  - component: {fileID: 2175604221976589250}
   m_Layer: 8
   m_Name: Kanarath
   m_TagString: Player
@@ -377,6 +378,20 @@ MonoBehaviour:
   boomerangRate: 5
   nextBoomerang: 0
   isFlipped: 0
+--- !u!114 &2175604221976589250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295379430455593621}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814d5335d0743994490b67a94f3148f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gotHit: 0
+  an: {fileID: 8295379430455593624}
 --- !u!1 &8295379431402873630
 GameObject:
   m_ObjectHideFlags: 0

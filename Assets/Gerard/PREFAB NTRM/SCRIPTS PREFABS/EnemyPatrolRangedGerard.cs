@@ -123,7 +123,7 @@ public class EnemyPatrolRangedGerard : MonoBehaviour
             attacking = false;
         }
 
-        if (stopRun == false)
+       else
         {
             speed = speedValue;
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);  // Mueve la posición del enemigo desde donde esté hasta la posición del objetivo y lo hace a la velocidad 'Speed'
