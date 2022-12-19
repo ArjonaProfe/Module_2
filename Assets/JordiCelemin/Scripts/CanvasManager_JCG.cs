@@ -7,13 +7,21 @@ public class CanvasManager_JCG : MonoBehaviour
 {
 
     public Text score;         //texto para los puntos
-
+   
+    
 
     public void Update()
     {
 
         score.text = ScoreManagerAtaque_JCG.scoreValue.ToString();
+
+       
+        
+
+
+
     }
+    
 
 
 }

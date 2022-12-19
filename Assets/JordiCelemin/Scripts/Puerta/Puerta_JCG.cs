@@ -22,7 +22,11 @@ public class Puerta_JCG : MonoBehaviour
             AbrirPuerta_JCG.llave = 1;
             Destroy(collision.gameObject);
         }
+
+        
     }
 
     
+
+
 }

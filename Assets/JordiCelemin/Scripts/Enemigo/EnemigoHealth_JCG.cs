@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemigoHealth_JCG : MonoBehaviour
 {
     Enemy_JCG enemy;
-
+    
     public void Start()
     {
         enemy = GetComponent<Enemy_JCG>();
@@ -20,6 +21,7 @@ public class EnemigoHealth_JCG : MonoBehaviour
             {
                 ScoreManagerAtaque_JCG.scoreValue += 10;
                 Destroy(gameObject);
+               
             }
         }
     }

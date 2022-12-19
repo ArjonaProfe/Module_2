@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreManagerAtaque_JCG : MonoBehaviour
 {
     public static int scoreValue = 0;
-
+   
      Text scoreMan;
     private void Start()
     {
@@ -16,5 +16,6 @@ public class ScoreManagerAtaque_JCG : MonoBehaviour
     private void Update()
     {
        scoreMan.text = "Score:" + scoreValue;
+
     }
 }

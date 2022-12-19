@@ -7,10 +7,14 @@ public class VidaPlayer_JCG : MonoBehaviour
 {
     public GameObject[] hearts;
     private int life;
-
+    public GameObject Reiniciar;
+    public Text GameOver;
     private void Start()
     {
         life = hearts.Length;
+
+        GameOver.enabled = false;
+        Reiniciar.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -35,7 +39,8 @@ public class VidaPlayer_JCG : MonoBehaviour
         if (life < 0)
         {
             Destroy(gameObject);
-
+            Reiniciar.gameObject.SetActive(true); //cuando se muera salga reiniciar
+            GameOver.enabled = true;
         }
         
     }   
@@ -47,6 +52,6 @@ public class VidaPlayer_JCG : MonoBehaviour
     {
         life = playerHealth;
         TakeDamage(0);
-        
+       
     }
 }

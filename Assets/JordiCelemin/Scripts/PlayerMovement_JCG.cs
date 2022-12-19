@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement_JCG : MonoBehaviour
 {
-
+    float xInicial, yInicial;  //
     private Rigidbody2D rb;
     private float Horizontal;
     private float Vertical;
@@ -20,6 +20,8 @@ public class PlayerMovement_JCG : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        xInicial = transform.position.x;  //cuando inice el juego este en la posicion x y Y
+        yInicial = transform.position.y;
     }
 
 
@@ -30,16 +32,18 @@ public class PlayerMovement_JCG : MonoBehaviour
      Horizontal = Input.GetAxisRaw("Horizontal");       //direcciones de x y z 
      Vertical = Input.GetAxisRaw("Vertical");
 
-     rb.velocity = new Vector2(Horizontal * speed, rb.velocity.y);         //velocidad del speed
+     rb.velocity = new Vector2(Horizontal * speed, rb.velocity.y);         //velocidad del speed  rb.velocity gravedad
 
         if (Input.GetKeyDown(KeyCode.Space))               // para que salte con el Space le esta añadiendo fuerza para impulsarse con la gravedad
         {
             rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+            Debug.Log("Jump");
         }
 
         if (Input.GetButtonDown("Fire1"))                         
         {
-            anim.SetBool("Attack", true);       //Si pulso ataca con la animacion.                                         
+            anim.SetBool("Attack", true);       //Si pulso ataca con la animacion.
+            Debug.Log("Ataque");
         }
         else
         {
@@ -82,7 +86,10 @@ public class PlayerMovement_JCG : MonoBehaviour
         transform.position = pos;
     }
 
-    
+    public void Recolocar()
+    {
+        transform.position = new Vector3(xInicial, yInicial, 0);
+    }
 
 
 
