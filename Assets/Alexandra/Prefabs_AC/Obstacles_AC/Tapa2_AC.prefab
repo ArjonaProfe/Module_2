@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4457024083058690649}
   - component: {fileID: 1960232514451745705}
   - component: {fileID: 1891447040886675321}
-  - component: {fileID: 2993486355628502937}
+  - component: {fileID: 2877674801915744205}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2993486355628502937
+--- !u!114 &2877674801915744205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Pop: {fileID: 0}
 --- !u!1 &5827174517445301918
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 5827174517445301918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.725, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4457024083058690649}
