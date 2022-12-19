@@ -86,7 +86,7 @@ public class BowserntControlOscar : MonoBehaviour
         //Calculate the nearest platform to the player
 
     }
-
+    //selects the nex action from the patern
     public void NextMove()
     {
         State = Patern[CurrState];
@@ -114,6 +114,7 @@ public class BowserntControlOscar : MonoBehaviour
         }
     }
 
+    //Jumps causing damage inmediately bellow him (to destroy the platform it stans on
     public void PotentJump()
     {
         Collider2D[] EnemiesToDamage = Physics2D.OverlapCircleAll(GroundPoint.transform.position, 0.5f, IsEnemy);
@@ -126,7 +127,7 @@ public class BowserntControlOscar : MonoBehaviour
         }
         RB2D.velocity = new Vector3(0, 30, 0);
     }
-
+    //Throws projectiles from it's feet in both directions
     public void PotentLanding()
     {
         GameObject WaveR = Instantiate(Wave, GroundPoint.transform.position + new Vector3(0, 0.5f, 0), Quaternion.Euler(0, 0, 0));
@@ -136,6 +137,7 @@ public class BowserntControlOscar : MonoBehaviour
         State = 0;
     }
 
+    //throws a horizontal projectile, can choose if thrown from canon 1 or 2
     public void ShotAltShot(int Bar)
     {
         Vector3 Dir = new Vector3(0, 0, 0);
@@ -156,6 +158,7 @@ public class BowserntControlOscar : MonoBehaviour
         if(Uses > 6) { Uses = 0;  State = 0; }
     }
 
+    //Throws fireballs upwards (to pretend that they are throns and then fall)
     public void FireRainPre()
     {
         for (int i = 0; i < RainAmmo; i++)
@@ -166,6 +169,7 @@ public class BowserntControlOscar : MonoBehaviour
             NewPellet.GetComponent<BulletOscar>().Power = RainDmg;
         }
     }
+    //The fireballs that actually fall down
     public void FireRainTrue()
     {
         for (int i = 0; i < RainAmmo; i++)
@@ -177,6 +181,7 @@ public class BowserntControlOscar : MonoBehaviour
         State = 0;
     }
 
+    //Summons a rain of detonable meteors
     public void BombRain()
     {
         for (int i = 0; i < RainAmmo; i++)
@@ -188,6 +193,7 @@ public class BowserntControlOscar : MonoBehaviour
         }
     }
 
+    //Detons the meteors it has in list
     public void DetonPunch()
     {
         for (int i = 0; i < Meteors.Count; i++)

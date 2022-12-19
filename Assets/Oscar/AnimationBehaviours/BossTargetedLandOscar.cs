@@ -18,13 +18,25 @@ public class BossTargetedLandOscar : StateMachineBehaviour
         Me = animator.GetComponent<BowserntControlOscar>();
         RB2D = animator.GetComponent<Rigidbody2D>();
         GroundPoint = Me.GroundPoint;
-        TarCord = Me.Target.transform.position.x;
+        Transform TarTrans = null;
+        float MinDist = Mathf.Infinity;
+        for (int i = 0; i < Me.BreakPlats.Count; i++)
+        {
+            float Dist = Vector3.Distance(Me.BreakPlats[i].transform.position, Me.Target.transform.position);
+            if (Dist < MinDist)
+            {
+                TarTrans = Me.BreakPlats[i];
+                MinDist = Dist;
+            }
+        }
+        TarCord = TarTrans.position.x;
         Timer = 0;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Lerps towards the targeted X position
         Timer += Time.deltaTime/Goal;
         animator.transform.position = new Vector3(Mathf.Lerp(StartCord, TarCord, Timer), animator.transform.position.y, 0);
 

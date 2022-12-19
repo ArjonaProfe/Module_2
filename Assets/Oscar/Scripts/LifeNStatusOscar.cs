@@ -26,14 +26,14 @@ public class LifeNStatusOscar : MonoBehaviour
             if(Anim != null) { Anim.SetTrigger("Death"); }
             else { Death(); }
         }
-
-        if (Input.GetKeyDown(KeyCode.H)) { TakeDamage(10, DmgType.Weak); }
     }
 
     public void TakeDamage(int Dmg, DmgType Type)
     {
+        //Diferent reaction depending on the damege type and the protections the user has
         switch (Type)
         {
+            //Weak damage is stropped by any protection
             case DmgType.Weak:
                 if(Shield == false && ExpShield == false)
                 {
@@ -50,6 +50,7 @@ public class LifeNStatusOscar : MonoBehaviour
                     JustHurted = true;
                 }
                 break;
+            //Strong damage destrois shields, but not explosion shields
             case DmgType.Strong:
                 if(ExpShield == false)
                 {
@@ -84,6 +85,7 @@ public class LifeNStatusOscar : MonoBehaviour
                     }
                 }
                 break;
+            //Explosion damage alwais causes damage and destrois both types of shield
             case DmgType.Explosive:
                 if (ExpShield == true)
                 {
@@ -116,6 +118,7 @@ public class LifeNStatusOscar : MonoBehaviour
                     JustHurted = true;
                 }
                 break;
+            //In practice fire is equal to weak damage...
             case DmgType.Fire:
                 if (Shield == false && ExpShield == false)
                 {

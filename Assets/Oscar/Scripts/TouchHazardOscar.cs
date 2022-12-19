@@ -21,6 +21,7 @@ public class TouchHazardOscar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Damages what it enters in contact with and sends it flying
         if(collision.GetComponent<LifeNStatusOscar>() != null)
         {
             collision.GetComponent<LifeNStatusOscar>().TakeDamage(Damage, LifeNStatusOscar.DmgType.Weak);
