@@ -10,13 +10,7 @@ public class PauseManagerMery : MonoBehaviour
     public static bool isPaused;
     public GameObject pausePanel;
 
-    public void Start()
-    {
-        isPaused = false;
-        pausePanel.SetActive(false);
-    }
-
-    public void Update()
+    void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
@@ -24,7 +18,7 @@ public class PauseManagerMery : MonoBehaviour
         }
     }
 
-    public void ChangePause()
+    void ChangePause()
     {
         isPaused = !isPaused;                    // isPaused es igual al valor contrario por defecto, lo que significa verdadero 
 
@@ -32,11 +26,13 @@ public class PauseManagerMery : MonoBehaviour
         {
             pausePanel.SetActive(true);          // Activar y desactivar el panel y pausar y despausar el tiempo
             Time.timeScale = 0f;
+            Debug.Log("Pause");
         }
         else
         {
             pausePanel.SetActive(false);
             Time.timeScale = 1f;
+            Debug.Log("Unpause");
         }
     }
 

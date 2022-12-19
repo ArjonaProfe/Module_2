@@ -5,22 +5,23 @@ using UnityEngine.UI;
 
 public class CanvasLoopMery : MonoBehaviour
 {
-    public MoveBackgroundMery mb;
+    public float speed;
+    public Rigidbody2D rb;
 
-    void Start()
+    private void Start()
     {
-        mb = GetComponent<MoveBackgroundMery>();
-        
+        rb = GetComponent<Rigidbody2D>();
     }
-
-    void OnTriggerEnter2D(Collider2D other)        
+    void Update()
     {
+        rb.transform.Translate(Vector2.left * Time.deltaTime * speed);
 
-
-        if (other.CompareTag("EditorOnly"))
+        if(transform.position.x < -800)
         {
-            other.GetComponent<MoveBackgroundMery>().ResetPosition();
+            rb.transform.position = new Vector2(115, transform.position.y);
         }
-            
     }
 }
+
+
+ 

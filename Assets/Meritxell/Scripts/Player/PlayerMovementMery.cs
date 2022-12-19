@@ -26,7 +26,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (PauseManagerMery.isPaused == false)
         {

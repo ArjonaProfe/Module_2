@@ -13,7 +13,6 @@ public class WeaponMery : MonoBehaviour  // Script que controla el "arma" del pe
 
     public float fireRate = 0.5f;       // No se puede disparar hasta que...
     public float nextFire = 0.0f;       // Tiempo base de disparo
-    public bool isFlipped;
 
     void Start()
 
@@ -22,7 +21,7 @@ public class WeaponMery : MonoBehaviour  // Script que controla el "arma" del pe
 
     }
 
-    void FixedUpdate () 
+    void Update () 
     {
         if(PauseManagerMery.isPaused == false)
         {

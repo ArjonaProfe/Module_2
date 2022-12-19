@@ -9,43 +9,56 @@ public class MainMenuMery : MonoBehaviour                 // Script del main men
 {
     public GameObject surePanel;
 
-    private void Start()
+    public void Start()
     {
-        surePanel.SetActive(false);
+        DataManagerMery.LoadData();
+        Debug.Log("Loading");
     }
-    public void Continue()                              // Cargar la escena Level1. Esto se cambiará al selector de niveles. Incorporar guardado
-      {
-             SceneManager.LoadScene("Level1Mery");
-             HealthCounterMery.ResetHealth();
-      }
+    public void Continue()                              // Cargar la escena Level1. Falta incorporar guardado. Resetea la vida
+    {
+        DataManagerMery.LoadData();                          // Se cargan los datos guardados
 
-    public void Levels()
+        if (PlayerPrefs.GetFloat("SavedData") == 1)           // Si existen datos de guardado, se cargan, pero si no es el caso se cogen los datos por defecto
+        {
+            DataManagerMery.LoadData();
+            SceneManager.LoadScene("Level1Mery");
+            HealthCounterMery.ResetHealth();
+        }
+        else
+        {
+            SceneManager.LoadScene("Level1Mery");
+            HealthCounterMery.ResetHealth();
+        }
+    }
+
+    public void Levels()                                // Menú de niveles
     {
         SceneManager.LoadScene("LevelsMenuMery");
     }
 
-      public void NewGame()                                // Cargar Level1. Resetea las vidas y los coleccionables
-      {
+    public void NewGame()                                // Carga el panel
+    {
          surePanel.SetActive(true);
-      }
+    }
 
-    public void NGYes()
+    public void NGYes()                                 // Si se confirma, empezará una partida nueva sin datos de guardado
     {
-        SceneManager.LoadScene("Level1Mery");
-        CollectibleCounterMery.ResetCollectibles();
-        HealthCounterMery.ResetLives();
-        HealthCounterMery.ResetHealth();
-
         DataManagerMery.DeleteData();
+
+        SceneManager.LoadScene("Level1Mery");
+        HealthCounterMery.ResetHealth();
+        HealthCounterMery.ResetLives();
+        CollectibleCounterMery.ResetCollectibles();
     }
 
-    public void NGNo()
+    public void NGNo()                                 // Si no, se cierra el panel
     {
-        surePanel.SetActive(false);
+         surePanel.SetActive(false);                    
     }
-      public void Quit()                 // Salir
+
+    public void Quit()                                // Salir (No funciona)
       {
-              Application.Quit();
-              Debug.Log("Exit");
+          Application.Quit();
+          Debug.Log("Exit");
       }
 }
