@@ -13,7 +13,7 @@ public class EnemyChargeAtkOscar : StateMachineBehaviour
         {
             Warning = Instantiate(WarnPropL, animator.transform.position, Quaternion.identity);
         }
-        else { Warning = Instantiate(WarnPropR, animator.transform.position, Quaternion.identity); }
+        else { Warning = Instantiate(WarnPropR, animator.transform); }
         
     }
 

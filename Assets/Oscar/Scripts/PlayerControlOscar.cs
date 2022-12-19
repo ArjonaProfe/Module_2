@@ -113,13 +113,13 @@ public class PlayerControlOscar : MonoBehaviour
             //Let object fall if damaged
             if (LifeMan.JustHurted == true)
             {
+                Carried.GetComponent<Rigidbody2D>().isKinematic = false;
                 Carried.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1);
                 Carried = null;
                 LifeMan.JustHurted = false;
             }
         }
         else { Anim.SetBool("Carrying", false); }
-        //Let object fall if damaged
         if (LifeMan.JustHurted == true)
         {
             LifeMan.JustHurted = false;
@@ -152,7 +152,6 @@ public class PlayerControlOscar : MonoBehaviour
 
         if (transform.position.y < -50)
         {
-            print("Caida");
             ReturnToPos();
             LifeMan.TakeDamage(10, LifeNStatusOscar.DmgType.Weak);
         }
@@ -226,12 +225,12 @@ public class PlayerControlOscar : MonoBehaviour
     //Grab and Throw
     public void GrabItem()
     {
-        Collider2D[] Grabbed = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius*2, IsGrabbable);
+        Collider2D[] Grabbed = Physics2D.OverlapCircleAll(CanonPoint.transform.position, AtkRadius, IsGrabbable);
         if(Grabbed.Length != 0)
         {
-            print(Grabbed[0].name);
             Carried = Grabbed[0].gameObject;
             Carried.GetComponent<GrabItemOscar>().Carried = true;
+            Carried.GetComponent<Rigidbody2D>().isKinematic = true;
         }
         else if(HangAbal == true)
         {
@@ -243,6 +242,7 @@ public class PlayerControlOscar : MonoBehaviour
     {
         if(Carried != null)
         {
+            Carried.GetComponent<Rigidbody2D>().isKinematic = false;
             Vector3 Dir = new Vector3(1, 1, 1);
             if (transform.localScale.x < 0) { Dir.x = -1; }
             Carried.GetComponent<Rigidbody2D>().velocity = ThrowVec * Dir;
@@ -270,7 +270,6 @@ public class PlayerControlOscar : MonoBehaviour
         //ground detector
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(GroundPoint.transform.position, 0.08f);
-        Gizmos.DrawWireSphere(CanonPoint.transform.position, AtkRadius*2);
         //punch
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(CanonPoint.position, AtkRadius);

@@ -249,6 +249,7 @@ MonoBehaviour:
   Shield: 0
   ExpShield: 0
   JustHurted: 0
+  Dead: 0
   Anim: {fileID: 7254699855688427712}
 --- !u!114 &7254699855688427713
 MonoBehaviour:
@@ -268,7 +269,7 @@ MonoBehaviour:
   RB2D: {fileID: 7254699855688427741}
   JumpSpeed: 26
   MeleeDmg: 25
-  CharMeleeDmg: 75
+  CharMeleeDmg: 100
   CharTimer: 0
   CharGoal: 0.7
   MoveX: 0
@@ -287,12 +288,12 @@ MonoBehaviour:
     m_Bits: 128
   IsLader:
     serializedVersion: 2
-    m_Bits: 196608
+    m_Bits: 131072
   Bouncer:
     serializedVersion: 2
     m_Bits: 65536
   CanonPoint: {fileID: 7254699854256907993}
-  AtkRadius: 0.4
+  AtkRadius: 0.6
   IsEnemy:
     serializedVersion: 2
     m_Bits: 1536

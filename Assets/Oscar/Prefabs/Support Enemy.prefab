@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7066199447370094677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58,6 +58,7 @@ MonoBehaviour:
   StunBuild: 0
   StunGoal: 60
   Shield: 0
+  ExpShield: 0
   JustHurted: 0
   Anim: {fileID: 7066199447370094634}
 --- !u!114 &7066199447370094638

@@ -7,7 +7,7 @@ public class BossTargetedLandOscar : StateMachineBehaviour
     public BowserntControlOscar Me;
     public Rigidbody2D RB2D;
     public Transform GroundPoint;
-    public float StartCord, TarCord, Timer, Goal;
+    public float StartCord, TarCord, Timer, Goal, Recoloc;
     public LayerMask Poundable;
     public Vector3 PushDir;
 
@@ -46,8 +46,11 @@ public class BossTargetedLandOscar : StateMachineBehaviour
         {
             for (int i = 0; i < Pounded.Length; i++)
             {
+                int Direction = 1;
+                if (animator.transform.position.x > Pounded[i].transform.position.x) { Direction = -1; }
                 Pounded[i].GetComponent<LifeNStatusOscar>().TakeDamage(15, LifeNStatusOscar.DmgType.Weak);
-                Pounded[i].GetComponent<Rigidbody2D>().velocity = Vector3.Scale(PushDir, Pounded[i].transform.localScale.normalized);
+                Pounded[i].transform.position += new Vector3(Recoloc * Direction, 0, 0);
+                Pounded[i].GetComponent<Rigidbody2D>().velocity = new Vector3(PushDir.x * Direction, PushDir.y, 0);
             }
         }
     }

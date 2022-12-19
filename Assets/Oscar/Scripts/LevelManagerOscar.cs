@@ -20,6 +20,7 @@ public class LevelManagerOscar : MonoBehaviour
 
     //Buttons for the menu
     public List<Button> LvButtons;
+    public GameObject DelPanel;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class LevelManagerOscar : MonoBehaviour
             }
             CollectLabel.text = "Gx" + Counter.ToString() + "/" + LvStats[SceneID].Gems.Count;
         }
+        if(DelPanel != null) { DelPanel.SetActive(false); }
     }
 
     public void Update()
@@ -114,6 +116,15 @@ public class LevelManagerOscar : MonoBehaviour
         }
     }
 
+    public void AskIfDelete()
+    {
+        DelPanel.SetActive(true);
+    }
+    public void RefuseToDelete()
+    {
+        DelPanel.SetActive(false);
+    }
+
     public void DeleteGame()
     {
         PlayerPrefs.SetInt("CoinCount", 0);
@@ -125,5 +136,7 @@ public class LevelManagerOscar : MonoBehaviour
                 PlayerPrefs.SetInt("Level" + i + "Gem" + u + "Taken", 0);
             }
         }
+        LoadGame();
+        DelPanel.SetActive(false);
     }
 }

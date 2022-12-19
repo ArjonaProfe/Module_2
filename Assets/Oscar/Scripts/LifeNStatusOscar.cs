@@ -7,7 +7,7 @@ public class LifeNStatusOscar : MonoBehaviour
     public enum Faction { Hero, Neutral, Villain }
     public Faction MyFaction;
     public int Life, MaxLife, StunBuild, StunGoal;
-    public bool Shield, ExpShield, JustHurted;
+    public bool Shield, ExpShield, JustHurted, Dead;
     public Animator Anim;
     public enum DmgType { Weak, Strong, Explosive, Fire }
 
@@ -16,6 +16,7 @@ public class LifeNStatusOscar : MonoBehaviour
     {
         Life = MaxLife;
         JustHurted = false;
+        Dead = false;
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class LifeNStatusOscar : MonoBehaviour
         {
             if(Anim != null) { Anim.SetTrigger("Death"); }
             else { Death(); }
+            Dead = true;
         }
     }
 
@@ -41,7 +43,7 @@ public class LifeNStatusOscar : MonoBehaviour
                     if (Anim != null)
                     {
                         StunBuild += Dmg;
-                        if (StunBuild >= StunGoal)
+                        if (StunBuild >= StunGoal && Dead == false)
                         {
                             Anim.SetTrigger("Hurt");
                             StunBuild = 0;
@@ -61,7 +63,7 @@ public class LifeNStatusOscar : MonoBehaviour
                         if (Anim != null)
                         {
                             StunBuild += Dmg;
-                            if (StunBuild >= StunGoal)
+                            if (StunBuild >= StunGoal && Dead == false)
                             {
                                 Anim.SetTrigger("Hurt");
                                 StunBuild = 0;
@@ -75,7 +77,7 @@ public class LifeNStatusOscar : MonoBehaviour
                         if (Anim != null)
                         {
                             StunBuild += Dmg;
-                            if (StunBuild >= StunGoal)
+                            if (StunBuild >= StunGoal && Dead == false)
                             {
                                 Anim.SetTrigger("Hurt");
                                 StunBuild = 0;
@@ -95,7 +97,7 @@ public class LifeNStatusOscar : MonoBehaviour
                     if (Anim != null)
                     {
                         StunBuild += Dmg;
-                        if (StunBuild >= StunGoal)
+                        if (StunBuild >= StunGoal && Dead == false)
                         {
                             Anim.SetTrigger("Hurt");
                             StunBuild = 0;
@@ -109,7 +111,7 @@ public class LifeNStatusOscar : MonoBehaviour
                     if (Anim != null)
                     {
                         StunBuild += Dmg;
-                        if (StunBuild >= StunGoal)
+                        if (StunBuild >= StunGoal && Dead == false)
                         {
                             Anim.SetTrigger("Hurt");
                             StunBuild = 0;
@@ -126,7 +128,7 @@ public class LifeNStatusOscar : MonoBehaviour
                     if (Anim != null)
                     {
                         StunBuild += Dmg;
-                        if (StunBuild >= StunGoal)
+                        if (StunBuild >= StunGoal && Dead == false)
                         {
                             Anim.SetTrigger("Hurt");
                             StunBuild = 0;

@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Power: 15
   Speed: 12
-  Lifetime: 2
+  Lifetime: 1
   Potency: 0
   MyFaction: 0
 --- !u!61 &60234745022381015

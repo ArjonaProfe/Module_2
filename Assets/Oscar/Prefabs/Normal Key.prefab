@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6057674275251898300}
   - component: {fileID: 6057674275251898301}
   - component: {fileID: 6057674275251898290}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Normal Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +110,7 @@ MonoBehaviour:
   ParSys: {fileID: 0}
   Anim: {fileID: 0}
   Carried: 0
+  StartPos: {x: 0, y: 0, z: 0}
   BarrelRadius: 0
   BarrelDmg: 0
   Thrown: 0
