@@ -315,11 +315,11 @@ GameObject:
   - component: {fileID: 957338428210584426}
   - component: {fileID: 698891875285695726}
   - component: {fileID: 7442883222177102374}
-  - component: {fileID: 2312596011440652302}
   - component: {fileID: 635799853702459133}
   - component: {fileID: 7100674873089275000}
   - component: {fileID: 544314197209881826}
-  - component: {fileID: 1238873964035143047}
+  - component: {fileID: 9126974673077970884}
+  - component: {fileID: 3498189765073024667}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -444,34 +444,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.26, y: 1.3}
   m_EdgeRadius: 0
---- !u!114 &2312596011440652302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7204928308722145852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df03438cd9aeed14ebdb14e7684ccfff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 3
-  hasRangedAttack: 0
-  hasMeleeAttack: 0
-  isFlipped: 0
-  sr: {fileID: 957338428210584426}
-  BulletEnemy: {fileID: 204045810943896913, guid: ef3c3820d3429bf4191ec6212f7554cf, type: 3}
-  waypointRight: {fileID: 3200832787647099174}
-  waypointLeft: {fileID: 2129983522877087175}
-  an: {fileID: 698891875285695726}
-  attacking: 0
-  waypointA: {fileID: 0}
-  waypointB: {fileID: 0}
-  speedValue: 0
-  stopRun: 0
-  speed: 1
-  smg: {fileID: 0}
 --- !u!114 &635799853702459133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +487,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeb5ddfc8aae534997883a979646dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1238873964035143047
+--- !u!114 &9126974673077970884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7204928308722145852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824a64bcfe94ef94180f828f37e73de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 3
+  isFlipped: 0
+  sr: {fileID: 957338428210584426}
+  BulletEnemy: {fileID: 204045810943896913, guid: ef3c3820d3429bf4191ec6212f7554cf, type: 3}
+  waypointRight: {fileID: 3200832787647099174}
+  waypointLeft: {fileID: 2129983522877087175}
+  an: {fileID: 698891875285695726}
+  attacking: 0
+  waypointA: {fileID: 0}
+  waypointB: {fileID: 0}
+  speedValue: 0
+  stopRun: 0
+  speed: 1
+  smg: {fileID: 0}
+--- !u!114 &3498189765073024667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -524,7 +522,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7204928308722145852}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456b7b66515d3844581996848bb67dbc, type: 3}
+  m_Script: {fileID: 11500000, guid: da1ab999beae08d41a7e309a6c1756d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  epg: {fileID: 2312596011440652302}
+  eprg: {fileID: 9126974673077970884}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 204045810822560956}
   - component: {fileID: 3224327950621868702}
   - component: {fileID: 6216564173825704731}
+  - component: {fileID: 6341964456571115701}
   m_Layer: 9
   m_Name: BlockFlash_0
   m_TagString: Untagged
@@ -144,6 +145,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6341964456571115701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204045810822560958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10973b2e896eaae4fbcb80c5dcfd9b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smg: {fileID: 0}
+  minuspoints: 50
 --- !u!1 &204045810943896913
 GameObject:
   m_ObjectHideFlags: 0

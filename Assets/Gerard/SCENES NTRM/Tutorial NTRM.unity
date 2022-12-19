@@ -198,6 +198,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7204928308722145852, guid: f4eb9c1f16c91f7498a63140367ddf29, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126974673077970884, guid: f4eb9c1f16c91f7498a63140367ddf29, type: 3}
+      propertyPath: waypointA
+      value: 
+      objectReference: {fileID: 276384170}
+    - target: {fileID: 9126974673077970884, guid: f4eb9c1f16c91f7498a63140367ddf29, type: 3}
+      propertyPath: waypointB
+      value: 
+      objectReference: {fileID: 696267545}
     m_RemovedComponents:
     - {fileID: 8334256646288299021, guid: f4eb9c1f16c91f7498a63140367ddf29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4eb9c1f16c91f7498a63140367ddf29, type: 3}
@@ -441,6 +453,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3713753411554806351, guid: 67a675c76d36c864a9c457369c58ed18, type: 3}
   m_PrefabInstance: {fileID: 1712565023}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &822562801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4686958569254129802, guid: f4eb9c1f16c91f7498a63140367ddf29, type: 3}
+  m_PrefabInstance: {fileID: 66297408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &822562804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822562801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10973b2e896eaae4fbcb80c5dcfd9b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smg: {fileID: 1512336478}
+  minuspoints: 10
 --- !u!4 &871964399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3952071516988117166, guid: d7ee3b9bbfa71fe41b6695c5c3c44deb, type: 3}

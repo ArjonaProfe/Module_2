@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 252901151125061426}
   - component: {fileID: 459339175028809119}
   - component: {fileID: 7085894785775547853}
-  - component: {fileID: 7006104353908111935}
+  - component: {fileID: 6990131545512439120}
   m_Layer: 9
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -335,8 +335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
-  hasRangedAttack: 0
-  hasMeleeAttack: 1
   isFlipped: 0
   sr: {fileID: 3021719305587136899}
   BulletEnemy: {fileID: 0}
@@ -393,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb440774a41309b4a9bdb5b57254c8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7006104353908111935
+--- !u!114 &6990131545512439120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -402,7 +400,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3021719305587136897}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456b7b66515d3844581996848bb67dbc, type: 3}
+  m_Script: {fileID: 11500000, guid: fafcf40f8abec3e49a94bdc29a44c6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   epg: {fileID: 8550098743726563468}

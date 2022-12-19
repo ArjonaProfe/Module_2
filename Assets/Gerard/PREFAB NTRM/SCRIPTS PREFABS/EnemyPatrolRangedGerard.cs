@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyPatrolGerard : MonoBehaviour
+public class EnemyPatrolRangedGerard : MonoBehaviour
 {
 
 
     public float attackCooldown;
     private float attackCD;
     private float speedTimerInterno = 1f;
+
 
     public bool isFlipped;
     public SpriteRenderer sr;
@@ -69,21 +70,34 @@ public class EnemyPatrolGerard : MonoBehaviour
     }
 
 
-    void EnemyAttackingMelee()
-    {
-            AttackEnemy();
-            attackCD = attackCooldown;
 
+
+    void EnemyAttackingRanged()
+    {
+            Bullet();
+            attackCD = attackCooldown;
     }
 
 
 
-    void AttackEnemy()
+    void BulletFlip()
+    {
+        if (sr.flipX == false)
+        {
+            Instantiate(BulletEnemy, waypointLeft.position, waypointLeft.rotation);
+        }
+        else
+        {
+            Instantiate(BulletEnemy, waypointRight.position, waypointRight.rotation);
+        }
+    }
+
+    void Bullet()
     {
         speed = 0;
-        speedTimerInterno = speedTimerInterno - 1f * Time.deltaTime;
+        speedTimerInterno = speedTimerInterno - 1 * Time.deltaTime;
         attacking = true;
-        Debug.Log(attacking = true);
+        BulletFlip();
         an.SetBool("Attack", attacking);
 
         if (speedTimerInterno < 0f)
@@ -92,12 +106,9 @@ public class EnemyPatrolGerard : MonoBehaviour
             stopRun = false;
             speedTimerInterno = 1f;
             attacking = false;
-            Debug.Log(attacking = false);
-
         }
 
     }
-
 
     void Update()
     {
@@ -105,15 +116,12 @@ public class EnemyPatrolGerard : MonoBehaviour
         MovingToWaypoints();
         attackCD = attackCD - 1f * Time.deltaTime;
 
-
         if (attackCD < 0)
         {
             stopRun = true;
-            EnemyAttackingMelee();
+            EnemyAttackingRanged();
             attacking = false;
-
         }
-
 
         if (stopRun == false)
         {
