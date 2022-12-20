@@ -7,35 +7,35 @@ public class EnemyPatrolGerard : MonoBehaviour
 {
 
 
-    public float attackCooldown;
-    private float attackCD;
-    private float speedTimerInterno = 1f;
+    public float attackCooldown;            // hacemos publico un numero X para darle CD al ataque
+    private float attackCD;                 // hacemos privado un numero para resetear el valor anterior
+    private float speedTimerInterno = 1f;   // hacemos privado un numero para hacer un contador de tiempo
 
-    public bool isFlipped;
-    public SpriteRenderer sr;
-    public GameObject BulletEnemy;
-    public Transform waypointRight;
+    public bool isFlipped;                  // hacemos publico un boleano para controlar el sentido en el que mira el sprite
+    public SpriteRenderer sr;               // hacemos que el SpriteRenderer sea conocido como sr
+    public GameObject BulletEnemy;          // hacemos que un gameObject sea llamado BulletEnemy
+    public Transform waypointRight;         // un objecto con transform (cordenadas) lo seteamos como publico.
     public Transform waypointLeft;
     
 
-    public Animator an;
+    public Animator an;                     // denominamos an al Animator que se coloque en ello
 
-    public bool attacking;
-    private bool stopRunningCheck = true;
+    public bool attacking;                  // hacemos publico un boleano para saber cuando estamos atacando
+    private bool stopRunningCheck = true;   // hacemos un bolano privado para setear otro mas adelante.
 
 
-    private SpriteRenderer sp;
+    private SpriteRenderer sp;              // hacemos privado el spriteRenderer con "sp"
 
     public Transform waypointA;   // primer waypoint de la ruta
     public Transform waypointB;   // segundo waypoint de la ruta  
 
-    public float speedValue;
+    public float speedValue;        // valor de velocidad para copiarlo y resetear el speed.
 
-    public bool stopRun;
+    public bool stopRun;            // boleano para controlar cuando para el movimiento.
 
     public float speed;           // velocidad del enemigo
     private Transform target;     // objetivo que va a perseguir el enemigo
-    public ScoreManagerGerard smg;
+    public ScoreManagerGerard smg;      // scoremanager pasa a ser smg
 
     private void Start()
     {

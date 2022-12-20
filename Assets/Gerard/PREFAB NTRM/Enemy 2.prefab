@@ -211,9 +211,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '5
-
-'
+  m_Text: 3
 --- !u!1 &2931182760825209706
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smg: {fileID: 2024363389461261550, guid: e1c0665f8de7a4a41865643e59db1a76, type: 3}
-  minuspoints: -20
+  minuspoints: -5
   an: {fileID: 8295379430455593624, guid: 8f88c259ec1760c4896df18911ef9ac7, type: 3}
 --- !u!1 &7204928308722145852
 GameObject:
@@ -472,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dead: 0
-  lifepoints: 5
+  lifepoints: 3
   deadpoints: 250
   gothit: 0
   life: {fileID: 2013659165344905060}
