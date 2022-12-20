@@ -25,7 +25,7 @@ public class Waypoint_AC : MonoBehaviour
         time = time - 1 * Time.deltaTime;   //restará 1u/s
         if (time < 0)
         {
-            number = Random.Range(0, Pops.Length - 1);   //hacemos un bingo
+            number = Random.Range(0, Pops.Length);   //hacemos un bingo
             Instantiate(Pops[number], waypoint[number]);     //mueve el objetivo al punto indicado
             time = resetTime;                       //una vez hecho resetea la cuenta
         }

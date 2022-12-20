@@ -170,7 +170,7 @@ MonoBehaviour:
   Heart_AC1: {fileID: 764787721}
   Heart_AC2: {fileID: 2107664103}
   Heart_AC3: {fileID: 1040429705}
-  gameOver: {fileID: 0}
+  gameOver: {fileID: 1495610632}
 --- !u!4 &79982781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3882249680789765618, guid: f67cdb3b2aa61d84ab0fe96e7967aa0a, type: 3}
@@ -730,6 +730,11 @@ Transform:
   m_Father: {fileID: 1637503944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1495610632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1293070264524255408, guid: 73929298b2b69ee4f8bab004ebb2f7bf, type: 3}
+  m_PrefabInstance: {fileID: 5819595899314787158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1506461451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5821649288158396430, guid: 2cb0ca6d589e9974781c8e39762b0792, type: 3}
