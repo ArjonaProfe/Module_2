@@ -112,7 +112,7 @@ MonoBehaviour:
   Carried: 0
   StartPos: {x: 0, y: 0, z: 0}
   BarrelRadius: 1
-  BarrelDmg: 25
+  BarrelDmg: 100
   Thrown: 0
   BombRadius: 0
   BombDmg: 0

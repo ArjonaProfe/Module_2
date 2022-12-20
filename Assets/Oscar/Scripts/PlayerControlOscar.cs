@@ -65,13 +65,9 @@ public class PlayerControlOscar : MonoBehaviour
         }
         else { Anim.SetBool("Running", false); }
 
-        //Ground detection, jump
+        //Ground detection
         Grounded = Physics2D.OverlapCircle(GroundPoint.position, 0.05f, IsGround);
         Anim.SetBool("Grounded", Grounded);
-        if ((Input.GetButtonDown("Jump") || MoveY > 0) && Grounded == true)
-        {
-            RB2D.velocity = new Vector2(RB2D.velocity.x, JumpSpeed);
-        }
 
         //Melee Attack
         if (Input.GetButton("Fire1"))
@@ -82,7 +78,15 @@ public class PlayerControlOscar : MonoBehaviour
                 CharTimer += Time.deltaTime;
             }
         }
-        else { Anim.SetBool("MeleeCharge", false);}
+        else
+        {
+            Anim.SetBool("MeleeCharge", false);
+            //Jump, unabailable if charging attack
+            if ((Input.GetButtonDown("Jump") || MoveY > 0) && Grounded == true)
+            {
+                RB2D.velocity = new Vector2(RB2D.velocity.x, JumpSpeed);
+            }
+        }
         Anim.SetFloat("CharTime", CharTimer);
 
         //Fireball shot

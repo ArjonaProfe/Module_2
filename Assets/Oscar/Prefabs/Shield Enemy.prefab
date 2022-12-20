@@ -62,6 +62,7 @@ MonoBehaviour:
   Shield: 1
   ExpShield: 0
   JustHurted: 0
+  Dead: 0
   Anim: {fileID: 2874336367718436999}
 --- !u!114 &2874336367718437051
 MonoBehaviour:
@@ -232,8 +233,8 @@ MonoBehaviour:
   Anim: {fileID: 0}
   Carried: 0
   StartPos: {x: 0, y: 0, z: 0}
-  BarrelRadius: 0
-  BarrelDmg: 0
+  BarrelRadius: 1
+  BarrelDmg: 100
   Thrown: 0
   BombRadius: 0
   BombDmg: 0

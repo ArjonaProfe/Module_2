@@ -126,7 +126,7 @@ void Start()
 
                 for (int i = 0; i < CurrentHorde.Count; i++)
                 {
-                    if (CurrentHorde[i] == null)
+                    if (CurrentHorde[i] == null || (CurrentHorde[i].GetComponent<LifeNStatusOscar>() != null && CurrentHorde[i].GetComponent<LifeNStatusOscar>().Dead == true))
                     {
                         CurrentHorde.Remove(CurrentHorde[i]);
                     }
@@ -182,6 +182,7 @@ void Start()
                         {
                             ToEnable[i].SetActive(true);
                         }
+                        gameObject.SetActive(false);
                     }
                 }
                 break;

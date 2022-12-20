@@ -71,7 +71,7 @@ public class LevelManagerOscar : MonoBehaviour
     {
         LvStats[SceneID].LvClear = true;
         SaveGame();
-        SceneManager.LoadScene(42);
+        SceneManager.LoadScene(40);
     }
 
     public void CollectGem(int ID)

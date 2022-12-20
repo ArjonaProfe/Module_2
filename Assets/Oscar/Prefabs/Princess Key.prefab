@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5770004191176321069}
   - component: {fileID: 5770004191176321068}
   - component: {fileID: 5770004191176321059}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Princess Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
