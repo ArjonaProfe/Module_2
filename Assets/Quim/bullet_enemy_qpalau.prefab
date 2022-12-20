@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5000786795674142550}
   - component: {fileID: 1106844673035305125}
   - component: {fileID: 5374131942345193834}
+  - component: {fileID: 2080344581971149096}
   m_Layer: 0
   m_Name: bullet_enemy_qpalau
   m_TagString: Untagged
@@ -169,3 +170,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+--- !u!114 &2080344581971149096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8079021411029198123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14212c8a929bea541968ab5c014d5507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Respawn: 1
