@@ -7,9 +7,14 @@ public class AceitunaMove_AC : MonoBehaviour
 {
     private float horizontal;       // el movimiento de acción será en eje x
     private float speed = 8f;       //variable de velocidad, le ponemos un valor X
-    private Rigidbody rb;           //mencionamos el Rigidbody
+    private Rigidbody2D rb;           //mencionamos el Rigidbody
 
-   
+
+
+   void Start()
+    {
+       rb = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
