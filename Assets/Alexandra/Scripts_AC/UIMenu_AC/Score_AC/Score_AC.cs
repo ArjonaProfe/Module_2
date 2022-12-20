@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score_AC : MonoBehaviour
+public class Score_AC : MonoBehaviour               //script score con el tiempo
 {
     public Text Text;
     public Text scoreText;
@@ -14,7 +14,7 @@ public class Score_AC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;          //score al inicio
+        score = 0;                                      //score al inicio
     }
 
     // Update is called once per frame
@@ -28,6 +28,6 @@ public class Score_AC : MonoBehaviour
     }
     public void highscorefun ()
     {
-        Text.text = PlayerPrefs.GetInt("score").ToString();
+        Text.text = PlayerPrefs.GetInt("score").ToString(); //muestra en pantalla el score
     }
 }

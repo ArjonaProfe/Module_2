@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AceitunaMove_AC : MonoBehaviour
+public class AceitunaMove_AC : MonoBehaviour        //script para darle movimiento al Player
 {
-    private float speed = 8f;       //variable de velocidad, le ponemos un valor X
+    private float speed = 10f;       //variable de velocidad, le ponemos un valor X
 
     void Update()
     {

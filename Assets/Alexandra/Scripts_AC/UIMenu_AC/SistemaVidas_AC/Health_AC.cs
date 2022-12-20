@@ -6,11 +6,11 @@ using UnityEngine.UI;                   //vamos a usar un texto con UI
 using UnityEngine.SceneManagement;      //cargar escenas             
 
 
-public class Health_AC : MonoBehaviour
+public class Health_AC : MonoBehaviour      //script vida
 {
     private void OnTriggerEnter2D (Collider2D other)
     {
-        GameControl_AC.health += 1;        
+        GameControl_AC.health += 1;                 //sumamos un punto de vida al recoger objeto
     }
 
 }
