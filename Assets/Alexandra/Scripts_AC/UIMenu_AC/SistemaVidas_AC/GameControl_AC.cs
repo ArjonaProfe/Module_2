@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameControl_AC : MonoBehaviour     //script sistema de vidas y canvas Game Over
@@ -50,5 +49,5 @@ public class GameControl_AC : MonoBehaviour     //script sistema de vidas y canv
             Debug.Log("buabuabuaa");
         }
     }
-        
+
 }
