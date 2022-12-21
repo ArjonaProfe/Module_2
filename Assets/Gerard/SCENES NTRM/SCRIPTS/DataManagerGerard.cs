@@ -17,10 +17,7 @@ public class DataManagerGerard : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetFloat("SavedData") == 1 )           // Si existen datos de guardado, se cargan, pero si no es el caso se cogen los datos por defecto
-        {
-            LoadData();
-        }
+
     }
 
 
@@ -29,16 +26,7 @@ public class DataManagerGerard : MonoBehaviour
         PlayerPrefs.SetFloat("SavedData", savedData = 1);
     }
 
-    public static void LoadData()
-    {
-        tutorialSucces = PlayerPrefs.GetString("tutorialSucces", "No");
-        levelOneSucces = PlayerPrefs.GetString("levelOneSucces", "No");
-        levelTwoSucces = PlayerPrefs.GetString("levelTwoSucces", "No");
-        levelThreeSucces = PlayerPrefs.GetString("levelThreeSucces", "No");
-        levelOneTimerSucces = PlayerPrefs.GetString("levelOneTimerSucces", "No");
-        levelTwoTimerSucces = PlayerPrefs.GetString("levelTwoTimerSucces", "No");
-        levelThreeTimerSucces = PlayerPrefs.GetString("levelThreeTimerSucces", "No");
-    }
+
 
     public static void TutorialProgress()
     {

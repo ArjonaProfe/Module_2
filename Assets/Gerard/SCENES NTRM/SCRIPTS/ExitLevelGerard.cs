@@ -10,6 +10,8 @@ public class ExitLevelGerard : MonoBehaviour
     public ScoreManagerGerard smg;
     private float secsToExit = 5f;
     public Text done;
+    public Text finalScoreText;
+    private float finalScore;
 
 
     void Start()
@@ -23,6 +25,8 @@ public class ExitLevelGerard : MonoBehaviour
     {
         if (smg.enemiesNumber == 0)
         {
+            finalScore = smg.score;
+            finalScoreText.text = "Final Score: \n" + finalScore.ToString();
             secsToExit = secsToExit - 1 * Time.deltaTime;
             done.text = "Done! \n" + secsToExit.ToString("0");
 

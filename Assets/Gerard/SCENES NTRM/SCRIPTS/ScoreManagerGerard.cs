@@ -11,7 +11,8 @@ public class ScoreManagerGerard : MonoBehaviour
     public Text minusscoreText;
     public Text enemiesText;
 
-    private int minusScoreHolder;
+
+
 
     public int score = 0;
     public int highscore = 0;

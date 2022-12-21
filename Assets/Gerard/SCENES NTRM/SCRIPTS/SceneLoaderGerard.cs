@@ -22,7 +22,6 @@ public class SceneLoaderGerard : MonoBehaviour
 
     public void Start()
     {
-        DataManagerGerard.LoadData();                          // Se cargan los datos guardados
 
         if (DataManagerGerard.tutorialSucces == "No")            // Si el primer nivel no se ha superado, el botón no se puede usar
         {
