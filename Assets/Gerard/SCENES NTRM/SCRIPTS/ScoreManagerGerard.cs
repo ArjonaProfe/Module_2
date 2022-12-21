@@ -17,6 +17,7 @@ public class ScoreManagerGerard : MonoBehaviour
     public int highscore = 0;
     public int minusScore = 0;
     public int enemiesNumber;
+    public int minimumScore;
 
 
     void Start()

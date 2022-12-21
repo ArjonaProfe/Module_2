@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadGerard : MonoBehaviour
+public class LevelManagerGerard : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
