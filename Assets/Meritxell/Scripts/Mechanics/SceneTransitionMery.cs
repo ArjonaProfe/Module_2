@@ -5,25 +5,17 @@ using UnityEngine;
 public class SceneTransitionMery : MonoBehaviour
 {
     public GameObject FadePanel;
-    private Animator anim;
+    private static Animator anim;
 
     public static bool fading;
-    public static bool done;
 
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-
-        fading = anim.GetBool("Fading");
-        done = anim.GetBool("Done");
-
-        fading = false;
-        done = true;
-
-    }
+    public static GameObject fadePanel;
 
     public void FadeTransition()
     {
+        fadePanel.SetActive(true);
+        fading = anim.GetBool("Fading");
+
         anim.SetBool("Fading", true);
         fading = true;
         Debug.Log("FadeIn");
@@ -36,5 +28,6 @@ public class SceneTransitionMery : MonoBehaviour
         anim.SetBool("Fading", false);
         fading = false;
         Debug.Log("FadeOut");
+        fadePanel.SetActive(false);
     }
 }

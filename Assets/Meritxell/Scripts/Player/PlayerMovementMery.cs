@@ -56,7 +56,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     }
     void IsGrounded()
     {
-        RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.down, 10f); // Lanza un raycast 2D desde la posición 'rayOrigin', en dirección hacia abajo y con un alcance de 10 unidades
+        RaycastHit2D ray = Physics2D.Raycast(rayOrigin.position, Vector2.down, 30f); // Lanza un raycast 2D desde la posición 'rayOrigin', en dirección hacia abajo y con un alcance de 10 unidades
 
         if (ray.distance < 0.01f)   // Si el rayo choca con un objeto a una distancia menor de 0.01
         {
@@ -84,15 +84,15 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
         if(isDucking == false)                    // Mientras el bool isDucking es falso
         {
             GetComponent<BoxCollider2D>().size = new Vector2(1f, 1.5f);            // El collider tiene este tamaño
-            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.755f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.77f);
         }
 
 
         if (Input.GetAxisRaw("Vertical") < 0)    // Si el input vertical es menor a 0, aka estás pulsando abajo (nota: get axis raw solo reconoce 1, 0 y -1; sin float)
         {
             isDucking = true;                                                        // El bool es verdadero y el collider tiene este otro tamaño
-            GetComponent<BoxCollider2D>().size = new Vector2(1f, 0.9f);        
-            GetComponent<BoxCollider2D>().offset = new Vector2(0.05f, 0.45f);
+            GetComponent<BoxCollider2D>().size = new Vector2(1f, 1f);        
+            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.52f);
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;                 // Constraints evita que el personaje pueda moverse mientras se agacha
         }
         else

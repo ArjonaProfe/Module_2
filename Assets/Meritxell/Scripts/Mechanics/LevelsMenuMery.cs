@@ -25,7 +25,21 @@ public class LevelsMenuMery : MonoBehaviour              // Menú de niveles
 
     public void Level1()                                // Cargar nivel 1
     {
-        SceneManager.LoadScene("Level1Mery");
+        DataManagerMery.LoadData();                          // Se cargan los datos guardados
+
+        if (PlayerPrefs.GetFloat("SavedData") == 1)           // Si existen datos de guardado, se cargan, pero si no es el caso se cogen los datos por defecto
+        {
+            DataManagerMery.LoadData();
+            SceneManager.LoadScene("Level1Mery");
+            HealthCounterMery.ResetHealth();
+        }
+        else
+        {
+            SceneManager.LoadScene("Level1Mery");
+            HealthCounterMery.ResetHealth();
+            HealthCounterMery.ResetLives();
+            CollectibleCounterMery.ResetCollectibles();
+        }
     }
 
     public void Level2()

@@ -9,9 +9,6 @@ public class DoorMery : MonoBehaviour
 
     public GameObject fadePanel;
 
-    public static bool fading;
-    public static bool done;
-
     public SceneTransitionMery fade;
 
     void OnTriggerEnter2D(Collider2D other)                                  // Preguntar por axis vertical y porque no funciona
