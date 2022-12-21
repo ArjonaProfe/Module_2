@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletEnemyMery : MonoBehaviour
 {
     public float speed = 5f;          // Velocidad de la bala
-    public int damage = 40;           // Daño que causa la bala
+    public int damage = 1;           // Daño que causa la bala
 
     public Rigidbody2D rb;            // El RB del objeto (probar private)
 
@@ -13,6 +13,11 @@ public class BulletEnemyMery : MonoBehaviour
     {
         rb.velocity = transform.right * speed;        // Mueve el objeto hacia delante
     }
+    private void Update()
+    {
+        DestroyTimer();                              // Llama la función 
+    }
+
     void OnTriggerEnter2D(Collider2D hitInfo)         // Cuando entra en un collider. Crea el parametro hitInfo
     {
         PlayerHealthMery player = hitInfo.GetComponent<PlayerHealthMery>();   // Interactua con el script al que llama player, y le asigna el hitInfo
@@ -29,5 +34,14 @@ public class BulletEnemyMery : MonoBehaviour
         {
             Destroy(gameObject);                      // Se destruye en el impacto
         }
+    }
+    void DestroyTimer()                 // Si ha pasado 1 unidad de tiempo y la bala no ha chocado con nada, se destruye
+    {
+        Destroy(gameObject, 2f);
+    }
+
+    void OnBecameInvisible()            // Destruye cuando sale de la camara
+    {
+        Destroy(gameObject);
     }
 }

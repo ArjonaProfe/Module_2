@@ -32,7 +32,7 @@ public class AnimationPlayerMery : MonoBehaviour      // Script que controla la 
         }
 
         anim.SetInteger("SpeedMovement", Mathf.RoundToInt(rb.velocity.x));   // Se setea SpeedMovement del animator al rb.velocity.x
-        anim.SetBool("Ground", pm.isGrounded);                               // Se setea Ground al bool isGrounded del script pm
+        anim.SetBool("isGrounded", pm.isGrounded);                               // Se setea Ground al bool isGrounded del script pm
       
         if (rb.velocity.x < -0.1)                                            // Si la velocidad en X es menor de -0.1
         {
