@@ -127,8 +127,8 @@ GameObject:
   - component: {fileID: 7329346972283588609}
   - component: {fileID: 3697735757962084390}
   - component: {fileID: 8782421253582435970}
-  - component: {fileID: 2483509105506926393}
   - component: {fileID: 6944097615866671202}
+  - component: {fileID: 5940340340874826293}
   m_Layer: 0
   m_Name: Aceituna
   m_TagString: Player
@@ -220,18 +220,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2483509105506926393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7338920268678075219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb1452d771d1894aa3df3173948609b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &6944097615866671202
 Rigidbody2D:
   serializedVersion: 4
@@ -253,3 +241,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5940340340874826293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7338920268678075219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb1452d771d1894aa3df3173948609b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
