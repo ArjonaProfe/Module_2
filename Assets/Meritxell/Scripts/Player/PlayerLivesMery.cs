@@ -43,7 +43,7 @@ public class PlayerLivesMery : MonoBehaviour     // Script que controla que ocur
 
         DataManagerMery.isDeath = "Yes";
 
-        CollectibleCounterMery.collected = 0;
+        CollectibleCounterMery.collected = DataManagerMery.savedCollec;
 
         HealthCounterMery.lives = HealthCounterMery.lives - 1;     // Se resta una vida  directamente del contador
     }

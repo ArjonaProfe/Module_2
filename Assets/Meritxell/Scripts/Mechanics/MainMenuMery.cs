@@ -21,13 +21,15 @@ public class MainMenuMery : MonoBehaviour                 // Script del main men
         if (PlayerPrefs.GetFloat("SavedData") == 1)           // Si existen datos de guardado, se cargan, pero si no es el caso se cogen los datos por defecto
         {
             DataManagerMery.LoadData();
-            SceneManager.LoadScene("Level1Mery");
+            SceneManager.LoadScene("LevelsMenuMery");
             HealthCounterMery.ResetHealth();
         }
         else
         {
             SceneManager.LoadScene("Level1Mery");
             HealthCounterMery.ResetHealth();
+            HealthCounterMery.ResetLives();
+            CollectibleCounterMery.ResetCollectibles();
         }
     }
 
