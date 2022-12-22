@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 700410957}
   - component: {fileID: 700410956}
   - component: {fileID: 700410955}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623031630482123752}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 623031630637722495}
   - component: {fileID: 623031630637722497}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Layer1
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
@@ -1804,7 +1804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623031631247906790}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,9 +1957,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 623031631257525176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57aa95a1d415b854e8fb9ce96adbd80b, type: 3}
+  m_Script: {fileID: 11500000, guid: f460be0e90d958440b48c49fca636253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  surePanel: {fileID: 623031631071598794}
 --- !u!114 &623031631257525183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,10 +1970,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 623031631257525176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f460be0e90d958440b48c49fca636253, type: 3}
+  m_Script: {fileID: 11500000, guid: 57aa95a1d415b854e8fb9ce96adbd80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surePanel: {fileID: 623031631071598794}
 --- !u!224 &623031631301268832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2405,7 +2405,7 @@ GameObject:
   - component: {fileID: 623031631676857314}
   - component: {fileID: 623031631676857313}
   - component: {fileID: 623031631676857328}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: New Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2672,7 +2672,7 @@ GameObject:
   - component: {fileID: 623031632038936943}
   - component: {fileID: 623031632038936929}
   - component: {fileID: 623031632038936928}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2788,7 +2788,7 @@ GameObject:
   - component: {fileID: 623031632094488281}
   - component: {fileID: 623031632094488280}
   - component: {fileID: 623031632094488283}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2934,7 +2934,7 @@ GameObject:
   - component: {fileID: 623031632145883356}
   - component: {fileID: 623031632145883358}
   - component: {fileID: 623031632145883357}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3016,7 +3016,7 @@ GameObject:
   - component: {fileID: 623031632179031499}
   - component: {fileID: 623031632179031498}
   - component: {fileID: 623031632179031501}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3162,7 +3162,7 @@ GameObject:
   - component: {fileID: 623031632200055141}
   - component: {fileID: 623031632200055143}
   - component: {fileID: 623031632200055142}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3475,7 +3475,7 @@ GameObject:
   - component: {fileID: 623031632446403356}
   - component: {fileID: 623031632446403355}
   - component: {fileID: 623031632446403357}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 7006322547923071982}
   - component: {fileID: 7006322547923071980}
   - component: {fileID: 7006322547923071983}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3760,7 +3760,7 @@ GameObject:
   - component: {fileID: 7006322547976467947}
   - component: {fileID: 7006322547976467946}
   - component: {fileID: 7006322547976467945}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Levels
   m_TagString: Untagged
   m_Icon: {fileID: 0}

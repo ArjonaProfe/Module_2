@@ -1,33 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneTransitionMery : MonoBehaviour
 {
-    public GameObject FadePanel;
-    private static Animator anim;
+    public Animator anim;
 
-    public static bool fading;
+    public bool fading;
+    public bool done;
 
-    public static GameObject fadePanel;
+    public GameObject fadePanel;
 
-    public void FadeTransition()
+    public void Start()
     {
-        fadePanel.SetActive(true);
-        fading = anim.GetBool("Fading");
 
         anim.SetBool("Fading", true);
+
+        anim.SetBool("Done", false);
+
         fading = true;
+        done = false;
         Debug.Log("FadeIn");
-        Invoke("SetFadeBack", 0.5f);
-        
+
+        Invoke("ResetFading", 0.5f);
+    }
+    public void FadeTransition()
+    {
+        anim.SetBool("Fading", true);
+
+        anim.SetBool("Done", false);
+
+        fading = true;
+        done = false;
+        Debug.Log("FadeIn");
+
+        Invoke("ResetFading", 0.1f);
+
     }
 
-    public void SetFadeBack()
+    void ResetFading()
     {
         anim.SetBool("Fading", false);
+
+        anim.SetBool("Done", true);
+
         fading = false;
-        Debug.Log("FadeOut");
-        fadePanel.SetActive(false);
+        done = true;
     }
+
 }

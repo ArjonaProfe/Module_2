@@ -10,6 +10,7 @@ public class WeaponMery : MonoBehaviour  // Script que controla el "arma" del pe
     public GameObject bulletPrefab;      // coge la bala
     public Animator anim;                // para el bool (Revisar, creo que al final no se usa)
     public SpriteRenderer sr;
+    private PlayerMovementMery pm;
 
     public float fireRate = 0.5f;       // No se puede disparar hasta que...
     public float nextFire = 0.0f;       // Tiempo base de disparo
@@ -18,12 +19,12 @@ public class WeaponMery : MonoBehaviour  // Script que controla el "arma" del pe
 
     {
         anim = GetComponent<Animator>();    // Las variables deben asignarse a los componentes
-
+        pm = GetComponent<PlayerMovementMery>();
     }
 
     void Update () 
     {
-        if(PauseManagerMery.isPaused == false)
+        if(PauseManagerMery.isPaused == false && pm.isDucking == false)
         {
             if (Input.GetButton("Fire1") && Time.time > nextFire)      // input asignado. Si se pulsa el input Fire1 y el tiempo pasado en time is mayor a nextFire
             {

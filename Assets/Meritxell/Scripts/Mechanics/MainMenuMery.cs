@@ -9,11 +9,6 @@ public class MainMenuMery : MonoBehaviour                 // Script del main men
 {
     public GameObject surePanel;
 
-    public void Start()
-    {
-        DataManagerMery.LoadData();
-        Debug.Log("Loading");
-    }
     public void Continue()                              // Cargar la escena Level1. Falta incorporar guardado. Resetea la vida
     {
         DataManagerMery.LoadData();                          // Se cargan los datos guardados

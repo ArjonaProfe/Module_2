@@ -49,7 +49,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     }
     void Jump()     
     {
-        if (isGrounded == true)     
+        if (isGrounded == true && isDucking == false)     
         {
             rb.velocity = new Vector2(0, jump);       //Salto
         }
@@ -69,7 +69,7 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     }
     void IsShooting()                               
     {
-        if (Input.GetButton("Fire1") == true)      // Si el input está (continuamente) presionado, entonces isShooting es true
+        if (Input.GetButton("Fire1") == true && isDucking == false)      // Si el input está (continuamente) presionado, entonces isShooting es true
         {
             isShooting = true;
         }
@@ -107,11 +107,11 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     {
         if(CameraMery.switchedCam == true)
         {
-            rb.transform.position = new Vector2(244, -49);
+            rb.transform.position = new Vector3(244, -49, -3);
         }
         else if (CameraMery.switchedCam == false)
         {
-            rb.transform.position = new Vector2(244, 2);
+            rb.transform.position = new Vector3(238, 2, -3);
         }
 
     }
