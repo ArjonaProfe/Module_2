@@ -23,10 +23,10 @@ public class Waypoint_AC : MonoBehaviour     //script para instanciar las plataf
     void Update()
     {
         time = time - 1 * Time.deltaTime;                    //restará 1u/s
-        if (time < 0)
+        if (time < 0)                                        //si es inferior a 0 haz lo siguiente
         {
             number = Random.Range(0, Pops.Length);           //hacemos un bingo
-            Instantiate(Pops[number], waypoint[number]);     //mueve el objetivo al punto indicado
+            Instantiate(Pops[number], waypoint[number]);     //mueve el objetivo al punto indicado. Se indicaran en Unity y donde
             time = resetTime;                               //una vez hecho resetea la cuenta
         }
    

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-
-
-public class Damage_AC : MonoBehaviour      //script de daño
+public class Damage_AC : MonoBehaviour      //script de daño al Player
 {
     private void OnTriggerEnter2D(Collider2D other)
     {

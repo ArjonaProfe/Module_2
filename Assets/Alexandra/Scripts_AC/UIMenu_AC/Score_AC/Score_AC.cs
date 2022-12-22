@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score_AC : MonoBehaviour               //script score con el tiempo
+public class Score_AC : MonoBehaviour               //script score de la partida que se incrementa con el tiempo
 {
     public Text Text;
     public Text scoreText;
