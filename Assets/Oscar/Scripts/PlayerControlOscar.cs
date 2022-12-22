@@ -16,7 +16,7 @@ public class PlayerControlOscar : MonoBehaviour
     public float CharTimer, CharGoal;
 
     //Movement
-    public float MoveX, MoveY;
+    public int MoveX, MoveY;
 
     //Detections
     public Transform GroundPoint, HangPoint1, HangPoint2;
@@ -52,8 +52,8 @@ public class PlayerControlOscar : MonoBehaviour
     void Update()
     {
         //Moving
-        MoveX = Input.GetAxisRaw("Horizontal");
-        MoveY = Input.GetAxisRaw("Vertical");
+        MoveX = (int)Input.GetAxisRaw("Horizontal");
+        MoveY = (int)Input.GetAxisRaw("Vertical");
         if (MoveX != 0)
         {
             transform.localScale = new Vector3(4 * MoveX, 4, 1);
@@ -262,10 +262,10 @@ public class PlayerControlOscar : MonoBehaviour
         transform.position = PosToReturn;
     }
 
-    //Death
+    //Death, but it sends you to the menu
     public void PlayerDeath()
     {
-        LvMan.GoToScene(42);
+        LvMan.GoToScene(40);
     }
 
     //Grafics for visualization

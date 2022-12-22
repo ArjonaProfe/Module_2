@@ -38,7 +38,6 @@ public class TriggerPlatformOscar : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision.transform.SetParent(transform);
-        print(collision.name);
         ThingsOn += 1;
     }
     private void OnTriggerExit2D(Collider2D collision)
