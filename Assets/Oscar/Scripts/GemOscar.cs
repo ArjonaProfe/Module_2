@@ -17,6 +17,15 @@ public class GemOscar : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        LvMan = FindObjectOfType<LevelManagerOscar>();
+        if (LvMan.LvStats[LvMan.SceneID].Gems[ID] == true)
+        {
+            Anim.SetBool("Collected", true);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")

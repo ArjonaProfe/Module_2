@@ -9,11 +9,11 @@ public class MainMenu_AC : MonoBehaviour    //Script para cambio de escena
 {
     public void EscenaMenu()                         //pública para que el usuario pueda interactuar
     {
-        SceneManager.LoadScene("MainMenuScene_AC");       //el nombre exacto que le hemos puesto a la escena creada
+        SceneManager.LoadScene("MainMenuScene_AC");       //el nombre exacto que le hemos puesto a la escena creada que se va a cargar
     }
     public void EscenaJuego()                        //pública para que el usuario pueda interactuar
     {
-        SceneManager.LoadScene("Play_AC");         //el nombre exacto que le hemos puesto a la escena creada
+        SceneManager.LoadScene("Play_AC");         //el nombre exacto que le hemos puesto a la escena creada que se va a cargar
     }
 
     public void Salir()                           //variable para poder salir del juego. Pública para que el usuario pueda interactuar

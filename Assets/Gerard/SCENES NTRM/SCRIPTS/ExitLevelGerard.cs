@@ -20,7 +20,7 @@ public class ExitLevelGerard : MonoBehaviour
         secsToExit = 5f;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (smg.enemiesNumber == 0)
@@ -37,35 +37,6 @@ public class ExitLevelGerard : MonoBehaviour
         }
     }
 
-    void LoadScene()
-    {
 
-        if (SceneManager.GetActiveScene().name == "Tutorial NTRM")
-        {
-            SceneManager.LoadScene("Floor Selection NTRM");
-            DataManagerGerard.SaveData();
-            DataManagerGerard.TutorialProgress();
-
-        }
-        if (SceneManager.GetActiveScene().name == "Level 1 NTRM")
-        {
-            SceneManager.LoadScene("Floor Selection NTRM");
-            DataManagerGerard.SaveData();
-            DataManagerGerard.LevelOneProgress();
-        }
-        if (SceneManager.GetActiveScene().name == "Level 2 NTRM")
-        {
-            SceneManager.LoadScene("Floor Selection NTRM");
-            DataManagerGerard.SaveData();
-            DataManagerGerard.LevelTwoProgress();
-        }
-        if (SceneManager.GetActiveScene().name == "Level 3 NTRM")
-        {
-            SceneManager.LoadScene("Floor Selection NTRM");
-            DataManagerGerard.SaveData();
-            DataManagerGerard.LevelThreeProgress();
-        }
-
-    }
 
 }

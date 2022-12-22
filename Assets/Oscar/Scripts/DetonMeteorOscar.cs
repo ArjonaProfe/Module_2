@@ -33,7 +33,6 @@ public class DetonMeteorOscar : MonoBehaviour
 
     public void Deton()
     {
-        print("boom");
         GameObject Boom = Instantiate(Bomb, transform.position, Quaternion.identity);
         Boom.GetComponent<GrabItemOscar>().Anim.SetBool("Carried", true);
         Destroy(gameObject);

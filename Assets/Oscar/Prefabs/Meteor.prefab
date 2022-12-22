@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Power: 20
   Speed: 12
-  Lifetime: 7
+  Lifetime: 4
   Potency: 0
   MyFaction: 2
   Phase: 0

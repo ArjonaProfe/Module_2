@@ -11,7 +11,6 @@ public class MovePlatformOscar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer = 0;
     }
 
     // Update is called once per frame

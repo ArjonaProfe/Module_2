@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Highscore_AC : MonoBehaviour
+public class Highscore_AC : MonoBehaviour       //script para guardar highscore. PD que funcione!
 {
     public float Score;
     public float highscore;
