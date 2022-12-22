@@ -14,7 +14,7 @@ public class PuertaAbierta_JCG : MonoBehaviour
 
         if(Puerta != null)
         {
-            bool IsActive = Puerta.activeSelf;
+            bool IsActive = Puerta.activeSelf; // si le das click en el boton de abrir puerta se quita el sprite
             Puerta.SetActive(!IsActive);
         }
     }

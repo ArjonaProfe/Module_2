@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement_JCG : MonoBehaviour
 {
-    float xInicial, yInicial;  //
-    private Rigidbody2D rb;
+    float xInicial, yInicial;  //respawn
+    private Rigidbody2D rb;   
     private float Horizontal;
     private float Vertical;
     public float speed;
@@ -17,8 +17,8 @@ public class PlayerMovement_JCG : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();  //gravedad
+        anim = GetComponent<Animator>();       //animacion de walk idle demas
         spriteRenderer = GetComponent<SpriteRenderer>();
         xInicial = transform.position.x;  //cuando inice el juego este en la posicion x y Y
         yInicial = transform.position.y;
@@ -78,17 +78,17 @@ public class PlayerMovement_JCG : MonoBehaviour
    // }
     public Vector2 GetPosition()
     {
-        return transform.position;
+        return transform.position;                   //cuando le des a cargar que te vuelva a la posicion guardada 
     }
     
     public void SetPosition(Vector2 pos)
     {
-        transform.position = pos;
+        transform.position = pos;  //cuando le des a cargar que te vuelva a la posicion guardada 
     }
 
     public void Recolocar()
     {
-        transform.position = new Vector3(xInicial, yInicial, 0);
+        transform.position = new Vector3(xInicial, yInicial, 0);  //respawn del personaje
     }
 
 

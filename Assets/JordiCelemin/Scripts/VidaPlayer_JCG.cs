@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class VidaPlayer_JCG : MonoBehaviour
 {
-    public GameObject[] hearts;
+    public GameObject[] hearts; //contador de vidas
     private int life;
-    public GameObject Reiniciar;
+    public GameObject Reiniciar;   //cuando tengas 0 vidas se reinicia
     public Text GameOver;
     private void Start()
     {

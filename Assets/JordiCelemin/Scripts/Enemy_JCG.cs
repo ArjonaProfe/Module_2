@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy_JCG : MonoBehaviour
 {
 
-    public string Enemigo_JCGName;
+    public string Enemigo_JCGName;  //enemigo en otro script
     public float healthPoints;
     private Rigidbody2D rb;
     private Animator anim;
