@@ -35,7 +35,7 @@ public class ScoreManagerGerard : MonoBehaviour
         enemiesText.text = "Enemies Left:\n" + enemiesNumber.ToString();
         scoreText.text = "Actual Score:\n"  + score.ToString();
         minusscoreText.text = "Minus Score:\n" + minusScore.ToString();
-        Debug.Log(minusScore);
+
 
         if (highscore<score)
         {
