@@ -13,14 +13,16 @@ public class LevelsMenuMery : MonoBehaviour              // Menú de niveles
     {
         DataManagerMery.LoadData();                          // Se cargan los datos guardados
 
-        if (DataManagerMery.levelCleared == "No")            // Si el primer nivel no se ha superado, el botón no se puede usar
+        L2Button.interactable = false;
+
+        /*if (DataManagerMery.levelCleared == "No")            // Si el primer nivel no se ha superado, el botón no se puede usar
         {
             L2Button.interactable = false;
         }
         else
         {
             L2Button.interactable = true;
-        }
+        }*/
     }
 
     public void Level1()                                // Cargar nivel 1
@@ -42,14 +44,14 @@ public class LevelsMenuMery : MonoBehaviour              // Menú de niveles
         }
     }
 
-    public void Level2()
+    /*public void Level2()
     {
         if(DataManagerMery.levelCleared == "Yes")     // Cargar nivel dos (solo se puede usar si se ha superado el primer nivel)
         {
             SceneManager.LoadScene("Level2Mery");
         }
 
-    }
+    }*/
 
     public void Back()                               // Regresar al menú principal
     {

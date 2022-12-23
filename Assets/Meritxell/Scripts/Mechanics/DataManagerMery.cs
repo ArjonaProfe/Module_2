@@ -33,14 +33,14 @@ public class DataManagerMery : MonoBehaviour        // Gestión de datos guardado
 
     }
 
-    public void Update()
+    /*public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))           // Para testing. Pulsar Z debería eliminar los datos guardados (no funciona)
         {
             Debug.Log("Tecla pulsada");
             DeleteData();
         }
-    }
+    }*/
 
     public static void SaveData()
     {

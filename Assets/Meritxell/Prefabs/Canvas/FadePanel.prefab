@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5032649900701803644}
   - component: {fileID: 5032649900701803645}
   - component: {fileID: 5032649900701803646}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: FadePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

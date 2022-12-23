@@ -107,11 +107,11 @@ public class PlayerMovementMery : MonoBehaviour     // Script asignado a los con
     {
         if(CameraMery.switchedCam == true)
         {
-            rb.transform.position = new Vector3(244, -49, -3);
+            rb.transform.position = new Vector3(245, -49, -3);
         }
         else if (CameraMery.switchedCam == false)
         {
-            rb.transform.position = new Vector3(238, 2, -3);
+            rb.transform.position = new Vector3(231, 4, -3);
         }
 
     }
