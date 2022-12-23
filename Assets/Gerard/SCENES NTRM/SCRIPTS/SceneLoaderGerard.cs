@@ -15,41 +15,6 @@ public class SceneLoaderGerard : MonoBehaviour
     public string SceneName5;
 
 
-    public Button TButton;
-    public Button L1Button;
-    public Button L2Button;
-    public Button L3Button;
-
-    public void Start()
-    {
-
-        if (DataManagerGerard.tutorialSucces == "No")            // Si el primer nivel no se ha superado, el botón no se puede usar
-        {
-            L1Button.interactable = false;
-        }
-        else 
-        {
-            L1Button.interactable = true;
-        }
-        if (DataManagerGerard.levelOneSucces == "No")
-        {
-            L2Button.interactable = false;
-        }
-        else 
-        {
-            L2Button.interactable = true;
-        }
-        if (DataManagerGerard.levelTwoSucces == "No")
-        {
-            L3Button.interactable = false;
-        }
-        else
-        {
-            L3Button.interactable = true;
-        }
-
-    }
-
 
 
 

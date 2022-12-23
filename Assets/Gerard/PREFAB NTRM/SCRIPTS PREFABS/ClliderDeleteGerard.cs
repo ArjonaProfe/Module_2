@@ -22,5 +22,6 @@ public class ClliderDeleteGerard : MonoBehaviour
             colliderShift.enabled = false;
 
         }
+        else colliderShift.enabled = true;
     }
 }
