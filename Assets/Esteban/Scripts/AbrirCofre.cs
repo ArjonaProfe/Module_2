@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbrirCofre : MonoBehaviour
@@ -30,6 +31,10 @@ public class AbrirCofre : MonoBehaviour
             //animSueloDestructible.SetBool("sueloPozo",true);
            // Destroy(sueloDestructible.transform.gameObject, 3);
             Destroy(gameObject, 2);
+            PlayerMovement_Es playerMovement_Es = collision.transform.GetComponent<PlayerMovement_Es>();
+            playerMovement_Es.Vida = 100f;
+            playerMovement_Es.Damage(0f);//esto es para actualizar el progressbar
+
 
         }
     }

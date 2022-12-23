@@ -115,7 +115,7 @@ public class PlayerMovement_Es : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log(collision.collider.tag);
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
 
         if (collision.collider.CompareTag("Enemy1") && blockFlashBool.BlockFlashBool == false)
         {
@@ -161,16 +161,16 @@ public class PlayerMovement_Es : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
+        //Debug.Log(collision.tag);
         if (collision.CompareTag("Lava"))
         {
-            Debug.Log("lava");
+            //Debug.Log("lava");
             Damage(100);
         }
         else if (collision.CompareTag("Fuego"))
         {
             StartCoroutine(ColorBlancoRojo());
-            Debug.Log("Fuego");
+            //Debug.Log("Fuego");
             Damage(10);
         }
     }

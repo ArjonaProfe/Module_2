@@ -36,13 +36,26 @@ public class AIBasic_Es : MonoBehaviour
 
         if (!detectado)
         {
-          
+            
             StartCoroutine(CheckEnemyMovint());
             //Debug.Log(rb.velocity);
             transform.position = Vector2.MoveTowards(transform.position, moveSpots[i].transform.position,
           speed_ * Time.deltaTime);
 
         }
+        else
+        {
+            
+            Transform norbutTransform = GameObject.Find("Norbut").transform;
+            Debug.Log("tendría que seguir a Norbut" + norbutTransform.position);
+            Debug.Log("detectado " + detectado);
+            StartCoroutine(CheckEnemyMovint());
+            transform.position = Vector2.MoveTowards(transform.position, norbutTransform.position,
+          speed_ * Time.deltaTime);
+
+
+        }
+
         if (Vector2.Distance(transform.position, moveSpots[i].transform.position) < 0.1f)
         {
             if (waitTime <= 0)
@@ -77,7 +90,7 @@ public class AIBasic_Es : MonoBehaviour
         {
             //spriteRenderer.flipX = true;
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
-            
+
             mirandoDerecha = !mirandoDerecha;
 
         }
@@ -85,7 +98,7 @@ public class AIBasic_Es : MonoBehaviour
         {
             //spriteRenderer.flipX = false;
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
-            
+
             mirandoDerecha = true;
 
         }

@@ -10,6 +10,7 @@ public class Enemy2Damage_Es : MonoBehaviour
     private bool muerto;    
     private PlayerMovement_Es playerMovement_Es;
     private ProgressBarravida_Es progressBarravida_Es;
+    
 
     public bool Muerto { get => muerto; set => muerto = value; }
 
@@ -25,7 +26,7 @@ public class Enemy2Damage_Es : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     public void Damage(int damage)
     {
@@ -45,11 +46,13 @@ public class Enemy2Damage_Es : MonoBehaviour
     public void Muerte()
     {
         muerto = true;
+        transform.GetComponent<Enemy2_Attack>().enabled= false;
+        animator.Play("dead");
         //animationManagerEnemy.Muerte();
         //rb.simulated = false;
         //Debug.Log("Muerte");
         //Debug.Log(gameObject.tag);
-        Destroy(transform.root.gameObject, 1.2f);
+        Destroy(transform.root.gameObject, 1.5f);
 
     }
     IEnumerator ColorBlancoRojo()
@@ -70,7 +73,8 @@ public class Enemy2Damage_Es : MonoBehaviour
 
             if (blockFlashBool.BlockFlashBool)
             {
-                Damage(1);
+                Debug.Log("BlockFlash no hace daño al enemigo 2, solo le protege");
+                //Damage(1);
             }
         }
     }
@@ -82,8 +86,10 @@ public class Enemy2Damage_Es : MonoBehaviour
             BlockFlash blockFlashBool = transformCircle.gameObject.GetComponent<BlockFlash>();
             if (blockFlashBool.BlockFlashBool)
             {
-                Damage(1);
+                Debug.Log("BlockFlash no hace daño al enemigo 2, solo le protege");
+                //Damage(1);
             }
         }
     }
+
 }

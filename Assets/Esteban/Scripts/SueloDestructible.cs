@@ -35,4 +35,15 @@ public class SueloDestructible : MonoBehaviour
             }
         }
     }
+
+    public void Autodestroy()
+    {
+        animSueloDestructible.SetBool("sueloPozo", true);
+
+        Destroy(gameObject, 2);
+        if (particulas)
+        {
+            particulas.Play();
+        }
+    }
 }

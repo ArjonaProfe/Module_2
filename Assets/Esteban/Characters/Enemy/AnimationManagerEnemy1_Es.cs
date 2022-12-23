@@ -27,8 +27,8 @@ public class AnimationManagerEnemy1_Es : MonoBehaviour
 
         animator.SetBool("Muerte", true);
     }
-    public void Idle()
+    public void Attack(bool attack)
     {
-
+        animator.SetBool("Attack", attack);
     }
 }
