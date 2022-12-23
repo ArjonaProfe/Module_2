@@ -24,6 +24,8 @@ public class LevelManagerOscar : MonoBehaviour
 
     private void Awake()
     {
+        //FPS Limit
+        Application.targetFrameRate = 30;
         LoadGame();
         if (CollectLabel != null)
         {
@@ -71,7 +73,7 @@ public class LevelManagerOscar : MonoBehaviour
     {
         LvStats[SceneID].LvClear = true;
         SaveGame();
-        SceneManager.LoadScene(40);
+        SceneManager.LoadScene(0);
     }
 
     public void CollectGem(int ID)

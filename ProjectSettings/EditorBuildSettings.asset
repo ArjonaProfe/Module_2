@@ -6,17 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Oscar/Scenes/MainMenuOscar.unity
+    guid: fee64c8d12d179e48984e779a255fa04
+  - enabled: 1
     path: Assets/Alexandra/Scenes_AC/MainMenuScene_AC.unity
     guid: 2e2f445b364a10e42bbbdf723e6d3397
   - enabled: 1
     path: Assets/Alexandra/Scenes_AC/Play_AC.unity
     guid: 9d0028709fcebdc4fb6568d99b777854
   - enabled: 0
-    path: Assets/Alexandra/Scenes_AC/Niveles_AC/Level2_AC.unity
-    guid: 7c04ac011cee1d04db9d83d1181eb6f1
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Alexandra/Scenes_AC/Niveles_AC/Level3_AC.unity
-    guid: 0dcbb8e95b20b5f4c8b523915dcb4133
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Arjona/Animations/AnimationsScene.unity
     guid: 29b782816e1a97040895e537bce90feb
@@ -134,9 +137,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Meritxell/Scenes/SandboxMery.unity
     guid: 4b97d0cef41c589419b287fffe795821
-  - enabled: 1
-    path: Assets/Oscar/Scenes/MainMenuOscar.unity
-    guid: fee64c8d12d179e48984e779a255fa04
   - enabled: 1
     path: Assets/Oscar/Scenes/Nivel1Oscar.unity
     guid: 80604c741b22f034cbc9d0626f27d8ce

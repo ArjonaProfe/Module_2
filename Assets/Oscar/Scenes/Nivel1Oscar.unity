@@ -3938,7 +3938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &632299412
 Transform:
   m_ObjectHideFlags: 0
@@ -16873,7 +16873,7 @@ PrefabInstance:
       objectReference: {fileID: 1474802807}
     - target: {fileID: 7500868072118112849, guid: 0d69cf5675f64694084b18afde455f01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7500868072276950085, guid: 0d69cf5675f64694084b18afde455f01, type: 3}
       propertyPath: MyLifeMan
